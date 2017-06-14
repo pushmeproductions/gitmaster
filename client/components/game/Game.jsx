@@ -17,11 +17,8 @@ class Game extends React.Component {
   render () {
     return (
       <div className='game-container'>
+        <Ui />
         <Cell />
-        <Corridor />
-        <Staffroom />
-        <Reactcore />
-        <Escapepod />
       </div>
     )
   }
@@ -29,3 +26,8 @@ class Game extends React.Component {
 }
 
 export default connect()(Game)
+
+// <Corridor />
+// <Staffroom />
+// <Reactcore />
+// <Escapepod />

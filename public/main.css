@@ -1,0 +1,19 @@
+#cell-home {
+  width: 680px;
+  height: 450px;
+  position: fixed;
+  z-index: 0;
+  left: 50%;
+  margin-left: -445px;
+  top: 55px;
+}
+
+#overlay {
+  width: 960px;
+  height: 640px;
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  margin-left: -480px;
+  top: 20px;
+}
