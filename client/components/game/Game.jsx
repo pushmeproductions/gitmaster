@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import Ui from '../ui/Ui'
+import Ui from './ui/Ui'
 import Cell from './Cell'
 import Corridor from './Corridor'
 import Escapepod from './Escapepod'
