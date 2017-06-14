@@ -7,9 +7,7 @@ const HomePage = () => {
       <div className = 'home-container'>
         <h1>GitMaster</h1>
         <button>
-        
-        <Link to='/game'>Start</Link>
-
+        <Link to='/game' id='start'>Start</Link>
         </button>
       </div>
     )

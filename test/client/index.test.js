@@ -1,27 +1,24 @@
+import './setup-dom'
 import React from 'react'
 import test from 'ava'
 import { shallow, mount } from 'enzyme'
+import store from '../../client/store'
+import {Provider} from 'react-redux'
 
 import Homepage from '../../client/components/Homepage'
-import './setup-dom'
+import App from '../../client/components/App'
+import Game from '../../client/components/game/Game'
 
 test('Heading renders on App', t => {
-  const wrapper = mount(<Homepage />)
+  const wrapper = shallow(<Homepage />)
   t.is(wrapper.find('h1').text(), 'GitMaster')
 })
 
+//THIS IS AN INTEGRATION TEST!
+//console.log(wrapper.html()); check what we should see
 test('Start button renders cell component and begins game', t => {
-  const wrapper = mount(<Homepage />)
+  const wrapper = mount(<Provider store={store}><App/></Provider>)
   t.is(wrapper.find('button').text(), 'Start')
-  wrapper.find('#start').simulate('click')
-  t.is(wrapper.find(<Game />).exists(), true)
+  wrapper.find('#start').simulate('click', {button:0})
+  t.is(wrapper.find(".game-container").exists(), true)
 })
-
-
-// test('Renders add form when clicked', t => {
-//  const wrapper = mount(<App />)
-//  t.is(wrapper.find('.addUserForm').exists(), false)
-//  wrapper.find('#show-add-link').simulate('click')
-//  t.is(wrapper.find('.addUserForm').exists(), true)
-// })
-// Contact GitHub API Training Shop Blog About
