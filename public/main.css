@@ -1,0 +1,26 @@
+/* home page */
+
+.home-container {
+  text-align: center;
+  padding: 10px;
+  margin: 20vh;
+  font-family: 'Orbitron';
+}
+
+a {
+  text-decoration: none;
+  height: 100px;
+  width: 100px;
+  display:block;
+}
+
+.Gitmaster {
+
+}
+.introtext {
+
+}
+
+#start-button {
+
+}
