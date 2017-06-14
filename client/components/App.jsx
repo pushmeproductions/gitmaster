@@ -1,11 +1,35 @@
 import React from 'react'
+import {connect} from 'react-redux'
 
-import Greetings from './Greetings'
+// import Ui from './UI/Ui'
+import Cell from './Cell'
+import Corridor from './Corridor'
+import Endscreen from './Endscreen'
+import Escapepod from './Escapepod'
+import Homepage from './Homepage'
+import Reactcore from './Reactcore'
+import Staffroom from './Staffroom'
 
-const App = () => (
-  <div className='app-container'>
-    <Greetings />
-  </div>
-)
 
-export default App
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+
+  render () {
+    return (
+      <div className='app-container'>
+        <Cell />
+        <Corridor />
+        <Endscreen />
+        <Escapepod />
+        <Homepage />
+        <Reactcore />
+        <Staffroom />
+      </div>
+    )
+  }
+
+}
+
+export default connect()(App)
