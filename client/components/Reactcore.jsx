@@ -17,10 +17,8 @@ class ReactCore extends React.Component {
 }
 
 
-function mapStateToProps() {
-  return {
-    .......
-  }
+const mapStateToProps = (state) => {
+  return {state}
 }
 
 export default connect(mapStateToProps)(ReactCore)
