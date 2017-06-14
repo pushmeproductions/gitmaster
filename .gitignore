@@ -1,5 +1,5 @@
 node_modules
 static
 npm-debug.log
-*bundle
+bundle*
 package-lock.json

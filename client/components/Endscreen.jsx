@@ -6,7 +6,7 @@ class Endscreen extends React.Component {
     super(props);
 
     this.state = {
-      this.state
+      
     }
   }
 
