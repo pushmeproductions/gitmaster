@@ -13,7 +13,7 @@ class Cell extends React.Component {
 
   render() {
     return (
-      <div id='cell-container'><img id='cell-home'src='images/backgrounds/Cell.png'/></div>
+      <div className='window'><img className='background-img'src='images/backgrounds/Cell.png'/></div>
     )
   }
 }
