@@ -10,13 +10,16 @@ class Cell extends React.Component {
       this.state
     }
   }
-}
 
+  render() {
+    return (
+      <div><p>I am the CELL</p></div>
+    )
+  }
+}
 
 const mapStateToProps = (state) => {
 return {state}
 }
 
 export default connect(mapStateToProps)(Cell)
-
-export default Cell

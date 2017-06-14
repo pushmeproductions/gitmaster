@@ -9,13 +9,16 @@ class Corridor extends React.Component {
       this.state
     }
   }
-}
 
+  render() {
+    return (
+      <div><p>I am the CORRIDOR</p></div>
+    )
+  }
+}
 
 const mapStateToProps = (state) => {
 return {state}
 }
 
 export default connect(mapStateToProps)(Corridor)
-
-export default Corridor
