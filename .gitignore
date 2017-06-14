@@ -2,3 +2,4 @@ node_modules
 static
 npm-debug.log
 *bundle
+package-lock.json
