@@ -5,7 +5,7 @@ const HomePage = () => {
     return (
       <div className = 'home-container'>
         <h1>Welcome to GitMaster!</h1>
-        <button ='start'>Start</button>
+        <button id='start'>Start</button>
       </div>
     )
 }

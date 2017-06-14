@@ -9,9 +9,11 @@ import Homepage from './Homepage'
 const App = () => (
   <div className='app-container'>
     <Router>
-      <Route exact path='/' component={Homepage} />
-      <Route path='/game' component={Game} />
-      <Route path='/end' component={Endscreen} />
+      <span>
+        <Route exact path='/' component={Homepage} />
+        <Route path='/game' component={Game} />
+        <Route path='/end' component={Endscreen} />
+      </span>
     </Router>
   </div>
 )
