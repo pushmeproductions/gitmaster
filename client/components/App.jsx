@@ -1,7 +1,7 @@
 import React from 'react'
 import {HashRouter as Router, Route} from 'react-router-dom'
 
-import Game from './Game'
+import Game from './game/Game'
 import Endscreen from './Endscreen'
 import Homepage from './Homepage'
 
