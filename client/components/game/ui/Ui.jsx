@@ -16,6 +16,7 @@ class Ui extends React.Component {
   render () {
     return (
       <div className='ui-container'>
+        <img id='overlay' src='images/backgrounds/UI.png' />
         <Inventory />
         <Function />
         <div id='log'>

@@ -7,13 +7,13 @@ class Cell extends React.Component {
     super(props);
 
     this.state = {
-      
+
     }
   }
 
   render() {
     return (
-      <div><p>I am the CELL</p></div>
+      <div className='window'><img className='background-img'src='images/backgrounds/Cell.png'/></div>
     )
   }
 }
