@@ -7,7 +7,7 @@ export default class Skull extends Item {
     this.msg = 'You feel like you are being watched...'
     this.name = 'skull'
     this.roomStyle = {
-      imageidth: '680px',
+      imageWidth: '680px',
       imageHeight: '450px',
       xPosition: 0,
       yPosition: 0,

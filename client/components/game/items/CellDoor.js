@@ -7,8 +7,8 @@ export default class CellDoor extends Item {
     this.msg = 'The door is locked...'
     this.name = 'cellDoor'
     this.roomStyle = {
-      imageWidth: '680px',
-      iamgeHeight: '450px',
+      width: '680px',
+      height: '450px',
       position: absolute,
       top: 0,
       left: 0,

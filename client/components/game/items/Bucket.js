@@ -7,8 +7,8 @@ export default class Bucket extends Item {
     this.msg = 'The contents of this bucket glow strangely, you wonder if they might be corrosive...'
     this.name = 'bucket'
     this.roomStyle = {
-      imageWidth: '680',
-      imageHeight: '450px',
+      width: '680px',
+      height: '450px',
       position: absolute,
       top: 0,
       left: 0,
