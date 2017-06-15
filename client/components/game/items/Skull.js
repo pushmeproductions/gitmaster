@@ -10,6 +10,14 @@ export default class Skull extends Item {
     this.img = 'images/items/Skull.png'
     this.msg = 'You feel like you are being watched...'
     this.name = 'skull'
+    this.roomStyle = {
+      width: '680px',
+      height: '450px',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: 5
+    }
   }
   mouseClick(){
     this.dispatch(addToInv(this))

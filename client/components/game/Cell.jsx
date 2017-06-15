@@ -10,13 +10,8 @@ class Cell extends React.Component {
 
     this.state = {
       worldItems: this.props.worldItems,
-      skull: {
-        img: ''
-      }
     }
   }
-
-  //componentWillReceiveProps
 
   componentWillMount(props) {
     this.setState({
@@ -24,13 +19,15 @@ class Cell extends React.Component {
     })
   }
 
+  //componentWillReceiveProps
+
   populateRoom () {
     return [new Skull (this.props.dispatch)]
   }
 
   renderItem(item) {
     if (this.state.worldItems.indexOf(item.name) > -1) {
-      return( <img src={item.img} /> )
+      return( <img src={item.img} style={item.roomStyle} /> )
     }
   }
 
@@ -38,20 +35,19 @@ class Cell extends React.Component {
     return (
       <div className='window'>
         <img className='background-img'src='images/backgrounds/Cell.png'/>
-        // if skull in items, show Skull
         <div>
           {this.state.roomItems.map((item) => {
             return this.renderItem(item)
           })}
         </div>
-        // if bucket
-        // if brick
-        // if unlocked
-        // if func
       </div>
     )
   }
 }
+// if bucket
+// if brick
+// if unlocked
+// if func
 
 const mapStateToProps = (state) => {
   return {
