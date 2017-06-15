@@ -7,7 +7,6 @@ import {Provider} from 'react-redux'
 
 import Homepage from '../../client/components/Homepage'
 import App from '../../client/components/App'
-import Game from '../../client/components/game/Game'
 
 test('Heading renders on App', t => {
   const wrapper = shallow(<Homepage />)
