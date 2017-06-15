@@ -9,25 +9,29 @@ class Cell extends React.Component {
     super(props)
 
     this.state = {
-      items: this.props.items
+      worldItems: this.props.worldItems,
+      skull: {
+        img: ''
+      }
     }
   }
 
   //componentWillReceiveProps
 
-  componentDidMount(props) {
-    new Skull (this.props.dispatch) // save in state
+  componentWillMount(props) {
+    this.setState({
+      roomItems: this.populateRoom()
+    })
   }
 
-  renderSkull() {
-    return (
-      <div>
+  populateRoom () {
+    return [new Skull (this.props.dispatch)]
+  }
 
-        if (this.state.items.indexOf('skull') > -1) {
-        //render img of this.state.skull.img
-      }
-    </div>
-    )
+  renderItem(item) {
+    if (this.state.worldItems.indexOf(item.name) > -1) {
+      return( <img src={item.img} /> )
+    }
   }
 
   render() {
@@ -35,7 +39,11 @@ class Cell extends React.Component {
       <div className='window'>
         <img className='background-img'src='images/backgrounds/Cell.png'/>
         // if skull in items, show Skull
-        {this.renderSkull()}
+        <div>
+          {this.state.roomItems.map((item) => {
+            return this.renderItem(item)
+          })}
+        </div>
         // if bucket
         // if brick
         // if unlocked
@@ -46,7 +54,9 @@ class Cell extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-return {state} //items
+  return {
+    worldItems: state.worldItems
+  }
 }
 
 export default connect(mapStateToProps)(Cell)
