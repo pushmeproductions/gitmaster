@@ -1,12 +1,12 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import Skull from '../items/Skull'
+import Skull from './items/Skull'
 
 
 class Cell extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {
       items: this.props.items
@@ -21,9 +21,12 @@ class Cell extends React.Component {
 
   renderSkull() {
     return (
-      if (this.state.items.indexOf('skull') > -1) {
+      <div>
+
+        if (this.state.items.indexOf('skull') > -1) {
         //render img of this.state.skull.img
       }
+    </div>
     )
   }
 
