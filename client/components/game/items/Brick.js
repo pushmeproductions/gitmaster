@@ -7,11 +7,12 @@ export default class Brick extends Item {
     this.msg = 'Hi I am Brick.'
     this.name = 'brick'
     this.roomStyle = {
-      imageWidth: '680px',
-      imageHeight: '450px',
-      xPosition: 0,
-      yPosition: 0,
-      zPosition: 0
+      width: '680px',
+      height: '450px',
+      position: absolute,
+      top: 0,
+      left: 0,
+      z: 5
     }
   }
   mouseClick() {

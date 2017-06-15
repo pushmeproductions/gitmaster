@@ -9,9 +9,10 @@ export default class Bucket extends Item {
     this.roomStyle = {
       imageWidth: '680',
       imageHeight: '450px',
-      xPosition: 0,
-      yPosition: 0,
-      zPosition: 5
+      position: absolute,
+      top: 0,
+      left: 0,
+      z: 5
     }
   }
   mouseClick() {
