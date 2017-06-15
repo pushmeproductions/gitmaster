@@ -27,7 +27,15 @@ class Cell extends React.Component {
 
   renderItem(item) {
     if (this.state.worldItems.indexOf(item.name) > -1) {
-      return( <img src={item.img} style={item.roomStyle} /> )
+      return  (
+        <img
+          src={item.img}
+          style={item.roomStyle}
+          onClick={() => item.mouseClick()}
+          onMouseOver={() => item.mouseOver()}
+          onMouseOut={() => item.mouseOff()}
+        />
+      )
     }
   }
 
@@ -44,10 +52,6 @@ class Cell extends React.Component {
     )
   }
 }
-// if bucket
-// if brick
-// if unlocked
-// if func
 
 const mapStateToProps = (state) => {
   return {
