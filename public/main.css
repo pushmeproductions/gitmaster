@@ -1,0 +1,67 @@
+.window {
+  width: 680px;
+  height: 450px;
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  margin-left: -445px;
+  top: 55px;
+
+}
+
+.background-img {
+  width: 100%;
+}
+
+#overlay {
+  width: 960px;
+  height: 640px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  margin-left: -480px;
+  top: 20px;
+}
+
+#log {
+  position: absolute;
+  color: white;
+  z-index: 2;
+  left: 50%;
+  margin-left: -160px;
+  top: 550px;
+}
+
+#function {
+  position: absolute;
+  color: white;
+  z-index: 2;
+  left: 50%;
+  margin-left: -427px;
+  top: 523px;
+/* home page */
+
+.home-container {
+  text-align: center;
+  padding: 10px;
+  margin: 20vh;
+  font-family: 'Orbitron';
+}
+
+a {
+  text-decoration: none;
+  height: 100px;
+  width: 100px;
+  display:block;
+}
+
+.Gitmaster {
+
+}
+.introtext {
+
+}
+
+#start-button {
+
+}

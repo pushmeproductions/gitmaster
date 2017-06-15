@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-class Endscreen extends React.Component {
+class Corridor extends React.Component {
   constructor(props) {
     super(props);
 
@@ -12,7 +12,7 @@ class Endscreen extends React.Component {
 
   render() {
     return (
-      <div><p>I am the ENDSCREEN</p></div>
+      <div><p>I am the CORRIDOR</p></div>
     )
   }
 }
@@ -21,4 +21,4 @@ const mapStateToProps = (state) => {
 return {state}
 }
 
-export default connect(mapStateToProps)(Endscreen)
+export default connect(mapStateToProps)(Corridor)
