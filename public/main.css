@@ -39,6 +39,18 @@
   left: 50%;
   margin-left: -427px;
   top: 523px;
+}
+
+  #inventory {
+    position: absolute;
+    z-index: 2;
+    left: 50%;
+    margin-left: 258px;
+    top: 132px;
+    width: 194px;
+    height: 500px;
+  }
+
 /* home page */
 
 .home-container {
