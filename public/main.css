@@ -62,9 +62,14 @@
 
 a {
   text-decoration: none;
-  height: 100px;
-  width: 100px;
-  display:block;
+  display:inline-block;
+  font-size: 25px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px 20px 10px 20px;
+  color: black;
+  border: 3px black solid;
 }
 
 .Gitmaster {
