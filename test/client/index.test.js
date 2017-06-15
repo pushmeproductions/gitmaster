@@ -18,7 +18,12 @@ test('Heading renders on App', t => {
 //console.log(wrapper.html()); check what we should see
 test('Start button renders cell component and begins game', t => {
   const wrapper = mount(<Provider store={store}><App/></Provider>)
-  t.is(wrapper.find('button').text(), 'Start')
+  t.is(wrapper.find('Link').text(), 'Start')
   wrapper.find('#start').simulate('click', {button:0})
   t.is(wrapper.find(".game-container").exists(), true)
+})
+
+test('Description rendering', t => {
+  const wrapper = mount(<Provider store={store}><App/></Provider>)
+  t.is(wrapper.find('p').exists('3000'), true)
 })

@@ -18,9 +18,7 @@ const HomePage = () => {
             most recent Merge Conflict. You awaken in a cell…"
           </p>
         </div>
-        <button id='start-button'>
-          <Link to='/game' id='start'>Start</Link>
-        </button>
+          <Link to='/game' id='start'><div className='start-button'>Start</div></Link>
       </div>
     )
 }
