@@ -12,8 +12,8 @@ export default class Bucket extends Item {
       width: '140px',
       height: '160px',
       position: 'absolute',
-      top: 0,
-      left: 0,
+      top: '58%',
+      left: '58%',
       zIndex: 5
     }
     this.invStyle =  {
