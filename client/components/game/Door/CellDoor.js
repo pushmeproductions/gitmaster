@@ -18,7 +18,7 @@ export default class CellDoor extends Door {
     }
   }
   mouseClick() {
-
+    console.log("The door is locked ahh get me out!!!!!!");
   }
 
   mouseOver() {

@@ -25,6 +25,7 @@ class Cell extends React.Component {
     return [new Skull (this.props.dispatch)]
   }
 
+
   renderItem(item) {
     if (this.state.worldItems.indexOf(item.name) > -1) {
       return  (
@@ -38,6 +39,13 @@ class Cell extends React.Component {
       )
     }
   }
+
+renderDoor() {
+  return (
+    <img
+      
+  )
+}
 
   render() {
     return (
