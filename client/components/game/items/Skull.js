@@ -1,6 +1,7 @@
 import Item from './Item'
 import {addToInv} from '../../../actions/inventory'
 import {deleteItem} from '../../../actions/worldItems'
+import {updateLog} from '../../../actions/currentLog'
 
 
 export default class Skull extends Item {
@@ -29,6 +30,7 @@ export default class Skull extends Item {
   mouseClick(){
     this.dispatch(addToInv(this))
     this.dispatch(deleteItem(this.name))
+    this.dispatch(updateLog(this.msg))
     // console.log("I'm a skull!") // but to our log
   }
 

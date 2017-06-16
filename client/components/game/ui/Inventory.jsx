@@ -16,8 +16,8 @@ class Inventory extends React.Component {
   }
 
   renderItems(items) {
-    return items.map((item) => {
-      return <img src={item.img} style={item.invStyle} />
+    return items.map((item, i) => {
+      return <img src={item.img} key={i} style={item.invStyle} />
     })
   }
 
