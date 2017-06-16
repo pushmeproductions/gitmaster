@@ -25,10 +25,10 @@ class Cell extends React.Component {
     return [new Skull (this.props.dispatch)]
   }
 
-  renderItem(item) {
+  renderItem(item, i) {
     if (this.state.worldItems.indexOf(item.name) > -1) {
       return  (
-        <img
+        <img key={i}
           src={item.img}
           style={item.roomStyle}
           onClick={() => item.mouseClick()}
