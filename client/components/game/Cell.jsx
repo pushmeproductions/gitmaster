@@ -10,6 +10,7 @@ class Cell extends React.Component {
 
     this.state = {
       worldItems: this.props.worldItems,
+      cellLocked: this.props.cellLocked
     }
   }
 
@@ -23,6 +24,7 @@ class Cell extends React.Component {
 
   populateRoom () {
     return [new Skull (this.props.dispatch)]
+    return [new Door (this.props.dispatch)]
   }
 
 
@@ -41,10 +43,18 @@ class Cell extends React.Component {
   }
 
 renderDoor() {
-  return (
-    <img
-      
-  )
+  if(this.state.cellLocked){
+    return (
+      <img
+        src={item.img}
+        style={item.roomStyle}
+        onClick={()=> item.mouseClick()}
+        onMouseOver={()=> item.mouseOver()}
+        onMouseOut={()=> item.mouseOff()}
+        />
+    )
+
+  }
 }
 
   render() {
@@ -56,6 +66,7 @@ renderDoor() {
             return this.renderItem(item)
           })}
         </div>
+        {this.state.cellLocked && this.renderDoor()}
       </div>
     )
   }
@@ -63,7 +74,8 @@ renderDoor() {
 
 const mapStateToProps = (state) => {
   return {
-    worldItems: state.worldItems
+    worldItems: state.worldItems,
+    cellLocked: state.cellLocked
   }
 }
 
