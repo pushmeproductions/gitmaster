@@ -3,10 +3,10 @@ import {connect} from 'react-redux'
 
 class Escapepod extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-
+      
     }
   }
 

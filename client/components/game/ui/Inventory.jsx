@@ -9,7 +9,7 @@ class Inventory extends React.Component {
 
   render() {
     return (
-      <div id="inventory">
+      <div className="inventoryCont">
         <h2>Hello there I am an Inventory!</h2>
       </div>
     )
