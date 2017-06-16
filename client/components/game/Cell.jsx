@@ -23,7 +23,6 @@ class Cell extends React.Component {
     this.setState({
       worldItems: nextProps.worldItems
     })
-    console.log(nextProps)
   }
 
   populateRoom () {

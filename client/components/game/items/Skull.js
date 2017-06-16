@@ -22,7 +22,7 @@ export default class Skull extends Item {
   mouseClick(){
     this.dispatch(addToInv(this))
     this.dispatch(deleteItem('skull'))
-    console.log('I\'m a skull!') // but to our log
+    // console.log('I\'m a skull!') // but to our log
   }
 
   mouseOver(){
