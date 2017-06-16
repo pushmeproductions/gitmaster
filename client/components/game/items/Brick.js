@@ -1,6 +1,5 @@
 
 import Item from './Item'
-import {addToInv} from '../../../actions/inventory'
 import {deleteItem} from '../../../actions/worldItems'
 
 export default class Brick extends Item {
@@ -10,18 +9,17 @@ export default class Brick extends Item {
     this.msg = 'This brick could come in handy later...'
     this.name = 'brick'
     this.roomStyle = {
-      width: '680px',
-      height: '450px',
+      width: '90px',
+      height: '79px',
       position: 'absolute',
-      top: 0,
-      left: 0,
+      top: '18%',
+      left: '83.5%',
       zIndex: 5
     }
   }
   mouseClick() {
-    this.dispatch(addToInv(this))
+    //log a thing
     this.dispatch(deleteItem('brick'))
-    console.log("I'm a brick");
   }
 
   mouseOver(){

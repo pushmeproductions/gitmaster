@@ -4,20 +4,36 @@ import {connect} from 'react-redux'
 class Inventory extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+    this.state = {
+      items: []
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      items: nextProps.items
+    })
+  }
+
+  renderItems(items) {
+    return items.map((item) => {
+      return <img src={item.img} style={item.invStyle} />
+    })
   }
 
   render() {
     return (
       <div id="inventory">
-        <h2>Hello there I am an Inventory!</h2>
+        {this.renderItems(this.state.items)}
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {state}
+  return {
+    items: state.inventory
+  }
 }
 
 export default connect(mapStateToProps)(Inventory)

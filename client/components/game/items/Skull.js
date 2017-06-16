@@ -17,10 +17,18 @@ export default class Skull extends Item {
       left: '71%',
       zIndex: 5
     }
+    this.invStyle = {
+      width: '90px',
+      height: '80px',
+      position: 'absolute',
+      top: '0%',
+      left: '0%',
+      zIndex: 5
+    }
   }
   mouseClick(){
     this.dispatch(addToInv(this))
-    this.dispatch(deleteItem('skull'))
+    this.dispatch(deleteItem(this.name))
     // console.log("I'm a skull!") // but to our log
   }
 
