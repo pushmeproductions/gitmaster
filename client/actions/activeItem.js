@@ -8,9 +8,9 @@ export const activateItem = ('') => {
   }
 }
 
-export const deActivateItem = () => {
+export const deactivateItem = () => {
   return {
     type: 'DEACTIVATE_ITEM',
-    
+
   }
 }

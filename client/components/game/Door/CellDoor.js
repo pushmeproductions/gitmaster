@@ -5,20 +5,27 @@ export default class CellDoor extends Door {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/Door.png'
-    this.msg = 'The door is locked...'
+    this.lockmsg = 'The door is locked...'
+    this.openmsg = 'Spark! Flash! The door melts before your very eyes'
     this.name = 'cellDoor'
-    this.exit = 'Spark! Flash! The door opens and you find yourself in a corridor'
+    this.exit = ''
     this.roomStyle = {
-      width: '680px',
-      height: '450px',
-      position: absolute,
-      top: 0,
-      left: 0,
-      z: 5
+      width: '171px',
+      height: '299px',
+      position: 'absolute',
+      top: '20%',
+      left: '27%',
+      zIndex: 5
     }
   }
-  mouseClick() {
-    console.log("The door is locked ahh get me out!!!!!!");
+
+  mouseClick(activeItem) {
+    if(activeItem == 'bucket') {
+      this.dispatch(openCell())
+      this.openmsg
+    } else
+      {this.lockmsg}
+      console.log("i am barry hear me roar");
   }
 
   mouseOver() {

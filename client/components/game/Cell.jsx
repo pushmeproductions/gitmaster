@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import Skull from './items/Skull'
 import Bucket from './items/Bucket'
 import Brick from './items/Brick'
-import CellDoor from './items/CellDoor'
+import CellDoor from './Door/CellDoor'
 
 class Cell extends React.Component {
   constructor(props) {
@@ -48,14 +48,14 @@ class Cell extends React.Component {
     }
   }
 
-  renderDoor(item) {
+  renderDoor(door) {
     if (this.state.cellLocked) {
       return (<img
-        src={item.img}
-        style={item.roomStyle}
-        onClick={() => item.mouseClick()}
-        onMouseOver={() => item.mouseOver()}
-        onMouseOut={() => item.mouseOff()}/>
+        src={door.img}
+        style={door.roomStyle}
+        onClick={() => door.mouseClick(this.props.activeItem)}
+        onMouseOver={() => door.mouseOver()}
+        onMouseOut={() => door.mouseOff()}/>
       )
     }
   }
@@ -69,7 +69,7 @@ class Cell extends React.Component {
             return this.renderItem(item)
           })}
         </div>
-        {this.state.cellLocked && this.renderDoor(item)}
+        {this.state.cellLocked && this.renderDoor(this.state.cellDoor)}
       </div>
     )
   }
@@ -79,7 +79,9 @@ const mapStateToProps = (state) => {
   return {
     worldItems: state.worldItems,
     cellLocked: state.cellLocked,
-    inventory: state.inventory
+    inventory: state.inventory,
+    activeItem: state.activeItem
+
   }
 }
 
