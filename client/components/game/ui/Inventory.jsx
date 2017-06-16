@@ -4,7 +4,18 @@ import {connect} from 'react-redux'
 class Inventory extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
+  }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      items: nextProps.items
+    })
+  }
+
+  renderItems() {
+    this.state.items.map((item) => {
+      return <img src={item.img} />
+    })
   }
 
   render() {
@@ -17,7 +28,9 @@ class Inventory extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  return {state}
+  return {
+    items: state.inventory
+  }
 }
 
 export default connect(mapStateToProps)(Inventory)

@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Skull from './items/Skull'
+import Bucket from './items/Bucket'
+import Brick from './items/Brick'
 
 
 class Cell extends React.Component {

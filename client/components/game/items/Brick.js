@@ -10,8 +10,8 @@ export default class Brick extends Item {
     this.msg = 'This brick could come in handy later...'
     this.name = 'brick'
     this.roomStyle = {
-      width: '680px',
-      height: '450px',
+      width: '110px',
+      height: '100px',
       position: 'absolute',
       top: 0,
       left: 0,
