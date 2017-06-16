@@ -2,6 +2,7 @@
   width: 680px;
   height: 450px;
   position: absolute;
+  z-index: 0;
   left: 50%;
   margin-left: -445px;
   top: 55px;
@@ -10,7 +11,6 @@
 
 .background-img {
   width: 100%;
-  z-index: 0;
 }
 
 #overlay {
@@ -39,18 +39,6 @@
   left: 50%;
   margin-left: -427px;
   top: 523px;
-}
-
-  #inventory {
-    position: absolute;
-    z-index: 2;
-    left: 50%;
-    margin-left: 258px;
-    top: 132px;
-    width: 194px;
-    height: 500px;
-  }
-
 /* home page */
 
 .home-container {
@@ -62,14 +50,9 @@
 
 a {
   text-decoration: none;
-  display:inline-block;
-  font-size: 25px;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 10px 20px 10px 20px;
-  color: black;
-  border: 3px black solid;
+  height: 100px;
+  width: 100px;
+  display:block;
 }
 
 .Gitmaster {
