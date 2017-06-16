@@ -4,6 +4,9 @@ import {connect} from 'react-redux'
 class Inventory extends React.Component {
   constructor(props) {
     super(props)
+    this.state = {
+      items: []
+    }
   }
 
   componentWillReceiveProps (nextProps) {
@@ -12,8 +15,9 @@ class Inventory extends React.Component {
     })
   }
 
-  renderItems() {
-    this.state.items.map((item) => {
+  renderItems(items) {
+    console.log('state', this.state, 'props', this.props);
+    return items.map((item) => {
       return <img src={item.img} />
     })
   }
@@ -22,6 +26,7 @@ class Inventory extends React.Component {
     return (
       <div id="inventory">
         <h2>Hello there I am an Inventory!</h2>
+        {this.renderItems(this.state.items)}
       </div>
     )
   }
