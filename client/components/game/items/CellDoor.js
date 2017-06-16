@@ -7,11 +7,11 @@ export default class CellDoor extends Item {
     this.msg = 'The door is locked...'
     this.name = 'cellDoor'
     this.roomStyle = {
-      imageWidth: '680px',
-      iamgeHeight: '450px',
-      xPosition: 0,
-      yPosition: 0,
-      zPosition: 5
+      width: '680px',
+      height: '450px',
+      top: 0,
+      left: 0,
+      zIndex: 5
     }
   }
   mouseClick() {

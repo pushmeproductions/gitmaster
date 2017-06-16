@@ -11,18 +11,18 @@ export default class Skull extends Item {
     this.msg = 'You feel like you are being watched...'
     this.name = 'skull'
     this.roomStyle = {
-      width: '680px',
-      height: '450px',
+      width: '110px',
+      height: '100px',
       position: 'absolute',
-      top: 0,
-      left: 0,
+      top: '71%',
+      left: '71%',
       zIndex: 5
     }
   }
   mouseClick(){
-    // this.dispatch(addToInv(this))
-    // this.dispatch(deleteItem('skull'))
-    console.log('I\'m a skull!') // but to our log
+    this.dispatch(addToInv(this))
+    this.dispatch(deleteItem('skull'))
+    // console.log('I\'m a skull!') // but to our log
   }
 
   mouseOver(){
