@@ -1,11 +1,9 @@
 import request from 'superagent'
 
 
-export const openCell = (item, itemName) => {
+export const openCell = () => {
   return {
-    type: 'OPEN_CELL',
-    item,
-    itemName
+    type: 'OPEN_CELL'
   }
 }
 

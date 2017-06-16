@@ -1,12 +1,12 @@
-function activateItem (state = '', action) {
+function activeItem (state = '', action) {
   switch (action.type) {
     case 'ACTIVATE_ITEM':
-      return action, action.active.item.name // state = '{item.name}'
+      return action.name 
     case 'DEACTIVATE_ITEM':
-      return action, state = ''
+      return ''
     default:
       return state
   }
 }
 
-export default activateItem
+export default activeItem

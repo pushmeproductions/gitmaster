@@ -1,16 +1,16 @@
 import request from 'superagent'
 
 
-export const activateItem = (item) => {
+export const activateItem = ('') => {
   return {
     type: 'ACTIVATE_ITEM',
-    item
+    ''
   }
 }
 
-export const deActivateItem = (item) => {
+export const deActivateItem = () => {
   return {
     type: 'DEACTIVATE_ITEM',
-    item
+    
   }
 }

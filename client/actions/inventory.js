@@ -13,10 +13,3 @@ export const dropFromInv = (item) => {
     item
   }
 }
-
-export const activeItem = (item) => {
-  return {
-    type: 'MAKE_ACTIVE',
-    item
-  }
-}

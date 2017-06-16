@@ -2,10 +2,12 @@ import {combineReducers} from 'redux'
 
 import inventory from './inventory'
 import worldItems from './worldItems'
-import cellDoor from './cellDoor'
+import cellLocked from './cellLocked'
+import location from './location'
 
 export default combineReducers({
   inventory,
   worldItems,
-  cellDoor
+  cellLocked,
+  location
 })
