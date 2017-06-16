@@ -2,6 +2,8 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Skull from './items/Skull'
+import Bucket from './items/Bucket'
+import Brick from './items/Brick'
 
 
 class Cell extends React.Component {
@@ -20,18 +22,21 @@ class Cell extends React.Component {
     })
   }
 
-  //componentWillReceiveProps
-
-  populateRoom () {
-    return [new Skull (this.props.dispatch)]
-    return [new Door (this.props.dispatch)]
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      worldItems: nextProps.worldItems
+    })
   }
 
+  populateRoom () {
 
-  renderItem(item) {
+    return [new Skull (this.props.dispatch), new Brick (this.props.dispatch), new Bucket (this.props.dispatch)]
+  }
+
+  renderItem(item, i) {
     if (this.state.worldItems.indexOf(item.name) > -1) {
       return  (
-        <img
+        <img key={i}
           src={item.img}
           style={item.roomStyle}
           onClick={() => item.mouseClick()}
@@ -76,6 +81,7 @@ const mapStateToProps = (state) => {
   return {
     worldItems: state.worldItems,
     cellLocked: state.cellLocked
+    inventory: state.inventory
   }
 }
 

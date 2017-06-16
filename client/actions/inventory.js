@@ -1,4 +1,3 @@
-import request from 'superagent'
 
 export const addToInv = (item) => {
   return {
