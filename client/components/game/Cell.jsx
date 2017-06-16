@@ -22,9 +22,7 @@ class Cell extends React.Component {
   //componentWillReceiveProps
 
   populateRoom () {
-    return [new Skull (this.props.dispatch)]
-    return [new Brick (this.props.dispatch)]
-    return [new Bucket (this.props.dispatch)]
+    return [new Skull (this.props.dispatch), new Brick (this.props.dispatch), new Bucket (this.props.dispatch)]
   }
 
   renderItem(item) {
