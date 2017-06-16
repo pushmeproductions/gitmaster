@@ -1,5 +1,9 @@
 import Item from './Item'
 
+import {addToInv} from '../../../actions/inventory'
+import {deleteItem} from '../../../actions/worldItems'
+
+
 export default class Skull extends Item {
   constructor(dispatch) {
     super(dispatch)
@@ -7,16 +11,18 @@ export default class Skull extends Item {
     this.msg = 'You feel like you are being watched...'
     this.name = 'skull'
     this.roomStyle = {
-      imageWidth: '680px',
-      imageHeight: '450px',
-      xPosition: 0,
-      yPosition: 0,
-      zPosition: 0
+      width: '680px',
+      height: '450px',
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      zIndex: 5
     }
   }
   mouseClick(){
-    //dispatch add to Inventory also print message
-    // when click, update inventory and items
+    // this.dispatch(addToInv(this))
+    // this.dispatch(deleteItem('skull'))
+    console.log('I\'m a skull!') // but to our log
   }
 
   mouseOver(){

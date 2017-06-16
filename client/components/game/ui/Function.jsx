@@ -7,7 +7,7 @@ class Function extends React.Component {
     this.state = {}
   }
   line1(){
-    return '> function escape(){'
+    return '> function escape( ) {'
   }
   line2(){
     return '>   var core.status = "meltdown"'

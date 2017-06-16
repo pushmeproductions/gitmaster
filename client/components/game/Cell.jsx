@@ -9,44 +9,54 @@ class Cell extends React.Component {
     super(props)
 
     this.state = {
-      items: this.props.items
+      worldItems: this.props.worldItems,
     }
+  }
+
+  componentWillMount(props) {
+    this.setState({
+      roomItems: this.populateRoom()
+    })
   }
 
   //componentWillReceiveProps
 
-  componentDidMount(props) {
-    new Skull (this.props.dispatch) // save in state
+  populateRoom () {
+    return [new Skull (this.props.dispatch)]
   }
 
-  renderSkull() {
-    return (
-      <div>
-
-        if (this.state.items.indexOf('skull') > -1) {
-        //render img of this.state.skull.img
-      }
-    </div>
-    )
+  renderItem(item) {
+    if (this.state.worldItems.indexOf(item.name) > -1) {
+      return  (
+        <img
+          src={item.img}
+          style={item.roomStyle}
+          onClick={() => item.mouseClick()}
+          onMouseOver={() => item.mouseOver()}
+          onMouseOut={() => item.mouseOff()}
+        />
+      )
+    }
   }
 
   render() {
     return (
       <div className='window'>
         <img className='background-img'src='images/backgrounds/Cell.png'/>
-        // if skull in items, show Skull
-        {this.renderSkull()}
-        // if bucket
-        // if brick
-        // if unlocked
-        // if func
+        <div>
+          {this.state.roomItems.map((item) => {
+            return this.renderItem(item)
+          })}
+        </div>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-return {state} //items
+  return {
+    worldItems: state.worldItems
+  }
 }
 
 export default connect(mapStateToProps)(Cell)
