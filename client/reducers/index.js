@@ -1,7 +1,9 @@
 import {combineReducers} from 'redux'
 
-import greetings from './greetings' 
+import inventory from './inventory'
+import worldItems from './worldItems'
 
 export default combineReducers({
-  greetings
+  inventory,
+  worldItems
 })
