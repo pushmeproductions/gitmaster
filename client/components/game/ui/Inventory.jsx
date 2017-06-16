@@ -18,14 +18,13 @@ class Inventory extends React.Component {
   renderItems(items) {
     console.log('state', this.state, 'props', this.props);
     return items.map((item) => {
-      return <img src={item.img} />
+      return <img src={item.img} style={item.invStyle}/>
     })
   }
 
   render() {
     return (
       <div id="inventory">
-        <h2>Hello there I am an Inventory!</h2>
         {this.renderItems(this.state.items)}
       </div>
     )

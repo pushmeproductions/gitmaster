@@ -10,18 +10,17 @@ export default class Brick extends Item {
     this.msg = 'This brick could come in handy later...'
     this.name = 'brick'
     this.roomStyle = {
-      width: '110px',
-      height: '100px',
+      width: '90px',
+      height: '79px',
       position: 'absolute',
-      top: 0,
-      left: 0,
+      top: '18%',
+      left: '83.5%',
       zIndex: 5
     }
   }
   mouseClick() {
-    this.dispatch(addToInv(this))
+    //log a thing
     this.dispatch(deleteItem('brick'))
-    console.log("I'm a brick");
   }
 
   mouseOver(){
