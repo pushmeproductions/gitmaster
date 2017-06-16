@@ -19,7 +19,12 @@ class Cell extends React.Component {
     })
   }
 
-  //componentWillReceiveProps
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      worldItems: nextProps.worldItems
+    })
+    console.log(nextProps)
+  }
 
   populateRoom () {
     return [new Skull (this.props.dispatch)]
@@ -55,7 +60,8 @@ class Cell extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    worldItems: state.worldItems
+    worldItems: state.worldItems,
+    inventory: state.inventory
   }
 }
 

@@ -2,7 +2,6 @@
   width: 680px;
   height: 450px;
   position: absolute;
-  z-index: 0;
   left: 50%;
   margin-left: -445px;
   top: 55px;
@@ -11,6 +10,7 @@
 
 .background-img {
   width: 100%;
+  z-index: 0;
 }
 
 #overlay {
