@@ -9,13 +9,13 @@ export default class Staffroom extends Door {
     super (dispatch)
     this.img = 'images/items/StaffroomSign.png'
     this.msg = 'To Staff Room'
-    this.name = 'reactSign'
+    this.name = 'staffroom'
     this.roomStyle = {
-      width: '680px',
-      height: '450px',
+      width: '182px',
+      height: '100px',
       position: 'absolute',
-      top: '3%',
-      left: '0%',
+      top: '5%',
+      left: '41%',
       zIndex: 5
   }
 }

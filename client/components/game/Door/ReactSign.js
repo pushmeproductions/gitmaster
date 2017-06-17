@@ -1,7 +1,7 @@
 import Door from './Door'
 
-// import {updateLog} from '../../../actions/currentLog'
-// import {locChange} from '../../../actions/door'
+import {updateLog} from '../../../actions/currentLog'
+import {locChange} from '../../../actions/door'
 
 
 export default class ReactSign extends Door {
@@ -11,19 +11,19 @@ export default class ReactSign extends Door {
     this.msg = 'To React Room'
     this.name = 'reactSign'
     this.roomStyle = {
-      width: '680px',
-      height: '450px',
+      width: '145px',
+      height: '130px',
       position: 'absolute',
-      top: '3%',
-      left: '0%',
+      top: '12%',
+      left: '10%',
       zIndex: 5
   }
 }
 
   mouseClick() {
-    // this.dispatch(updateLog(this.msg))
-    // this.dispatch(locChange('reactcore'))
-    // console.log('Surely I am the best looking sign you have ever seen right?')
+    this.dispatch(updateLog(this.msg))
+    this.dispatch(locChange('reactcore'))
+    console.log('Surely I am the best looking sign you have ever seen right?')
     }
 
   mouseOver() {
