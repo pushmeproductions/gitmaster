@@ -1,6 +1,6 @@
 import Door from './Door'
-import {locChange} from '../../../actions/door'
 
+import {locChange} from '../../../actions/door'
 import {activateItem} from '../../../actions/activeItem'
 import {openCell} from '../../../actions/door'
 import {updateLog} from '../../../actions/currentLog'
@@ -32,7 +32,7 @@ export default class CellDoor extends Door {
      } else {
        this.dispatch(updateLog("This item can't open the door...try another one"))
      }
-     if(CellDoor !== cellLocked) {
+     if(cellLocked !== cellLocked) {
       this.dispatch(locChange('corridor'))
       this.dispactch(updateLog(this.openmsg))
     } else
@@ -40,9 +40,9 @@ export default class CellDoor extends Door {
         this.dispatch(updateLog(this.lockmsg))
         console.log("i am barry hear me roar");
       }
-    
+
     }
-  }
+
 
   mouseOver() {
 
