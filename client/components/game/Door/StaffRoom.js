@@ -22,7 +22,7 @@ export default class Staffroom extends Door {
 
   mouseClick() {
     this.dispatch(updateLog(this.msg))
-    this.dispatch(locChange())
+    this.dispatch(locChange('staffroom'))
     console.log('I am the sign like no other sign!');
   }
 
