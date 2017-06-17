@@ -9,7 +9,7 @@
     "start": "node server/index",
     "test": "nyc ava -v 'test/**/*.test.js' & npm run lint",
     "watch": "nodemon -e js,jsx -x npm test",
-    "h:deploy": "git push heroku master",
+    "h:deploy": "git push heroku deployment:master",
     "h:migrate": "heroku run knex migrate:latest",
     "h:rollback": "heroku run knex migrate:rollback",
     "h:seed": "heroku run knex seed:run",
