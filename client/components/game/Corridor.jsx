@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import ReactSign from './Door/ReactSign'
+import StaffRoom from './Door/StaffRoom'
 
 
 class Corridor extends React.Component {
@@ -51,7 +52,7 @@ class Corridor extends React.Component {
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Corridor.png'/>
           {this.renderReactSign(this.state.reactSign)}
-          {this.renderStaffRoom(this.state.staffroom)}
+          {this.renderStaffRoom(this.state.staffRoom)}
       </div>
     )
   }
