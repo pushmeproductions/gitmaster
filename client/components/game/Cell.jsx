@@ -17,14 +17,17 @@ class Cell extends React.Component {
   }
 
   componentWillMount(props) {
-    this.setState({roomItems: this.populateRoom(),
+    this.setState({
+      roomItems: this.populateRoom(),
       cellDoor: new CellDoor(this.props.dispatch)
-})
+    })
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({worldItems: nextProps.worldItems,
-    cellLocked: nextProps.cellLocked
+    console.log(nextProps);
+    this.setState({
+      worldItems: nextProps.worldItems,
+      cellLocked: nextProps.cellLocked
     })
   }
 
@@ -33,7 +36,7 @@ class Cell extends React.Component {
     return [
       new Skull(this.props.dispatch),
       new Brick(this.props.dispatch),
-      new Bucket(this.props.dispatch),
+      new Bucket(this.props.dispatch)
     ]
   }
 
@@ -50,11 +53,13 @@ class Cell extends React.Component {
   }
 
   renderDoor(door) {
+    console.log(this.state.cellLocked);
     if (this.state.cellLocked) {
+      console.log('door');
       return (<img
         src={door.img}
         style={door.roomStyle}
-        onClick={() => door.mouseClick(this.props.activeItem)}
+        onClick={() => door.mouseClick(this.props.activeItem, this.props.cellLocked)}
         onMouseOver={() => door.mouseOver()}
         onMouseOut={() => door.mouseOff()}/>
       )
@@ -66,11 +71,11 @@ class Cell extends React.Component {
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Cell.png'/>
         <div>
-          {this.state.roomItems.map((item, i) => {
-            return this.renderItem(item, i)
+          {this.state.roomItems.map((item) => {
+            return this.renderItem(item)
           })}
         </div>
-        {this.state.cellLocked && this.renderDoor(this.state.cellDoor)}
+        {this.renderDoor(this.state.cellDoor)}
       </div>
     )
   }
@@ -82,7 +87,6 @@ const mapStateToProps = (state) => {
     cellLocked: state.cellLocked,
     inventory: state.inventory,
     activeItem: state.activeItem
-
   }
 }
 
