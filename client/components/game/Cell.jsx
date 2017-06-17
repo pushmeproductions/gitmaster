@@ -53,7 +53,7 @@ class Cell extends React.Component {
       return (<img
         src={door.img}
         style={door.roomStyle}
-        onClick={() => door.mouseClick('bucket')}
+        onClick={() => door.mouseClick(this.props.activeItem)}
         onMouseOver={() => door.mouseOver()}
         onMouseOut={() => door.mouseOff()}/>
       )
@@ -65,8 +65,8 @@ class Cell extends React.Component {
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Cell.png'/>
         <div>
-          {this.state.roomItems.map((item, i) => {
-            return this.renderItem(item, i)
+          {this.state.roomItems.map((item) => {
+            return this.renderItem(item)
           })}
         </div>
         {this.state.cellLocked && this.renderDoor(this.state.cellDoor)}

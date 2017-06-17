@@ -1,6 +1,8 @@
 import Door from './Door'
 
-import activeItem from '../../../actions/activeItem'
+import {activateItem} from '../../../actions/activeItem'
+import {openCell} from '../../../actions/door'
+import {updateLog} from '../../../actions/currentLog'
 
 export default class CellDoor extends Door {
   constructor(dispatch) {
@@ -20,14 +22,15 @@ export default class CellDoor extends Door {
     }
   }
 
-  mouseClick(activeItem) {
-    if(this.activeItem == 'bucket') {
+  mouseClick(string) {
+    if(string == 'bucket') {
       this.dispatch(openCell())
-      this.openmsg
+      this.dispatch(updateLog(this.openmsg))
       console.log('oh no I am slain');
-    } else
-      {this.lockmsg}
+    } else{
+      this.dispatch(updateLog(this.lockmsg))
       console.log("i am barry hear me roar");
+    }
   }
 
   mouseOver() {
