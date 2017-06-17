@@ -10,17 +10,17 @@ export default class ReactSign extends Door {
     this.msg = 'To React Room'
     this.name = 'reactSign'
     this.roomStyle = {
-      width: '171px',
-      height: '299px',
+      width: '680px',
+      height: '450px',
       position: 'absolute',
-      top: '20%',
-      left: '27%',
+      top: '3%',
+      left: '0%',
       zIndex: 5
   }
 }
 
   mouseClick() {
-    this.dispatch(updateLog(this.openmsg))
+    console.log('Surely I am the best looking sign you have ever seen right?')
     }
 
   mouseOver() {

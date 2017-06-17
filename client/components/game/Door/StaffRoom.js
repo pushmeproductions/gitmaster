@@ -7,8 +7,8 @@ export default class Staffroom extends Door {
     this.msg = 'To React Room'
     this.name = 'reactSign'
     this.roomStyle = {
-      width: '171px',
-      height: '299px',
+      width: '680px',
+      height: '450px',
       position: 'absolute',
       top: '20%',
       left: '27%',
