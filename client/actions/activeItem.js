@@ -1,8 +1,8 @@
 
-export const activateItem = (string) => {
+export const activateItem = (name) => {
   return {
     type: 'ACTIVATE_ITEM',
-    string
+    name
   }
 }
 
