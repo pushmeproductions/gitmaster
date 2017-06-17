@@ -28,16 +28,13 @@ export default class CellDoor extends Door {
   mouseClick(activeItem, cellLocked) {
     console.log(cellLocked)
     if(activeItem == 'bucket') {
-      console.log('1');
       this.dispatch(updateLog(this.openmsg))
       this.dispatch(openCell())
       this.img = 'images/items/OpenDoor.png'
       this.dispatch(deactivateItem())
     } else if (!cellLocked) {
-      console.log('2');
        this.dispatch(locChange('corridor'))
     } else {
-      console.log('3')
         this.dispatch(updateLog(this.lockmsg))
         if(activeItem) this.dispatch(updateLog(this.error))
     }
