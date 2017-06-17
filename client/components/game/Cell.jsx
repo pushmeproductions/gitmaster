@@ -12,19 +12,22 @@ class Cell extends React.Component {
 
     this.state = {
       worldItems: this.props.worldItems,
-      cellLocked: this.props.cellLocked,
+      cellLocked: this.props.cellLocked
     }
   }
 
   componentWillMount(props) {
-    this.setState({roomItems: this.populateRoom(),
+    this.setState({
+      roomItems: this.populateRoom(),
       cellDoor: new CellDoor(this.props.dispatch)
-})
+    })
   }
 
   componentWillReceiveProps(nextProps) {
-    this.setState({worldItems: nextProps.worldItems,
-    cellLocked: nextProps.cellLocked
+    console.log(nextProps);
+    this.setState({
+      worldItems: nextProps.worldItems,
+      cellLocked: nextProps.cellLocked
     })
   }
 
@@ -33,7 +36,7 @@ class Cell extends React.Component {
     return [
       new Skull(this.props.dispatch),
       new Brick(this.props.dispatch),
-      new Bucket(this.props.dispatch),
+      new Bucket(this.props.dispatch)
     ]
   }
 
@@ -49,7 +52,9 @@ class Cell extends React.Component {
   }
 
   renderDoor(door) {
+    console.log(this.state.cellLocked);
     if (this.state.cellLocked) {
+      console.log('door');
       return (<img
         src={door.img}
         style={door.roomStyle}
@@ -69,7 +74,7 @@ class Cell extends React.Component {
             return this.renderItem(item)
           })}
         </div>
-        {this.state.cellLocked && this.renderDoor(this.state.cellDoor)}
+        {this.renderDoor(this.state.cellDoor)}
       </div>
     )
   }
@@ -80,9 +85,7 @@ const mapStateToProps = (state) => {
     worldItems: state.worldItems,
     cellLocked: state.cellLocked,
     inventory: state.inventory,
-    activeItem: state.activeItem,
-    cellLocked: state.activeItem
-
+    activeItem: state.activeItem
   }
 }
 
