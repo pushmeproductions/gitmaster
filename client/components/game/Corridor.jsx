@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import ReactSign from './Door/ReactSign'
 import StaffRoom from './Door/StaffRoom'
+import Authbot from './items/Authbot'
 
 
 class Corridor extends React.Component {
@@ -17,7 +18,8 @@ class Corridor extends React.Component {
   componentWillMount(props) {
     this.setState({
       reactSign: new ReactSign(this.props.dispatch),
-      staffRoom: new StaffRoom(this.props.dispatch)
+      staffRoom: new StaffRoom(this.props.dispatch),
+      authbot: new Authbot(this.props.dispatch)
     })
   }
 
@@ -47,12 +49,25 @@ class Corridor extends React.Component {
     )
   }
 
+  renderAuthbot(bot) {
+    return (<img
+      src={bot.img}
+      style={bot.activeStyle}
+      onClick={() =>
+      bot.mouseClick()}
+      onMouseOver={() => bot.mouseOver()}
+      onMouseOut={() => bot.mouseOff()}/>
+    )
+    console.log('authbot is here');
+  }
+
   render() {
     return (
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Corridor.png'/>
           {this.renderReactSign(this.state.reactSign)}
           {this.renderStaffRoom(this.state.staffRoom)}
+          {this.renderAuthbot(this.state.authbot)}
       </div>
     )
   }
