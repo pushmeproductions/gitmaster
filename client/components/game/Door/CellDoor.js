@@ -24,6 +24,7 @@ export default class CellDoor extends Door {
   }
 
 
+
   mouseClick(activeItem, cellLocked) {
     if(activeItem === 'bucket') {
       this.dispatch(updateLog(this.openmsg))

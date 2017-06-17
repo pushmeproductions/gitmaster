@@ -12,7 +12,7 @@ class Cell extends React.Component {
 
     this.state = {
       worldItems: this.props.worldItems,
-      cellLocked: this.props.cellLocked
+      cellLocked: true
     }
   }
 
@@ -44,10 +44,11 @@ class Cell extends React.Component {
     if (this.state.worldItems.indexOf(item.name) > -1) {
       return (<img key={i}
         src={item.img}
-         style={item.roomStyle}
-         onClick={() => item.mouseClick()}
-         onMouseOver={() => item.mouseOver()}
-         onMouseOut={() => item.mouseOff()}/>)
+        style={item.roomStyle}
+        onClick={() => item.mouseClick()}
+        onMouseOver={() => item.mouseOver()}
+        onMouseOut={() => item.mouseOff()}
+       />)
     }
   }
 

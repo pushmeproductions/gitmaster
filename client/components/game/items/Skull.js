@@ -31,7 +31,6 @@ export default class Skull extends Item {
     this.dispatch(addToInv(this))
     this.dispatch(deleteItem(this.name))
     this.dispatch(updateLog(this.msg))
-    // console.log("I'm a skull!") // but to our log
   }
 
   mouseOver(){
