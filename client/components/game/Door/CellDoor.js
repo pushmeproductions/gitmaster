@@ -13,6 +13,7 @@ export default class CellDoor extends Door {
     this.openmsg = 'Spark! Flash! The door melts before your very eyes'
     this.name = 'cellDoor'
     this.exit = ''
+    this.error = "This item can't open the door...try another one"
     this.roomStyle = {
       width: '171px',
       height: '299px',
@@ -24,24 +25,16 @@ export default class CellDoor extends Door {
   }
 
 
-
   mouseClick(activeItem, cellLocked) {
-    if(activeItem === 'bucket') {
+    if(activeItem == 'bucket') {
       this.dispatch(updateLog(this.openmsg))
-       this.dispatch(openCell())
-       console.log('oh no I am slain');
-     } else {
-       this.dispatch(updateLog("This item can't open the door...try another one"))
-     }
-     if(cellLocked !== cellLocked) {
-      this.dispatch(locChange('corridor'))
-      this.dispactch(updateLog(this.openmsg))
-    } else
-      {
+      this.dispatch(openCell())
+     } else if(!cellLocked) {
+       this.dispatch(locChange('corridor'))
+    } else {
         this.dispatch(updateLog(this.lockmsg))
-        console.log("i am barry hear me roar");
+        if(activeItem) this.dispatch(updateLog(this.error))
       }
-
     }
 
 
