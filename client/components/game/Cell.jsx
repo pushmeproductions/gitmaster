@@ -12,7 +12,7 @@ class Cell extends React.Component {
 
     this.state = {
       worldItems: this.props.worldItems,
-      cellLocked: this.props.cellLocked
+      cellLocked: true
     }
   }
 

@@ -20,6 +20,7 @@ export default class Item {
   }
 
   toggleActive(currentActive) {
+    console.log(currentActive + ' is the active item')
     if (this.name == currentActive ) {
       this.dispatch(deactivateItem())
       } else {

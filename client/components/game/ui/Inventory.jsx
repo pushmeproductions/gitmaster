@@ -16,14 +16,15 @@ class Inventory extends React.Component {
   }
 
   renderItems(items) {
+    console.log('i am here');
     return items.map((item, i) => {
-      return
+      return (
         <img
           src={item.img}
           key={i}
           style={item.invStyle}
-          onClick={() =>item.toggleActive(this.props.activeItem)}
-      />
+          onClick={()=> item.toggleActive(this.props.activeItem)}
+      /> )
     })
   }
 

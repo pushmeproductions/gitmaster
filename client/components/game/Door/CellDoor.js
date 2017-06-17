@@ -18,15 +18,8 @@ export default class CellDoor extends Door {
     }
   }
 
-  mouseClick(activeItem) {
-    if(activeItem == 'bucket') {
-      this.dispatch(openCell())
-      this.openmsg
-      this.img == this.openimg
-      console.log("mother, i am dead");
-    } else
-      {this.lockmsg}
-      console.log("i am barry hear me roar");
+  mouseClick() {
+
   }
 
   mouseOver() {
