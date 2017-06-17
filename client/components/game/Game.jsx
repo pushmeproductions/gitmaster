@@ -12,20 +12,52 @@ import Staffroom from './Staffroom'
 class Game extends React.Component {
   constructor (props) {
     super(props)
+    this.state = {
+      location: 'cell'
+    }
+  }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      location: nextProps.location
+    })
+  }
+
+  renderRoom(location) {
+    switch (location) {
+      case 'cell':
+        return <Cell />
+      case 'corridor':
+        return <Corridor />
+      case 'staffroom':
+        return <Staffroom />
+      case 'reactcore':
+        return <Reactcore />
+      case 'escapepod':
+        return <Escapepod />
+      default:
+        return
+    }
   }
 
   render () {
     return (
       <div className='game-container'>
         <Ui />
-        <Cell />
+        {this.renderRoom(this.state.location)}
       </div>
     )
   }
 
 }
 
-export default connect()(Game)
+const mapStateToProps = (state) => {
+  return {
+    location: state.location
+  }
+}
+
+export default connect(mapStateToProps)(Game)
 
 // <Corridor />
 // <Staffroom />
