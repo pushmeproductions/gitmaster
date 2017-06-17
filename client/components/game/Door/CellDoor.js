@@ -29,8 +29,10 @@ export default class CellDoor extends Door {
     if(activeItem == 'bucket') {
       this.dispatch(updateLog(this.openmsg))
       this.dispatch(openCell())
+      this.img = 'images/items/OpenDoor.png'
+      this.dispatch(deactivateItem())
      } else if(!cellLocked) {
-       this.dispatch(locChange('corridor'))
+      this.dispatch(locChange('corridor'))
     } else {
         this.dispatch(updateLog(this.lockmsg))
         if(activeItem) this.dispatch(updateLog(this.error))
