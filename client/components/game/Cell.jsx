@@ -12,7 +12,7 @@ class Cell extends React.Component {
 
     this.state = {
       worldItems: this.props.worldItems,
-      cellLocked: this.props.cellLocked
+      cellLocked: this.props.cellLocked,
     }
   }
 
@@ -53,7 +53,7 @@ class Cell extends React.Component {
       return (<img
         src={door.img}
         style={door.roomStyle}
-        onClick={() => door.mouseClick(this.props.activeItem)}
+        onClick={() => door.mouseClick('bucket')}
         onMouseOver={() => door.mouseOver()}
         onMouseOut={() => door.mouseOff()}/>
       )

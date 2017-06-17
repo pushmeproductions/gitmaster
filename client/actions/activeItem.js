@@ -1,10 +1,10 @@
 import request from 'superagent'
 
 
-export const activateItem = ('') => {
+export const activateItem = (string) => {
   return {
     type: 'ACTIVATE_ITEM',
-    ''
+    string
   }
 }
 
