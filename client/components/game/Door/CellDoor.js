@@ -1,4 +1,5 @@
 import Door from './Door'
+import {locChange} from '../../../actions/door'
 
 
 export default class CellDoor extends Door {
@@ -19,9 +20,14 @@ export default class CellDoor extends Door {
     }
   }
 
-  mouseClick(activeItem) {
-    if(activeItem == 'bucket') {
-      this.dispatch(openCell())
+  mouseClick(activeItem, cellLocked) {
+    if(activeItem === 'bucket') {
+       this.dispatch(openCell())
+     } else {
+       this.dispatch(updateLog("This item can't open the door...try another one"))
+     }
+     if(CellDoor !== cellLocked) {
+      this.dispatch(locChange('corridor'))
       this.openmsg
     } else
       {this.lockmsg}
