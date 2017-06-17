@@ -1,14 +1,14 @@
 import './setup-dom'
 import React from 'react'
 import test from 'ava'
-import { shallow, mount, expect } from 'enzyme'
+import { shallow, mount } from 'enzyme'
 import store from '../../client/store'
 import {Provider} from 'react-redux'
 
 import Homepage from '../../client/components/Homepage'
 import App from '../../client/components/App'
 import Game from '../../client/components/game/Game'
-import Ui from '../../client/components/game/ui/Ui'
+// import Ui from '../../client/components/game/ui/Ui'
 import Cell from '../../client/components/game/Cell'
 
 //Homepage TESTS
@@ -41,7 +41,7 @@ test('Cell is rendering correct container & items', t => {
 
 })
 
-test.skip('Cell background image rendering', t => {
+test('Cell background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
-  t.is(wrapper.find(<img src='images/backgrounds/Cell.png'/>).exists(), true)
+  t.is(wrapper.find('.window').contains(<img className='background-img' src='images/backgrounds/Cell.png'/>), true)
 })

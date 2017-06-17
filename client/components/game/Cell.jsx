@@ -53,9 +53,7 @@ class Cell extends React.Component {
   }
 
   renderDoor(door) {
-    console.log(this.state.cellLocked);
     if (this.state.cellLocked) {
-      console.log('door');
       return (<img
         src={door.img}
         style={door.roomStyle}
@@ -71,8 +69,8 @@ class Cell extends React.Component {
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Cell.png'/>
         <div>
-          {this.state.roomItems.map((item) => {
-            return this.renderItem(item)
+          {this.state.roomItems.map((item, i) => {
+            return this.renderItem(item, i)
           })}
         </div>
         {this.renderDoor(this.state.cellDoor)}
