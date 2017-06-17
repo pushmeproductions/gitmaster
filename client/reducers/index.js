@@ -4,10 +4,12 @@ import inventory from './inventory'
 import worldItems from './worldItems'
 import cellLocked from './cellLocked'
 import location from './location'
+import currentLog from './currentLog'
 
 export default combineReducers({
   inventory,
   worldItems,
   cellLocked,
-  location
+  location,
+  currentLog
 })
