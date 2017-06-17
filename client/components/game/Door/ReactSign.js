@@ -1,6 +1,7 @@
 import Door from './Door'
 
-import {updateLog} from '../../../actions/currentLog'
+// import {updateLog} from '../../../actions/currentLog'
+// import {locChange} from '../../../actions/door'
 
 
 export default class ReactSign extends Door {
@@ -20,7 +21,9 @@ export default class ReactSign extends Door {
 }
 
   mouseClick() {
-    console.log('Surely I am the best looking sign you have ever seen right?')
+    // this.dispatch(updateLog(this.msg))
+    // this.dispatch(locChange('reactcore'))
+    // console.log('Surely I am the best looking sign you have ever seen right?')
     }
 
   mouseOver() {

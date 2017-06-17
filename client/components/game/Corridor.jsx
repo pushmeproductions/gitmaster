@@ -59,7 +59,9 @@ class Corridor extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-return {state}
+return {
+  location: state.location
+  }
 }
 
 export default connect(mapStateToProps)(Corridor)
