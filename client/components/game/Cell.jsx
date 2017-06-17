@@ -53,7 +53,7 @@ class Cell extends React.Component {
       return (<img
         src={door.img}
         style={door.roomStyle}
-        onClick={() => door.mouseClick(this.props.activeItem)}
+        onClick={() => door.mouseClick(this.props.activeItem, this.props.cellLocked)}
         onMouseOver={() => door.mouseOver()}
         onMouseOut={() => door.mouseOff()}/>
       )
@@ -80,7 +80,8 @@ const mapStateToProps = (state) => {
     worldItems: state.worldItems,
     cellLocked: state.cellLocked,
     inventory: state.inventory,
-    activeItem: state.activeItem
+    activeItem: state.activeItem,
+    cellLocked: state.activeItem
 
   }
 }

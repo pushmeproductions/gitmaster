@@ -1,4 +1,5 @@
 import Door from './Door'
+import {locChange} from '../../../actions/door'
 
 import {activateItem} from '../../../actions/activeItem'
 import {openCell} from '../../../actions/door'
@@ -22,14 +23,24 @@ export default class CellDoor extends Door {
     }
   }
 
-  mouseClick(string) {
-    if(string == 'bucket') {
-      this.dispatch(openCell())
+
+  mouseClick(activeItem, cellLocked) {
+    if(activeItem === 'bucket') {
       this.dispatch(updateLog(this.openmsg))
-      console.log('oh no I am slain');
-    } else{
-      this.dispatch(updateLog(this.lockmsg))
-      console.log("i am barry hear me roar");
+       this.dispatch(openCell())
+       console.log('oh no I am slain');
+     } else {
+       this.dispatch(updateLog("This item can't open the door...try another one"))
+     }
+     if(CellDoor !== cellLocked) {
+      this.dispatch(locChange('corridor'))
+      this.dispactch(updateLog(this.openmsg))
+    } else
+      {
+        this.dispatch(updateLog(this.lockmsg))
+        console.log("i am barry hear me roar");
+      }
+    
     }
   }
 
