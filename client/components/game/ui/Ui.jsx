@@ -9,9 +9,16 @@ class Ui extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      currentMessage: 'I am a UI that logs things'
+      currentLog: 'You awaken in a cell..'
     }
   }
+
+  componentWillReceiveProps (nextProps) {
+    this.setState({
+      currentLog: nextProps.currentLog
+    })
+  }
+
 
   render () {
     return (
@@ -20,7 +27,7 @@ class Ui extends React.Component {
         <Inventory />
         <Function />
         <div id='log'>
-          {this.state.currentMessage}
+          {this.state.currentLog}
         </div>
       </div>
     )
@@ -28,4 +35,8 @@ class Ui extends React.Component {
 
 }
 
-export default connect()(Ui)
+const mapStateToProps = (state) => {
+  return { currentLog: state.currentLog }
+}
+
+export default connect(mapStateToProps)(Ui)

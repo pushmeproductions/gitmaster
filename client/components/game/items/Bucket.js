@@ -1,6 +1,7 @@
 import Item from './Item'
 import {addToInv} from '../../../actions/inventory'
 import {deleteItem} from '../../../actions/worldItems'
+import {updateLog} from '../../../actions/currentLog'
 
 export default class Bucket extends Item {
   constructor (dispatch) {
@@ -28,6 +29,7 @@ export default class Bucket extends Item {
   mouseClick() {
     this.dispatch(addToInv(this))
     this.dispatch(deleteItem('bucket'))
+    this.dispatch(updateLog(this.msg))
   }
 
   mouseOver(){
