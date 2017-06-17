@@ -1,6 +1,5 @@
 import Door from './Door'
 
-
 export default class CellDoor extends Door {
   constructor(dispatch) {
     super(dispatch)
@@ -23,6 +22,8 @@ export default class CellDoor extends Door {
     if(activeItem == 'bucket') {
       this.dispatch(openCell())
       this.openmsg
+      this.img == this.openimg
+      console.log("mother, i am dead");
     } else
       {this.lockmsg}
       console.log("i am barry hear me roar");

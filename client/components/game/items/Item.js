@@ -1,3 +1,7 @@
+import {deactivateItem, activateItem} from '../../../actions/activeItem'
+
+
+
 export default class Item {
   constructor (dispatch) {
     this.dispatch = dispatch
@@ -8,10 +12,18 @@ export default class Item {
   }
 
   mouseOver() {
-    
+
   }
 
   mouseOff() {
 
+  }
+
+  toggleActive(currentActive) {
+    if (this.name == currentActive ) {
+      this.dispatch(deactivateItem())
+      } else {
+      this.dispatch(activateItem(this.name))
+    }
   }
 }

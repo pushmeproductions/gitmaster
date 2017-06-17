@@ -17,7 +17,13 @@ class Inventory extends React.Component {
 
   renderItems(items) {
     return items.map((item, i) => {
-      return <img src={item.img} key={i} style={item.invStyle} />
+      return
+        <img
+          src={item.img}
+          key={i}
+          style={item.invStyle}
+          onClick={() =>item.toggleActive(this.props.activeItem)}
+      />
     })
   }
 
@@ -32,7 +38,8 @@ class Inventory extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    items: state.inventory
+    items: state.inventory,
+    activeItem: state.activeItem
   }
 }
 
