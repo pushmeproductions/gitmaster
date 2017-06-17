@@ -1,5 +1,3 @@
-import request from 'superagent'
-
 
 export const activateItem = (string) => {
   return {
