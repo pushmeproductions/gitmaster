@@ -11,8 +11,8 @@ class StaffRoom extends React.Component {
 
   render () {
     return (
-      <div>
-        <h1> Welcome to the staffroom! </h1>
+      <div className='window'>
+        <img className='background-img' src='images/backgrounds/Staffroom.png'/>
       </div>
     )
   }

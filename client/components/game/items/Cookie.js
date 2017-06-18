@@ -12,10 +12,10 @@ export default class Cookie extends InventoryItem {
     this.name = 'cookie'
     this.msg = 'This cookie looks tasty...I wonder if the authbot might like it?'
     this.invStyle =  {
-      width: '60px',
-      height: '70px',
+      width: '65px',
+      height: '21px',
       position: 'absolute',
-      top: '18%',
+      top: '22%',
       left: '60%',
       zIndex: 5
     }

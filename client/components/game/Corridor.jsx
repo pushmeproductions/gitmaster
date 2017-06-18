@@ -7,6 +7,7 @@ import Authbot from './code/Authbot'
 import CorridorCell1 from './code/CorridorCell1'
 import CorridorCell2 from './items/CorridorCell2'
 import Cookie from './items/Cookie'
+import Moustache from './code/Moustache'
 
 
 class Corridor extends React.Component {
@@ -25,7 +26,8 @@ class Corridor extends React.Component {
       staffRoom: new StaffRoom(this.props.dispatch),
       authbot: new Authbot(this.props.dispatch),
       corridorCell1: new CorridorCell1(this.props.dispatch),
-      corridorCell2: new CorridorCell2(this.props.dispatch)
+      corridorCell2: new CorridorCell2(this.props.dispatch),
+      mo: new Moustache(this.props.dispatch)
     })
   }
 
@@ -66,7 +68,19 @@ class Corridor extends React.Component {
       onMouseOver={() => bot.mouseOver()}
       onMouseOut={() => bot.mouseOff()}/>
     )
-    console.log('authbot is here');
+  }
+
+  renderMo(mo) {
+    console.log("moustache is here")
+    return (<img
+      src={mo.img}
+      style={this.props.authorised ?
+      mo.idleStyle : mo.activeStyle}
+      onClick={() => mo.mouseClick()}
+      onMouseOver={() => mo.mouseOver()}
+      onMouseOut={() => mo.mouseOff()}
+    />
+      )
   }
 
 
@@ -103,6 +117,7 @@ class Corridor extends React.Component {
           {this.renderCorridorCell1(this.state.corridorCell1)}
           {this.renderCorridorCell2(this.state.corridorCell2)}
           {console.log(this.props)}
+          {this.renderMo(this.state.mo)}
         )
       </div>
     )
