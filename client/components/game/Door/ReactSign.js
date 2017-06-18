@@ -30,7 +30,7 @@ export default class ReactSign extends Door {
     }else {
       this.dispatch(updateLog(this.error))
     }
-    }
+  }
 
   mouseOver() {
 

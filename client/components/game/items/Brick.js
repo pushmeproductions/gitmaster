@@ -1,6 +1,5 @@
-
 import Item from './Item'
-import {deleteItem} from '../../../actions/worldItems'
+
 
 export default class Brick extends Item {
   constructor (dispatch) {
@@ -17,16 +16,5 @@ export default class Brick extends Item {
       zIndex: 5
     }
   }
-  mouseClick() {
-    //log a thing
-    this.dispatch(deleteItem('brick'))
-  }
 
-  mouseOver(){
-    //make glow
-  }
-
-  mouseOff(){
-    //make not glow
-  }
 }
