@@ -40,7 +40,7 @@ class Corridor extends React.Component {
     return (<img
       src={sign.img}
       style={sign.roomStyle}
-      onClick={() => sign.mouseClick('click')}
+      onClick={() => sign.mouseClick(this.props.authorised)}
       onMouseOver={() => sign.mouseOver()}
       onMouseOut={() => sign.mouseOff()}/>
     )
@@ -50,7 +50,7 @@ class Corridor extends React.Component {
     return (<img
       src={sign.img}
       style={sign.roomStyle}
-      onClick={() => sign.mouseClick('click')}
+      onClick={() => sign.mouseClick(this.props.authorised)}
       onMouseOver={() => sign.mouseOver()}
       onMouseOut={() => sign.mouseOff()}/>
     )
@@ -62,7 +62,7 @@ class Corridor extends React.Component {
       src={bot.img}
       style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
       onClick={() =>
-      bot.mouseClick()}
+      bot.mouseClick(this.props.activeItem)}
       onMouseOver={() => bot.mouseOver()}
       onMouseOut={() => bot.mouseOff()}/>
     )

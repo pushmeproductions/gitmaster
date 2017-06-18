@@ -19,16 +19,16 @@ export default class Authbot extends Item {
       zIndex: 5
     }
     this.idleStyle =  {
-      width: '68px',
-      height: '80px',
+      width: '176px',
+      height: '230',
       position: 'absolute',
-      top: '0%',
-      left: '56%',
+      top: '41%',
+      left: '1%',
       zIndex: 5
     }
   }
-  mouseClick(activeItem, authorised) {
-    console.log('authbotauthbotauthbotHEY!')
+  mouseClick(activeItem) {
+    console.log(activeItem)
     if (activeItem == 'cookie') {
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
