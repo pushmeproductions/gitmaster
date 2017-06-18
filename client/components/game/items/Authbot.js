@@ -1,11 +1,14 @@
 import Item from './Item'
 import {updateLog} from '../../../actions/currentLog'
+import {activateItem} from '../../../actions/activeItem'
+import {authorised} from '../../../actions/authorised'
 
 export default class Authbot extends Item {
   constructor (dispatch) {
     super (dispatch)
     this.img = 'images/items/AuthBot.png'
     this.msg = 'Authbot: "AUTHORISE YOURSELF"'
+    this.authmsg = 'Authbot smiles benignly and lets you pass and...gives you some code?'
     this.name = 'authbot'
     this.activeStyle = {
       width: '176px',
@@ -24,9 +27,16 @@ export default class Authbot extends Item {
       zIndex: 5
     }
   }
-  mouseClick() {
-    this.dispatch(updateLog(this.msg))
+  mouseClick(activeItem, authorised) {
     console.log('authbotauthbotauthbotHEY!')
+    if (activeItem == 'cookie') {
+      this.dispatch(updateLog(this.authmsg))
+      this.dispatch(authorised())
+      console.log("bot has been authorised");
+    } else {
+      this.dispatch(updateLog(this.msg))
+      console.log("bot is not authorised")
+    }
   }
 
   mouseOver(){

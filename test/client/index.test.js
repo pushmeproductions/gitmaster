@@ -45,3 +45,14 @@ test('Cell background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
   t.is(wrapper.find('.window').contains(<img className='background-img' src='images/backgrounds/Cell.png'/>), true)
 })
+
+// test('Corridor background image rendering', t => {
+//   const wrapper = mount(<Provider store={store}><Corridor /></Provider>)
+//   t.is(wrapper.find('.window').contains(<img
+//   className='background-img' src='images/backgrounds/Corridor.png'/>), true)
+// })
+//
+// test('corridor', t => {
+//   const wrapper = shallow(<Corridor />)
+//   t.is(wrapper.find())
+// })
