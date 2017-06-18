@@ -1,7 +1,8 @@
-import Item from './Item'
+import CodeGiver from './CodeGiver'
 import {updateLog} from '../../../actions/currentLog'
+import {sendToFunc} from '../../../actions/sendToFunction'
 
-export default class Authbot extends Item {
+export default class Authbot extends CodeGiver {
   constructor (dispatch) {
     super (dispatch)
     this.img = 'images/items/AuthBot.png'
@@ -26,6 +27,7 @@ export default class Authbot extends Item {
   }
   mouseClick() {
     this.dispatch(updateLog(this.msg))
+    this.dispatch(sendToFunc('code3'))
     console.log('authbotauthbotauthbotHEY!');
   }
 

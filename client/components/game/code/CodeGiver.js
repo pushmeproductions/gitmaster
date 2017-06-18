@@ -1,9 +1,13 @@
-export default class codeGiver {
+import {sendToFunc} from '../../../actions/sendToFunction'
+
+
+export default class CodeGiver {
   constructor(dispatch) {
     this.dispatch = dispatch
   }
 
   mouseClick() {
+    this.dispatch(sendToFunc(this.code))
 
   }
 
@@ -16,6 +20,6 @@ export default class codeGiver {
   }
 
   send2Func() {
-    
+
   }
 }

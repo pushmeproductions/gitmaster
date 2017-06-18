@@ -1,11 +1,13 @@
-import Item from './Item'
+import CodeGiver from './CodeGiver'
 
 import {updateLog} from '../../../actions/currentLog'
+import {sendToFunc} from '../../../actions/sendToFunction'
 
-export default class CorridorCell1 extends Item {
+export default class CorridorCell1 extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/CorridorCell1.png'
+    this.code = 'code2'
     this.lockmsg = 'The door is locked...maybe there is a key somewhere?'
     this.name = 'corridorCell1'
     this.roomStyle = {
@@ -19,7 +21,7 @@ export default class CorridorCell1 extends Item {
   }
 
 
-  mouseClick(cellLocked) {
+  mouseClick() {
       this.dispatch(updateLog(this.lockmsg))
   }
 
