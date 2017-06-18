@@ -8,11 +8,11 @@ export default class Authbot extends Item {
     this.msg = 'Authbot: "AUTHORISE YOURSELF"'
     this.name = 'authbot'
     this.activeStyle = {
-      width: '176px',
-      height: '229px',
+      width: '146px',
+      height: '220px',
       position: 'absolute',
-      top: '28%',
-      left: '34%',
+      top: '31%',
+      left: '29%',
       zIndex: 5
     }
     this.idleStyle =  {
