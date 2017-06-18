@@ -26,7 +26,7 @@ export default class Authbot extends Item {
   }
   mouseClick() {
     this.dispatch(updateLog(this.msg))
-    console.log('authbotauthbotauthbotHEY!');
+    console.log('authbotauthbotauthbotHEY!')
   }
 
   mouseOver(){
