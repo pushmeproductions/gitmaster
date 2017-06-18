@@ -10,6 +10,7 @@ import App from '../../client/components/App'
 import Game from '../../client/components/game/Game'
 // import Ui from '../../client/components/game/ui/Ui'
 import Cell from '../../client/components/game/Cell'
+import Corridor from '../../client/components/game/Corridor'
 
 //Homepage TESTS
 
@@ -46,11 +47,11 @@ test('Cell background image rendering', t => {
   t.is(wrapper.find('.window').contains(<img className='background-img' src='images/backgrounds/Cell.png'/>), true)
 })
 
-// test('Corridor background image rendering', t => {
-//   const wrapper = mount(<Provider store={store}><Corridor /></Provider>)
-//   t.is(wrapper.find('.window').contains(<img
-//   className='background-img' src='images/backgrounds/Corridor.png'/>), true)
-// })
+test('Corridor background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Corridor /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/Corridor.png'/>), true)
+})
 //
 // test('corridor', t => {
 //   const wrapper = shallow(<Corridor />)
