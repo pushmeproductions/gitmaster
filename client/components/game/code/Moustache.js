@@ -1,11 +1,13 @@
 import CodeGiver from './CodeGiver'
 
-import {sendToFunc} from '../../../actions/sendToFunction'
+import {deleteItem} from '../../../actions/worldItems'
+
 
 export default class Moustache extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)
-    this.code = 'code5'
+    this.name = 'moustache'
+    this.code = 'images/function/full/closingBrace.png'
     this.img = 'images/items/Mo.png'
     this.activeStyle = {
       width: '58px',
@@ -26,7 +28,7 @@ export default class Moustache extends CodeGiver {
   }
 
   mouseClick() {
-    console.log("Mooooustache");
+    console.log('Mooooustache')
   }
 
   mouseOver() {
@@ -34,10 +36,6 @@ export default class Moustache extends CodeGiver {
   }
 
   mouseOff() {
-
-  }
-
-  send2Func() {
 
   }
 }

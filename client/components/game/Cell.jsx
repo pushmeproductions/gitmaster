@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import Skull from './items/Skull'
 import Bucket from './items/Bucket'
-import Brick from './items/Brick'
+import Brick from './code/Brick'
 import CellDoor from './Door/CellDoor'
 
 class Cell extends React.Component {

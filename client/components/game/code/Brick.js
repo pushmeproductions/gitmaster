@@ -1,10 +1,10 @@
-
-import Item from './Item'
+import CodeGiver from './CodeGiver'
 import {deleteItem} from '../../../actions/worldItems'
 
-export default class Brick extends Item {
+export default class Brick extends CodeGiver {
   constructor (dispatch) {
     super (dispatch)
+    this.code = 'images/function/full/line1.png'
     this.img = 'images/items/Brick.png'
     this.msg = 'This brick could come in handy later...'
     this.name = 'brick'
@@ -29,4 +29,5 @@ export default class Brick extends Item {
   mouseOff(){
     //make not glow
   }
+
 }
