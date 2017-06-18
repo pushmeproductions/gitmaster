@@ -1,4 +1,4 @@
-
+import Item from './Item'
 
 import {updateLog} from '../../../actions/currentLog'
 
@@ -7,13 +7,13 @@ export default class CorridorCell1 extends Item {
     super(dispatch)
     this.img = 'images/items/CorridorCell1.png'
     this.lockmsg = 'The door is locked...maybe there is a key somewhere?'
-    this.name = 'corridorCell2'
+    this.name = 'corridorCell1'
     this.roomStyle = {
-      width: '171px',
-      height: '299px',
+      width: '75px',
+      height: '216px',
       position: 'absolute',
-      top: '20%',
-      left: '27%',
+      top: '50%',
+      left: '84%',
       zIndex: 5
     }
   }
@@ -21,8 +21,7 @@ export default class CorridorCell1 extends Item {
 
   mouseClick(cellLocked) {
       this.dispatch(updateLog(this.lockmsg))
-
-
+  }
 
   mouseOver() {
 
