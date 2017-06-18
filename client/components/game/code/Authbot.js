@@ -31,15 +31,13 @@ export default class Authbot extends CodeGiver {
 
 
   mouseClick(activeItem) {
-    // console.log(activeItem)
     if (activeItem == 'cookie') {
       this.dispatch(sendToFunc('code3'))
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
-      // console.log("bot has been authorised");
     } else {
       this.dispatch(updateLog(this.msg))
-      // console.log("bot is not authorised")
+
     }
   }
 
