@@ -19,6 +19,7 @@ const HomePage = () => {
           </p>
         </div>
           <Link to='/game' id='start'><div className='start-button'>Start</div></Link>
+      </div>
 
 
 
