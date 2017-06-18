@@ -22,7 +22,8 @@ export default class ReactSign extends Door {
 }
 
   mouseClick(authBot) {
-    if(!authBot) {
+    console.log(authBot);
+    if(authBot) {
       this.dispatch(locChange('reactcore'))
       this.dispatch(updateLog(this.msg))
       console.log('Surely I am the best looking sign you have ever seen right?')
