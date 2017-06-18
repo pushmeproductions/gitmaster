@@ -76,9 +76,9 @@ class Corridor extends React.Component {
       src={mo.img}
       style={this.props.authorised ?
       mo.idleStyle : mo.activeStyle}
-      // onClick={() =>(this.props.activeItem)}
-      // onMouseOver={() => mo.mouseOver()}
-      // onMouseOut={() => mo.mouseOff()}
+      onClick={() => mo.mouseClick()}
+      onMouseOver={() => mo.mouseOver()}
+      onMouseOut={() => mo.mouseOff()}
     />
       )
   }
