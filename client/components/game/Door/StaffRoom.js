@@ -11,19 +11,21 @@ export default class Staffroom extends Door {
     this.msg = 'To Staff Room'
     this.name = 'staffroom'
     this.roomStyle = {
-      width: '680px',
-      height: '450px',
+      width: '182px',
+      height: '100px',
       position: 'absolute',
-      top: '3%',
-      left: '0%',
+      top: '5%',
+      left: '41%',
       zIndex: 5
   }
 }
 
-  mouseClick() {
-    this.dispatch(updateLog(this.msg))
-    this.dispatch(locChange('staffroom'))
-    console.log('I am the sign like no other sign!');
+  mouseClick(authBot) {
+    // if(!authBot){
+      this.dispatch(updateLog(this.msg))
+      this.dispatch(locChange('staffroom'))
+      console.log('I am the sign like no other sign!');
+    // }
   }
 
   mouseOver() {
