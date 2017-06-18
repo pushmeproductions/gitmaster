@@ -5,6 +5,7 @@ import {addToInv} from '../../../actions/inventory'
 import {deleteItem} from '../../../actions/worldItems'
 import Cookie from '../items/Cookie'
 
+
 export default class CorridorCell2 extends Item {
   constructor(dispatch) {
     super(dispatch)
