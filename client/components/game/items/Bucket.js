@@ -1,9 +1,9 @@
-import Item from './Item'
+import InventoryItem from './InventoryItem'
 import {addToInv} from '../../../actions/inventory'
 import {deleteItem} from '../../../actions/worldItems'
 import {updateLog} from '../../../actions/currentLog'
 
-export default class Bucket extends Item {
+export default class Bucket extends InventoryItem {
   constructor (dispatch) {
     super (dispatch)
     this.img = 'images/items/Bucket.png'
@@ -26,17 +26,5 @@ export default class Bucket extends Item {
       zIndex: 5
     }
   }
-  mouseClick() {
-    this.dispatch(addToInv(this))
-    this.dispatch(deleteItem('bucket'))
-    this.dispatch(updateLog(this.msg))
-  }
 
-  mouseOver(){
-    //make glow
-  }
-
-  mouseOff(){
-    //make not glow
-  }
 }

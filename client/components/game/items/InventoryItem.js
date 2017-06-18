@@ -10,10 +10,8 @@ export default class InventoryItem extends Item {
   }
 
   mouseClick(){
-    console.log('hi');
     this.dispatch(addToInv(this))
-    this.dispatch(deleteItem(this.name))
-    this.dispatch(updateLog(this.msg))
+    super.mouseClick()
   }
 
   toggleActive(currentActive) {

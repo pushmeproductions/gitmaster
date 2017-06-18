@@ -1,4 +1,6 @@
 import {deactivateItem, activateItem} from '../../../actions/activeItem'
+import {deleteItem} from '../../../actions/worldItems'
+import {updateLog} from '../../../actions/currentLog'
 
 
 
@@ -8,7 +10,8 @@ export default class Item {
   }
 
   mouseClick() {
-
+    this.dispatch(deleteItem(this.name))
+    this.dispatch(updateLog(this.msg))
   }
 
   mouseOver(){
