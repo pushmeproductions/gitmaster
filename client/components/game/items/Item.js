@@ -18,13 +18,4 @@ export default class Item {
   mouseOff() {
 
   }
-
-  toggleActive(currentActive) {
-    console.log(currentActive + ' is the active item')
-    if (this.name == currentActive ) {
-      this.dispatch(deactivateItem())
-      } else {
-      this.dispatch(activateItem(this.name))
-    }
-  }
 }
