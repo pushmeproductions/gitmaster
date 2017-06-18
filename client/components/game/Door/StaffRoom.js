@@ -8,7 +8,8 @@ export default class Staffroom extends Door {
   constructor (dispatch) {
     super (dispatch)
     this.img = 'images/items/StaffroomSign.png'
-    this.msg = 'To Staff Room'
+    this.msg = 'The Staff Room'
+    this.error = 'AuthBot: "Sorry you are not AUTHORISED to pass."'
     this.name = 'staffroom'
     this.roomStyle = {
       width: '182px',
@@ -21,11 +22,13 @@ export default class Staffroom extends Door {
 }
 
   mouseClick(authBot) {
-    // if(!authBot){
+    if(!authBot){
       this.dispatch(updateLog(this.msg))
       this.dispatch(locChange('staffroom'))
       console.log('I am the sign like no other sign!');
-    // }
+    }else {
+      this.dispatch(updateLog(this.error))
+    }
   }
 
   mouseOver() {

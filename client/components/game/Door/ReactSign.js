@@ -8,7 +8,8 @@ export default class ReactSign extends Door {
   constructor (dispatch) {
     super (dispatch)
     this.img = 'images/items/ReactSign.png'
-    this.msg = 'To React Room'
+    this.msg = 'Welcome to the React Room'
+    this.error = 'AuthBot: "Sorry you are not AUTHORISED to pass."'
     this.name = 'reactSign'
     this.roomStyle = {
       width: '145px',
@@ -21,11 +22,13 @@ export default class ReactSign extends Door {
 }
 
   mouseClick(authBot) {
-    // if(!authBot) {
-      this.dispatch(updateLog(this.msg))
+    if(!authBot) {
       this.dispatch(locChange('reactcore'))
+      this.dispatch(updateLog(this.msg))
       console.log('Surely I am the best looking sign you have ever seen right?')
-    // }
+    }else {
+      this.dispatch(updateLog(this.error))
+    }
     }
 
   mouseOver() {
