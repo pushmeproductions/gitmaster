@@ -10,8 +10,7 @@ export default class CodeGiver extends Item {
 
   mouseClick() {
     this.dispatch(sendToFunc(this.code))
-    this.dispatch(deleteItem(this.name))
-    this.dispatch(updateLog(this.msg))
+    super.mouseClick()
   }
 
 }
