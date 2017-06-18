@@ -1,30 +1,23 @@
 import {deactivateItem, activateItem} from '../../../actions/activeItem'
-
+import {deleteItem} from '../../../actions/worldItems'
+import {updateLog} from '../../../actions/currentLog'
 
 
 export default class Item {
   constructor (dispatch) {
     this.dispatch = dispatch
-
   }
+
   mouseClick() {
-
+    this.dispatch(deleteItem(this.name))
+    this.dispatch(updateLog(this.msg))
   }
 
-  mouseOver() {
-
+  mouseOver(){
+    //make glow
   }
 
-  mouseOff() {
-
-  }
-
-  toggleActive(currentActive) {
-    console.log(currentActive + ' is the active item')
-    if (this.name == currentActive ) {
-      this.dispatch(deactivateItem())
-      } else {
-      this.dispatch(activateItem(this.name))
-    }
+  mouseOff(){
+    //make not glow
   }
 }

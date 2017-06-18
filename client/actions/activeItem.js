@@ -1,4 +1,3 @@
-
 export const activateItem = (name) => {
   return {
     type: 'ACTIVATE_ITEM',

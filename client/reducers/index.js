@@ -6,6 +6,7 @@ import cellLocked from './cellLocked'
 import location from './location'
 import currentLog from './currentLog'
 import activeItem from './activeItem'
+import authorised from './authorised'
 
 export default combineReducers({
   inventory,
@@ -13,5 +14,6 @@ export default combineReducers({
   cellLocked,
   location,
   currentLog,
-  activeItem
+  activeItem,
+  authorised
 })

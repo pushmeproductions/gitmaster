@@ -30,6 +30,7 @@
   left: 50%;
   margin-left: -160px;
   top: 550px;
+  width: 360px;
 }
 
 #function {
@@ -55,30 +56,39 @@
 
 .home-container {
   text-align: center;
-  padding: 10px;
-  margin: 20vh;
+  margin: 15vh;
   font-family: 'Orbitron';
+  letter-spacing: 1.8px;
 }
 
 a {
   text-decoration: none;
   display:inline-block;
-  font-size: 25px;
+  font-size: 40px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px 20px 10px 20px;
+  padding: 15px 20px 10px 20px;
   color: black;
   border: 3px black solid;
 }
 
+a:hover {
+  background-color: #7FFF00;
+  color: white;
+}
+
 .Gitmaster {
-
-}
-.introtext {
-
+font-size: 50px;
 }
 
-#start-button {
+h1 {
+  padding: 0;
+  margin: 0;
+}
 
+
+p {
+  padding-bottom: 20px;
+  font-size: 30px
 }
