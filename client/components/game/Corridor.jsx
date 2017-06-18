@@ -14,7 +14,8 @@ class Corridor extends React.Component {
     super(props)
 
     this.state = {
-      authorised: this.props.authorised
+      authorised: this.props.authorised,
+      worldItems: this.props.worldItems
 
     }
   }
@@ -59,7 +60,7 @@ class Corridor extends React.Component {
   renderAuthbot(bot) {
     return (<img
       src={bot.img}
-      style={bot.activeStyle}
+      style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
       onClick={() =>
       bot.mouseClick()}
       onMouseOver={() => bot.mouseOver()}
@@ -116,5 +117,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Corridor)
-
-// authorised: state.authorised
