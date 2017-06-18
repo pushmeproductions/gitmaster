@@ -1,10 +1,7 @@
-import Item from './Item'
-
-import {addToInv} from '../../../actions/inventory'
-import {deleteItem} from '../../../actions/worldItems'
+import InventoryItem from './InventoryItem'
 
 
-export default class Skull extends Item {
+export default class Skull extends InventoryItem {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/Skull.png'
@@ -18,18 +15,14 @@ export default class Skull extends Item {
       left: '71%',
       zIndex: 5
     }
-  }
-  mouseClick(){
-    this.dispatch(addToInv(this))
-    this.dispatch(deleteItem('skull'))
-    // console.log('I\'m a skull!') // but to our log
+    this.invStyle = {
+      width: '90px',
+      height: '80px',
+      position: 'absolute',
+      top: '0%',
+      left: '0%',
+      zIndex: 5
+    }
   }
 
-  mouseOver(){
-    //make glow
-  }
-
-  mouseOff(){
-    //make not glow
-  }
 }

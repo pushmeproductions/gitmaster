@@ -1,47 +1,40 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+
 class Function extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {}
-  }
-  line1(){
-    return '> function escape( ) {'
-  }
-  line2(){
-    return '>   var core.status = "meltdown"'
-  }
-  line3(){
-    return '>   if(core.status == "meltdown") {'
-  }
-  line4(){
-    return '>     return "escapeKey"'
-  }
-  line5(){
-    return '>   }'
-  }
-  line6(){
-    return '> }'
+    this.empty1 = 'images/function/empty/line1.png'
+    this.empty2 = 'images/function/empty/line2.png'
+    this.empty3 = 'images/function/empty/line3.png'
+    this.empty4 = 'images/function/empty/line4.png'
+    this.empty5 = 'images/function/empty/closingBrace.png'
+    this.empty6 = 'images/function/empty/line5.png'
   }
 
+componentWillReceiveProps() {
+this.dispatch(sendToFunc(this.props))
+}
 
   render() {
     return (
       <div id='function'>
-        <div>{this.line1()}</div>
-        <div>{this.line2()}</div>
-        <div>{this.line3()}</div>
-        <div>{this.line4()}</div>
-        <div>{this.line5()}</div>
-        <div>{this.line6()}</div>
+        <div><img src={`${this.empty1}`}></img></div>
+        <div><img src={`${this.empty2}`}></img></div>
+        <div><img src={`${this.empty3}`}></img></div>
+        <div><img src={`${this.empty4}`}></img></div>
+        <div><img src={`${this.empty5}`}></img></div>
+        <div><img src={`${this.empty6}`}></img></div>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {state}
+  return {
+    sendToFunc: state.sendToFunc
+  }
 }
 
 export default connect(mapStateToProps)(Function)
