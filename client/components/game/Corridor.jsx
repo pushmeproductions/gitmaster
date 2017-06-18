@@ -6,6 +6,7 @@ import StaffRoom from './Door/StaffRoom'
 import Authbot from './items/Authbot'
 import CorridorCell1 from './items/CorridorCell1'
 import CorridorCell2 from './items/CorridorCell2'
+import Cookie from './items/Cookie'
 
 
 class Corridor extends React.Component {
@@ -13,7 +14,8 @@ class Corridor extends React.Component {
     super(props)
 
     this.state = {
-      authorised: this.props.authorised
+      authorised: this.props.authorised,
+      worldItems: this.props.worldItems
 
     }
   }
@@ -38,7 +40,7 @@ class Corridor extends React.Component {
     return (<img
       src={sign.img}
       style={sign.roomStyle}
-      onClick={() => sign.mouseClick('click')}
+      onClick={() => sign.mouseClick(this.props.authorised)}
       onMouseOver={() => sign.mouseOver()}
       onMouseOut={() => sign.mouseOff()}/>
     )
@@ -48,7 +50,7 @@ class Corridor extends React.Component {
     return (<img
       src={sign.img}
       style={sign.roomStyle}
-      onClick={() => sign.mouseClick('click')}
+      onClick={() => sign.mouseClick(this.props.authorised)}
       onMouseOver={() => sign.mouseOver()}
       onMouseOut={() => sign.mouseOff()}/>
     )
@@ -58,9 +60,9 @@ class Corridor extends React.Component {
   renderAuthbot(bot) {
     return (<img
       src={bot.img}
-      style={bot.activeStyle}
+      style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
       onClick={() =>
-      bot.mouseClick()}
+      bot.mouseClick(this.props.activeItem)}
       onMouseOver={() => bot.mouseOver()}
       onMouseOut={() => bot.mouseOff()}/>
     )
@@ -82,12 +84,11 @@ class Corridor extends React.Component {
     return (<img
       src={cell.img}
       style={cell.roomStyle}
-      onClick={() => cell.mouseClick('click')}
+      onClick={() => cell.mouseClick(this.props.activeItem)}
       onMouseOver={() => cell.mouseOver()}
       onMouseOut={() => cell.mouseOff()}/>
     )
   }
-
 
 
   render() {
@@ -109,10 +110,10 @@ class Corridor extends React.Component {
 const mapStateToProps = (state) => {
   return {
     location: state.location,
-    authorised: state.authorised
+    authorised: state.authorised,
+    inventory: state.inventory,
+    activeItem: state.activeItem
   }
 }
 
 export default connect(mapStateToProps)(Corridor)
-
-// authorised: state.authorised

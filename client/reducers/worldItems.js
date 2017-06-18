@@ -1,4 +1,4 @@
-function worldItems (state = ['skull', 'bucket', 'brick', 'cellDoor'], action) {
+function worldItems (state = ['skull', 'bucket', 'brick', 'cellDoor', 'authbot', 'corridorCell1','corridorCell2', 'reactSign', 'StaffroomSign'], action) {
   switch (action.type) {
     case 'DELETE_ITEM':
       return state.filter(itemName => itemName !== action.itemName)
