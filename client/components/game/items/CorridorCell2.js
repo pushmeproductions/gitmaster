@@ -1,18 +1,16 @@
-import Item from './Item'
+import ThingGiver from './ThingGiver'
 
-import {updateLog} from '../../../actions/currentLog'
-import {addToInv} from '../../../actions/inventory'
-import {deleteItem} from '../../../actions/worldItems'
 import Cookie from '../items/Cookie'
 
 
-export default class CorridorCell2 extends Item {
+export default class CorridorCell2 extends ThingGiver {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/CorridorCell2.png'
     this.cellmsg = 'Wow...a cookie...I think the authbot likes cookies'
     this.name = 'corridorCell2'
     this.exit = ''
+    this.item =  new Cookie (this.dispatch)
     this.roomStyle = {
       width: '69px',
       height: '234px',
@@ -24,17 +22,5 @@ export default class CorridorCell2 extends Item {
   }
 
 
-  mouseClick() {
-      this.dispatch(addToInv( new Cookie(this.dispatch) ))
-      this.dispatch(deleteItem(this.name))
-      this.dispatch(updateLog(this.cellmsg))
- }
 
-  mouseOver() {
-
-  }
-
-  mouseOff(){
-
-  }
 }
