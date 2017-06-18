@@ -3,7 +3,7 @@ import test from 'ava'
 import {activateItem, deactivateItem} from '../../client/actions/activeItem'
 import {addToInv, dropFromInv} from '../../client/actions/inventory'
 // import {deleteItem} from '../../client/actions/worldItems'
-// import {updateLog} from '../../client/actions/currentLog'
+import {updateLog} from '../../client/actions/currentLog'
 // import {openCell, locChange} from '../../client/actions/door'
 
 
@@ -27,7 +27,7 @@ test('addToInv action creator returns correctly', t => {
     item: 'bucket'
   }
   const actual = addToInv('bucket')
-    t.deepEqual(actual,expectedAction)
+    t.deepEqual(actual, expectedAction)
 })
 
 test('dropFromIv action creator returns correctly', t => {
@@ -36,5 +36,14 @@ test('dropFromIv action creator returns correctly', t => {
     item: 'skull'
   }
   const actual = dropFromInv('skull')
-    t.deepEqual(actual,expectedAction)
+    t.deepEqual(actual, expectedAction)
+})
+
+test('updateLog updates the log correctly', t => {
+  const expectedAction = {
+    type: 'UPDATE_LOG',
+    msg: 'I am the correct message.'
+  }
+  const actual = updateLog('I am the correct message.')
+    t.deepEqual(actual, expectedAction)
 })
