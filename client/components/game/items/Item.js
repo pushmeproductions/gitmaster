@@ -11,11 +11,11 @@ export default class Item {
 
   }
 
-  mouseOver() {
-
+  mouseOver(){
+    //make glow
   }
 
-  mouseOff() {
-
+  mouseOff(){
+    //make not glow
   }
 }
