@@ -1,6 +1,5 @@
 import Item from './Item'
 
-import {addToInv} from '../../../actions/inventory'
 import {updateLog} from '../../../actions/currentLog'
 import {deleteItem} from '../../../actions/worldItems'
 

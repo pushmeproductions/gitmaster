@@ -1,6 +1,5 @@
 import CodeGiver from './CodeGiver'
 
-
 export default class Moustache extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)
@@ -25,7 +24,7 @@ export default class Moustache extends CodeGiver {
   }
 
   mouseClick() {
-    console.log("Mooooustache");
+    // console.log("Mooooustache");
   }
 
   mouseOver() {

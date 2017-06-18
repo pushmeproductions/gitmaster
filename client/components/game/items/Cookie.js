@@ -1,7 +1,5 @@
 import InventoryItem from './InventoryItem'
 
-
-import {addToInv} from '../../../actions/inventory'
 import {updateLog} from '../../../actions/currentLog'
 
 
@@ -23,7 +21,6 @@ export default class Cookie extends InventoryItem {
 
   mouseClick() {
       this.dispatch(updateLog(this.msg))
-      console.log('cookie');
   }
 
 }

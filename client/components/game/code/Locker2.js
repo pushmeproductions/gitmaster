@@ -15,20 +15,14 @@ export default class Locker2 extends CodeGiver {
       left: '27%',
       zIndex: 5
   }
+}
 
-  mouseClick() {
-
-  }
 
   mouseOver() {
 
   }
 
   mouseOff() {
-
-  }
-
-  send2Func() {
 
   }
 }
