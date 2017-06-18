@@ -3,6 +3,8 @@ import {connect} from 'react-redux'
 
 import ReactSign from './Door/ReactSign'
 import StaffRoom from './Door/StaffRoom'
+import CorridorCell1 from './items/CorridorCell1'
+import CorridorCell2 from './items/CorridorCell2'
 
 
 class Corridor extends React.Component {
@@ -17,7 +19,10 @@ class Corridor extends React.Component {
   componentWillMount(props) {
     this.setState({
       reactSign: new ReactSign(this.props.dispatch),
-      staffRoom: new StaffRoom(this.props.dispatch)
+      staffRoom: new StaffRoom(this.props.dispatch),
+      corridorCell1: new CorridorCell1(this.props.dispatch),
+      corridorCell2: new CorridorCell2(this.props.dispatch)
+
     })
   }
 
@@ -47,12 +52,36 @@ class Corridor extends React.Component {
     )
   }
 
+  renderCorridorCell1(cell) {
+    return (<img
+      src={cell.img}
+      style={cell.roomStyle}
+      onClick={() => cell.mouseClick('click')}
+      onMouseOver={() => cell.mouseOver()}
+      onMouseOut={() => cell.mouseOff()}/>
+    )
+  }
+
+  renderCorridorCell2(cell) {
+    return (<img
+      src={cell.img}
+      style={cell.roomStyle}
+      onClick={() => cell.mouseClick('click')}
+      onMouseOver={() => cell.mouseOver()}
+      onMouseOut={() => cell.mouseOff()}/>
+    )
+  }
+
+
+
   render() {
     return (
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Corridor.png'/>
           {this.renderReactSign(this.state.reactSign)}
           {this.renderStaffRoom(this.state.staffRoom)}
+          {this.renderCorridorCell1(this.state.corridorCell1)},
+          {this.renderCorridorCell2(this.state.corridorCell2)}
       </div>
     )
   }
