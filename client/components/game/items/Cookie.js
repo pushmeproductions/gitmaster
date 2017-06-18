@@ -1,8 +1,6 @@
 import InventoryItem from './InventoryItem'
 
 
-
-
 export default class Cookie extends InventoryItem {
   constructor(dispatch) {
     super(dispatch)
@@ -18,7 +16,4 @@ export default class Cookie extends InventoryItem {
       zIndex: 5
     }
   }
-
-
-
 }

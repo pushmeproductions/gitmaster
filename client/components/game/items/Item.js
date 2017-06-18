@@ -1,4 +1,3 @@
-import {deactivateItem, activateItem} from '../../../actions/activeItem'
 import {deleteItem} from '../../../actions/worldItems'
 import {updateLog} from '../../../actions/currentLog'
 

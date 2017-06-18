@@ -2,6 +2,7 @@ import ThingGiver from './ThingGiver'
 
 import Crowbar from '../items/Crowbar'
 
+
 export default class Locker1 extends ThingGiver {
   constructor(dispatch) {
     super(dispatch)

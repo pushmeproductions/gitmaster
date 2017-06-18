@@ -1,7 +1,7 @@
 import CodeGiver from './CodeGiver'
 import {updateLog} from '../../../actions/currentLog'
 import {sendToFunc} from '../../../actions/sendToFunction'
-import {activateItem} from '../../../actions/activeItem'
+// import {activateItem} from '../../../actions/activeItem'
 import {authorised} from '../../../actions/authorised'
 
 export default class Authbot extends CodeGiver {
@@ -37,6 +37,7 @@ export default class Authbot extends CodeGiver {
       this.dispatch(authorised())
     } else {
       this.dispatch(updateLog(this.msg))
+
     }
   }
 

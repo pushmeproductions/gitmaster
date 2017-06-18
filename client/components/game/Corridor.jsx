@@ -71,7 +71,6 @@ class Corridor extends React.Component {
   }
 
   renderMo(mo) {
-    console.log("moustache is here")
     return (<img
       src={mo.img}
       style={this.props.authorised ?
@@ -116,7 +115,6 @@ class Corridor extends React.Component {
           {this.renderAuthbot(this.state.authbot)}
           {this.renderCorridorCell1(this.state.corridorCell1)}
           {this.renderCorridorCell2(this.state.corridorCell2)}
-          {console.log(this.props)}
           {this.renderMo(this.state.mo)}
         )
       </div>

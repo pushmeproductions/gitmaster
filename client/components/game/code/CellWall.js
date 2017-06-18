@@ -1,6 +1,6 @@
 import CodeGiver from './CodeGiver'
 
-import {sendToFunc} from '../../../actions/sendToFunction'
+// import {sendToFunc} from '../../../actions/sendToFunction'
 
 export default class CellWall extends CodeGiver {
   constructor(dispatch) {

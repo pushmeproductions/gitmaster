@@ -1,6 +1,6 @@
 import Item from './Item'
 import {updateLog} from '../../../actions/currentLog'
-import {activateItem} from '../../../actions/activeItem'
+// import {activateItem} from '../../../actions/activeItem'
 import {authorised} from '../../../actions/authorised'
 
 export default class Authbot extends Item {
@@ -28,14 +28,13 @@ export default class Authbot extends Item {
     }
   }
   mouseClick(activeItem) {
-    console.log(activeItem)
     if (activeItem == 'cookie') {
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
-      console.log("bot has been authorised");
+      // console.log("bot has been authorised");
     } else {
       this.dispatch(updateLog(this.msg))
-      console.log("bot is not authorised")
+      // console.log("bot is not authorised")
     }
   }
 
