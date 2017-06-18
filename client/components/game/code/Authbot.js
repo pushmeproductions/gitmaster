@@ -7,7 +7,7 @@ import {authorised} from '../../../actions/authorised'
 export default class Authbot extends CodeGiver {
   constructor (dispatch) {
     super (dispatch)
-    this.code = 'images/function/full/line3.png'
+    this.code = 3
     this.img = 'images/items/AuthBot.png'
     this.msg = 'Authbot: "AUTHORISE YOURSELF"'
     this.authmsg = 'Authbot smiles benignly and lets you pass and...gives you some code?'

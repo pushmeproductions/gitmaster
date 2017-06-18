@@ -7,7 +7,7 @@ export default class Moustache extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)
     this.name = 'moustache'
-    this.code = 'images/function/full/closingBrace.png'
+    this.code = 5
     this.img = 'images/items/Mo.png'
     this.activeStyle = {
       width: '58px',

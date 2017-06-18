@@ -4,7 +4,7 @@ import {deleteItem} from '../../../actions/worldItems'
 export default class Brick extends CodeGiver {
   constructor (dispatch) {
     super (dispatch)
-    this.code = 'images/function/full/line1.png'
+    this.code = 1
     this.img = 'images/items/Brick.png'
     this.msg = 'This brick could come in handy later...'
     this.name = 'brick'
@@ -17,10 +17,7 @@ export default class Brick extends CodeGiver {
       zIndex: 5
     }
   }
-  mouseClick() {
-    //log a thing
-    this.dispatch(deleteItem('brick'))
-  }
+  
 
   mouseOver(){
     //make glow

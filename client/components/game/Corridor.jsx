@@ -130,7 +130,8 @@ const mapStateToProps = (state) => {
     authorised: state.authorised,
     inventory: state.inventory,
     activeItem: state.activeItem,
-    worldItems: state.worldItems
+    worldItems: state.worldItems,
+    func: state.func
   }
 }
 
