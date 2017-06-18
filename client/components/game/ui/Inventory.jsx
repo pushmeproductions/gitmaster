@@ -16,7 +16,6 @@ class Inventory extends React.Component {
   }
 
   renderItems(items) {
-    console.log('i am here');
     return items.map((item, i) => {
       return (
         <img

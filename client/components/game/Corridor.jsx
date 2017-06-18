@@ -13,6 +13,7 @@ class Corridor extends React.Component {
     super(props)
 
     this.state = {
+      authorised: this.props.authorised
 
     }
   }
@@ -27,11 +28,11 @@ class Corridor extends React.Component {
     })
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   this.setState({
-  //
-  //   })
-  // }
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      authorised: nextProps.authorised
+    })
+  }
 
   renderReactSign(sign) {
     return (<img
@@ -98,15 +99,20 @@ class Corridor extends React.Component {
           {this.renderAuthbot(this.state.authbot)}
           {this.renderCorridorCell1(this.state.corridorCell1)}
           {this.renderCorridorCell2(this.state.corridorCell2)}
+          {console.log(this.props)}
+        )
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-return {
-  location: state.location
+  return {
+    location: state.location,
+    authorised: state.authorised
   }
 }
 
 export default connect(mapStateToProps)(Corridor)
+
+// authorised: state.authorised
