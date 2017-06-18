@@ -19,7 +19,4 @@ export default class CodeGiver {
 
   }
 
-  send2Func() {
-
-  }
 }
