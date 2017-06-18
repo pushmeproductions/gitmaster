@@ -1,7 +1,6 @@
 import CodeGiver from './CodeGiver'
 
 import {updateLog} from '../../../actions/currentLog'
-import {sendToFunc} from '../../../actions/sendToFunction'
 
 export default class CorridorCell1 extends CodeGiver {
   constructor(dispatch) {

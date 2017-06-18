@@ -1,5 +1,7 @@
 import CodeGiver from './CodeGiver'
-import {deleteItem} from '../../../actions/worldItems'
+
+import Item from './Item'
+
 
 export default class Brick extends CodeGiver {
   constructor (dispatch) {
@@ -16,15 +18,6 @@ export default class Brick extends CodeGiver {
       left: '83.5%',
       zIndex: 5
     }
-  }
-  
-
-  mouseOver(){
-    //make glow
-  }
-
-  mouseOff(){
-    //make not glow
   }
 
 }

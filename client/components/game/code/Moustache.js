@@ -1,7 +1,5 @@
 import CodeGiver from './CodeGiver'
 
-import {deleteItem} from '../../../actions/worldItems'
-
 
 export default class Moustache extends CodeGiver {
   constructor(dispatch) {
@@ -27,15 +25,4 @@ export default class Moustache extends CodeGiver {
     }
   }
 
-  mouseClick() {
-    console.log('Mooooustache')
-  }
-
-  mouseOver() {
-
-  }
-
-  mouseOff() {
-
-  }
 }

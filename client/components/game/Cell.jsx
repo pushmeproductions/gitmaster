@@ -25,7 +25,6 @@ class Cell extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     this.setState({
       worldItems: nextProps.worldItems,
       cellLocked: nextProps.cellLocked,

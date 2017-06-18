@@ -1,7 +1,7 @@
 import CodeGiver from './CodeGiver'
 import {updateLog} from '../../../actions/currentLog'
 import {sendToFunc} from '../../../actions/sendToFunction'
-import {activateItem} from '../../../actions/activeItem'
+// import {activateItem} from '../../../actions/activeItem'
 import {authorised} from '../../../actions/authorised'
 
 export default class Authbot extends CodeGiver {
@@ -32,15 +32,15 @@ export default class Authbot extends CodeGiver {
 
 
   mouseClick(activeItem) {
-    console.log(activeItem)
+    // console.log(activeItem)
     if (activeItem == 'cookie') {
       this.dispatch(sendToFunc(this.code))
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
-      console.log("bot has been authorised");
+      // console.log("bot has been authorised");
     } else {
       this.dispatch(updateLog(this.msg))
-      console.log("bot is not authorised")
+      // console.log("bot is not authorised")
     }
   }
 
