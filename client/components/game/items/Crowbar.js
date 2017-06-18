@@ -5,7 +5,7 @@ export default class Crowbar extends InventoryItem {
     super(dispatch)
     this.img = 'images/items/crowbar.png'
     this.name = 'crowbar'
-    this.msg = 'This cookie looks tasty...I wonder if the authbot might like it?'
+    this.msg = 'This is one cool looking crowbar wonder if I can use it?'
     this.invStyle =  {
       width: '50px',
       height: '65px',
