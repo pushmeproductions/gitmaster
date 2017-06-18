@@ -1,6 +1,5 @@
-
 import Item from './Item'
-import {deleteItem} from '../../../actions/worldItems'
+
 
 export default class Brick extends Item {
   constructor (dispatch) {

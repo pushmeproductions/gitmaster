@@ -1,7 +1,5 @@
 import InventoryItem from './InventoryItem'
-import {addToInv} from '../../../actions/inventory'
-import {deleteItem} from '../../../actions/worldItems'
-import {updateLog} from '../../../actions/currentLog'
+
 
 export default class Bucket extends InventoryItem {
   constructor (dispatch) {

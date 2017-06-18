@@ -1,7 +1,6 @@
 import Item from './Item'
 import {addToInv} from '../../../actions/inventory'
-import {deleteItem} from '../../../actions/worldItems'
-import {updateLog} from '../../../actions/currentLog'
+import {activateItem, deactivateItem} from '../../../actions/activeItem'
 
 
 export default class InventoryItem extends Item {
