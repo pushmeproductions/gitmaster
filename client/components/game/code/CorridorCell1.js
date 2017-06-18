@@ -1,28 +1,29 @@
-import Door from './Door'
+import CodeGiver from './CodeGiver'
 
 import {updateLog} from '../../../actions/currentLog'
+import {sendToFunc} from '../../../actions/sendToFunction'
 
-export default class CorridorCell1 extends Door {
+export default class CorridorCell1 extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/CorridorCell1.png'
+    this.code = 'code2'
     this.lockmsg = 'The door is locked...maybe there is a key somewhere?'
-    this.name = 'corridorCell2'
+    this.name = 'corridorCell1'
     this.roomStyle = {
-      width: '171px',
-      height: '299px',
+      width: '75px',
+      height: '216px',
       position: 'absolute',
-      top: '20%',
-      left: '27%',
+      top: '50%',
+      left: '84%',
       zIndex: 5
     }
   }
 
 
-  mouseClick(cellLocked) {
+  mouseClick() {
       this.dispatch(updateLog(this.lockmsg))
-
-
+  }
 
   mouseOver() {
 
