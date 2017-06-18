@@ -1,4 +1,11 @@
+import Item from './Item'
+
+
+import {addToInv} from '../../../actions/inventory'
+import {deleteItem} from '../../../actions/worldItems'
+import {updateLog} from '../../../actions/currentLog'
 import InventoryItem from './InventoryItem'
+
 
 
 export default class Bucket extends InventoryItem {
