@@ -20,10 +20,12 @@ export default class Staffroom extends Door {
   }
 }
 
-  mouseClick() {
-    this.dispatch(updateLog(this.msg))
-    this.dispatch(locChange('staffroom'))
-    console.log('I am the sign like no other sign!');
+  mouseClick(authBot) {
+    // if(!authBot){
+      this.dispatch(updateLog(this.msg))
+      this.dispatch(locChange('staffroom'))
+      console.log('I am the sign like no other sign!');
+    // }
   }
 
   mouseOver() {

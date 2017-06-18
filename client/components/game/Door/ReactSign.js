@@ -20,10 +20,12 @@ export default class ReactSign extends Door {
   }
 }
 
-  mouseClick() {
-    this.dispatch(updateLog(this.msg))
-    this.dispatch(locChange('reactcore'))
-    console.log('Surely I am the best looking sign you have ever seen right?')
+  mouseClick(authBot) {
+    // if(!authBot) {
+      this.dispatch(updateLog(this.msg))
+      this.dispatch(locChange('reactcore'))
+      console.log('Surely I am the best looking sign you have ever seen right?')
+    // }
     }
 
   mouseOver() {
