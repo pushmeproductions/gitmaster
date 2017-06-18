@@ -16,7 +16,6 @@ class Corridor extends React.Component {
     this.state = {
       authorised: this.props.authorised,
       worldItems: this.props.worldItems
-
     }
   }
 
@@ -32,7 +31,8 @@ class Corridor extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      authorised: nextProps.authorised
+      authorised: nextProps.authorised,
+      worldItems: nextProps.worldItems
     })
   }
 
@@ -81,13 +81,15 @@ class Corridor extends React.Component {
   }
 
   renderCorridorCell2(cell) {
-    return (<img
-      src={cell.img}
-      style={cell.roomStyle}
-      onClick={() => cell.mouseClick(this.props.activeItem)}
-      onMouseOver={() => cell.mouseOver()}
-      onMouseOut={() => cell.mouseOff()}/>
-    )
+    if (this.state.worldItems.indexOf(cell.name) > -1) {
+      return (<img
+        src={cell.img}
+        style={cell.roomStyle}
+        onClick={() => cell.mouseClick(this.props.activeItem)}
+        onMouseOver={() => cell.mouseOver()}
+        onMouseOut={() => cell.mouseOff()}/>
+      )
+    }
   }
 
 
@@ -112,7 +114,8 @@ const mapStateToProps = (state) => {
     location: state.location,
     authorised: state.authorised,
     inventory: state.inventory,
-    activeItem: state.activeItem
+    activeItem: state.activeItem,
+    worldItems: state.worldItems
   }
 }
 
