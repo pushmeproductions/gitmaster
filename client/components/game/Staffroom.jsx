@@ -1,11 +1,67 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import StaffLog from './items/Stafflog'
+import Password from './items/Password'
+import Locker1 from './items/Locker1'
+import Locker3 from './items/Locker3'
+
 class StaffRoom extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      worldItems: this.props.worldItems
+    }
+  }
 
+  componentWillMount(props) {
+    this.setState({
+      stafflog: new StaffLog(this.props.dispatch),
+      locker1: new Locker1(this.props.dispatch),
+      locker3: new Locker3(this.props.dispatch)
+    })
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      worldItems: nextProps.worldItems
+    })
+  }
+
+
+renderLocker1(locker1){
+  if (this.state.worldItems.indexOf(locker1.name) > -1) {
+    return (<img
+      src={locker1.img}
+      style={locker1.roomStyle}
+      onClick={() => locker1.mouseClick('click')}
+      onMouseOver={() => locker1.mouseOver()}
+      onMouseOut={() => locker1.mouseOff()}/>
+      )
+  }
+}
+
+renderLocker3(locker){
+  if (this.state.worldItems.indexOf(locker.name) > -1) {
+    return (<img
+      src={locker.img}
+      style={locker.roomStyle}
+      onClick={() => locker.mouseClick('click')}
+      onMouseOver={() => locker.mouseOver()}
+      onMouseOut={() => locker.mouseOff()}/>
+      )
+  }
+}
+
+  renderStaffLog(log) {
+    if (this.state.worldItems.indexOf(log.name) > -1) {
+    return (<img
+      src={log.img}
+      style={log.roomStyle}
+      onClick={() => log.mouseClick(this.props.activeItem)}
+      onMouseOver={() => log.mouseOver()}
+      onMouseOut={() => log.mouseOff()}/>
+      )
     }
   }
 
@@ -13,13 +69,19 @@ class StaffRoom extends React.Component {
     return (
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Staffroom.png'/>
+        {this.renderStaffLog(this.state.stafflog)}
+        {this.renderLocker1(this.state.locker1)}
+        {this.renderLocker3(this.state.locker3)}
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {state}
+  return {
+  worldItems: state.worldItems,
+  activeItem: state.activeItem
+  }
 }
 
 export default connect(mapStateToProps)(StaffRoom)
