@@ -7,7 +7,7 @@ export default class CorridorCell2 extends ThingGiver {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/CorridorCell2.png'
-    this.cellmsg = 'Wow...a cookie...I think the authbot likes cookies'
+    this.msg = 'Wow...a cookie...I think the authbot likes cookies'
     this.name = 'corridorCell2'
     this.exit = ''
     this.item =  new Cookie (this.dispatch)
@@ -20,7 +20,5 @@ export default class CorridorCell2 extends ThingGiver {
       zIndex: 5
     }
   }
-
-
 
 }

@@ -1,11 +1,9 @@
-import Item from './Item'
-
-import {addToInv} from '../../../actions/inventory'
-import {updateLog} from '../../../actions/currentLog'
+import InventoryItem from './InventoryItem'
 
 
-export default class Password extends Item {
-  constructor(dispatch){
+
+export default class Password extends InventoryItem {
+  constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/Password.png'
     this.msg = "System password update: 1000001"
@@ -18,18 +16,6 @@ export default class Password extends Item {
       top: '21%',
       left: '10%',
       zIndex: 5
+    }
   }
-}
-  mouseClick() {
-    this.dispatch(updateLog(this.cellmsg))
-  }
-
-  mouseOver() {
-
-  }
-
-  mouseOff() {
-
-  }
-
 }
