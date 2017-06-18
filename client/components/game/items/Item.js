@@ -7,6 +7,7 @@ export default class Item {
     this.dispatch = dispatch
 
   }
+
   mouseClick() {
 
   }
