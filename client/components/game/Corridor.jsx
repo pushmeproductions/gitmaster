@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import ReactSign from './Door/ReactSign'
 import StaffRoom from './Door/StaffRoom'
+import Authbot from './items/Authbot'
 import CorridorCell1 from './items/CorridorCell1'
 import CorridorCell2 from './items/CorridorCell2'
 
@@ -20,9 +21,9 @@ class Corridor extends React.Component {
     this.setState({
       reactSign: new ReactSign(this.props.dispatch),
       staffRoom: new StaffRoom(this.props.dispatch),
+      authbot: new Authbot(this.props.dispatch),
       corridorCell1: new CorridorCell1(this.props.dispatch),
       corridorCell2: new CorridorCell2(this.props.dispatch)
-
     })
   }
 
@@ -52,6 +53,20 @@ class Corridor extends React.Component {
     )
   }
 
+
+  renderAuthbot(bot) {
+    return (<img
+      src={bot.img}
+      style={bot.activeStyle}
+      onClick={() =>
+      bot.mouseClick()}
+      onMouseOver={() => bot.mouseOver()}
+      onMouseOut={() => bot.mouseOff()}/>
+    )
+    console.log('authbot is here');
+  }
+
+
   renderCorridorCell1(cell) {
     return (<img
       src={cell.img}
@@ -80,7 +95,8 @@ class Corridor extends React.Component {
         <img className='background-img' src='images/backgrounds/Corridor.png'/>
           {this.renderReactSign(this.state.reactSign)}
           {this.renderStaffRoom(this.state.staffRoom)}
-          {this.renderCorridorCell1(this.state.corridorCell1)},
+          {this.renderAuthbot(this.state.authbot)}
+          {this.renderCorridorCell1(this.state.corridorCell1)}
           {this.renderCorridorCell2(this.state.corridorCell2)}
       </div>
     )
