@@ -6,6 +6,7 @@ import StaffRoom from './Door/StaffRoom'
 import Authbot from './items/Authbot'
 import CorridorCell1 from './items/CorridorCell1'
 import CorridorCell2 from './items/CorridorCell2'
+import Cookie from './items/Cookie'
 
 
 class Corridor extends React.Component {
@@ -82,12 +83,11 @@ class Corridor extends React.Component {
     return (<img
       src={cell.img}
       style={cell.roomStyle}
-      onClick={() => cell.mouseClick('click')}
+      onClick={() => cell.mouseClick(this.props.activeItem)}
       onMouseOver={() => cell.mouseOver()}
       onMouseOut={() => cell.mouseOff()}/>
     )
   }
-
 
 
   render() {
@@ -109,7 +109,9 @@ class Corridor extends React.Component {
 const mapStateToProps = (state) => {
   return {
     location: state.location,
-    authorised: state.authorised
+    authorised: state.authorised,
+    inventory: state.inventory,
+    activeItem: state.activeItem
   }
 }
 
