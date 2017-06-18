@@ -1,11 +1,8 @@
 import CodeGiver from './CodeGiver'
 import {updateLog} from '../../../actions/currentLog'
-<<<<<<< HEAD:client/components/game/code/Authbot.js
 import {sendToFunc} from '../../../actions/sendToFunction'
-=======
 import {activateItem} from '../../../actions/activeItem'
 import {authorised} from '../../../actions/authorised'
->>>>>>> d903b9da747302c95d858afb7d113c1ce3bb43dd:client/components/game/items/Authbot.js
 
 export default class Authbot extends CodeGiver {
   constructor (dispatch) {
@@ -24,22 +21,19 @@ export default class Authbot extends CodeGiver {
     }
     this.idleStyle =  {
       width: '176px',
-      height: '230',
+      height: '230px',
       position: 'absolute',
       top: '41%',
       left: '1%',
       zIndex: 5
     }
   }
-<<<<<<< HEAD:client/components/game/code/Authbot.js
-  mouseClick() {
-    this.dispatch(updateLog(this.msg))
-    this.dispatch(sendToFunc('code3'))
-    console.log('authbotauthbotauthbotHEY!');
-=======
+
+
   mouseClick(activeItem) {
     console.log(activeItem)
     if (activeItem == 'cookie') {
+      this.dispatch(sendToFunc('code3'))
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
       console.log("bot has been authorised");
@@ -47,7 +41,6 @@ export default class Authbot extends CodeGiver {
       this.dispatch(updateLog(this.msg))
       console.log("bot is not authorised")
     }
->>>>>>> d903b9da747302c95d858afb7d113c1ce3bb43dd:client/components/game/items/Authbot.js
   }
 
   mouseOver(){

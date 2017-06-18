@@ -3,8 +3,8 @@ import {connect} from 'react-redux'
 
 import ReactSign from './Door/ReactSign'
 import StaffRoom from './Door/StaffRoom'
-import Authbot from './items/Authbot'
-import CorridorCell1 from './items/CorridorCell1'
+import Authbot from './code/Authbot'
+import CorridorCell1 from './code/CorridorCell1'
 import CorridorCell2 from './items/CorridorCell2'
 import Cookie from './items/Cookie'
 
