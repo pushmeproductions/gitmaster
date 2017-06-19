@@ -11,6 +11,8 @@ import func from './function'
 import loggedIn from './loggedIn'
 import branch from './branch'
 import meltdown from './meltdown'
+import doorJammed from './doorJammed'
+import tries from './tries'
 
 export default combineReducers({
   inventory,
@@ -23,5 +25,7 @@ export default combineReducers({
   func,
   loggedIn,
   branch,
-  meltdown
+  meltdown,
+  doorJammed,
+  tries
 })
