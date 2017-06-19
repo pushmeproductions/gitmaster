@@ -10,6 +10,7 @@ import authorised from './authorised'
 import func from './function'
 import loggedIn from './loggedIn'
 import switchBranch from './branch'
+import consolePopUp from './consolePopUp'
 
 export default combineReducers({
   inventory,
@@ -21,5 +22,6 @@ export default combineReducers({
   authorised,
   func,
   loggedIn,
-  switchBranch
+  switchBranch,
+  consolePopUp
 })

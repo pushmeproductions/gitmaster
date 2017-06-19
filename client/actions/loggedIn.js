@@ -1,5 +1,5 @@
 
-export const loggedIn = () => {
+export const logIn = () => {
   return {
     type: 'LOG_IN'
   }
