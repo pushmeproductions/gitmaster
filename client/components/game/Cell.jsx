@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import Skull from './items/Skull'
 import Bucket from './items/Bucket'
-import Brick from './items/Brick'
+import Brick from './code/Brick'
 import CellDoor from './Door/CellDoor'
 
 class Cell extends React.Component {
@@ -12,7 +12,8 @@ class Cell extends React.Component {
 
     this.state = {
       worldItems: this.props.worldItems,
-      cellLocked: this.props.cellLocked
+      cellLocked: this.props.cellLocked,
+      func: this.props.func
     }
   }
 
@@ -24,11 +25,12 @@ class Cell extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
     this.setState({
       worldItems: nextProps.worldItems,
-      cellLocked: nextProps.cellLocked
+      cellLocked: nextProps.cellLocked,
+      func: nextProps.func
     })
+    {console.log(nextProps)}
   }
 
   populateRoom() {
@@ -83,7 +85,8 @@ const mapStateToProps = (state) => {
     cellLocked: state.cellLocked,
     inventory: state.inventory,
     activeItem: state.activeItem,
-    location: state.location
+    location: state.location,
+    func: state.func
   }
 }
 

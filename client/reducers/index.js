@@ -7,6 +7,7 @@ import location from './location'
 import currentLog from './currentLog'
 import activeItem from './activeItem'
 import authorised from './authorised'
+import func from './function'
 
 export default combineReducers({
   inventory,
@@ -15,5 +16,6 @@ export default combineReducers({
   location,
   currentLog,
   activeItem,
-  authorised
+  authorised,
+  func
 })

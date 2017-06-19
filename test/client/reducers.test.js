@@ -8,7 +8,10 @@ import cellLocked from '../../client/reducers/cellLocked'
 import {openCell} from '../../client/actions/door'
 import currentLog from '../../client/reducers/currentLog'
 import {updateLog} from '../../client/actions/currentLog'
-
+import {locChange} from '../../client/actions/door'
+import location from '../../client/reducers/location'
+import {sendToFunc} from  '../../client/actions/sendToFunction'
+import func from '../../client/reducers/function'
 
 test('The default state of inventory is an empty array', t => {
   const initialState = inventory(undefined, {})
@@ -34,4 +37,14 @@ test('Have added an item to the inventory', t => {
 test('Current log is updated', t => {
   const nextState = currentLog('', updateLog('I am updated!'))
   t.is(nextState, 'I am updated!')
+})
+
+test('Location change', t => {
+  const nextState = location('', locChange('staffroom'))
+  t.is(nextState, 'staffroom')
+})
+
+test('Recieves function code', t => {
+  const nextState = func([], sendToFunc(1))
+  t.is(nextState.length, 1)
 })

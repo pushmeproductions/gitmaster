@@ -1,26 +1,22 @@
 import CodeGiver from './CodeGiver'
 
-import {sendToFunc} from '../../../actions/sendToFunction'
-
 export default class Locker2 extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)
-    this.code = 'code4'
-  }
 
-  mouseClick() {
-
-  }
-
-  mouseOver() {
-
-  }
-
-  mouseOff() {
-
-  }
-
-  send2Func() {
+    this.code = 4
+    this.img = 'images/items/Locker2.png'
+    this.msg = 'You find some code in here.'
+    this.name = 'locker2'
+    this.roomStyle = {
+      width: '80px',
+      height: '230px',
+      position: 'absolute',
+      top: '34%',
+      left: '63%',
+      zIndex: 5
+    }
 
   }
+
 }

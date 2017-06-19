@@ -2,4 +2,3 @@ node_modules
 static
 npm-debug.log
 package-lock.json
-.nyc_output

@@ -1,4 +1,6 @@
+
 import InventoryItem from './InventoryItem'
+
 
 
 export default class Bucket extends InventoryItem {
