@@ -12,11 +12,11 @@ export default class ReactEscapeDoor extends Door {
     this.name = 'reactEscapeDoor'
     this.nextLoc = 'escapepod'
     this.roomStyle = {
-      width: '57px',
-      height: '98px',
+      width: '33.5px',
+      height: '81px',
       position: 'absolute',
-      top: '46%',
-      left: '12%',
+      top: '48.5%',
+      left: '14%',
       zIndex: 5
     }
   }
