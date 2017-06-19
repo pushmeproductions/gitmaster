@@ -13,7 +13,7 @@ export default class Locker2 extends CodeGiver {
       height: '230px',
       position: 'absolute',
       top: '34%',
-      left: '62%',
+      left: '63%',
       zIndex: 5
     }
 
