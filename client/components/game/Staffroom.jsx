@@ -13,6 +13,7 @@ class StaffRoom extends React.Component {
     this.state = {
       worldItems: this.props.worldItems,
     }
+    console.log(this.state);
   }
 
   componentWillMount(props) {
@@ -97,7 +98,8 @@ const mapStateToProps = (state) => {
   return {
   worldItems: state.worldItems,
   activeItem: state.activeItem,
-  func: state.func
+  func: state.func,
+  meltdown: state.meltdown
   }
 }
 

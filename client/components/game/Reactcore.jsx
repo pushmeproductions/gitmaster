@@ -79,7 +79,8 @@ const mapStateToProps = (state) => {
     activeItem: state.activeItem,
     worldItems: state.worldItems,
     func: state.func,
-    branch: state.branch
+    branch: state.branch,
+    meltdown: state.meltdown
   }
 }
 

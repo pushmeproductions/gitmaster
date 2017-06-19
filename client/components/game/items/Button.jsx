@@ -20,8 +20,9 @@ export default class Button extends Item {
   }
 
   mouseClick(branch) {
-    (branch == 'master') ? this.dispatch(meltdown()) : this.dispatch(updateLog(this.msg))
-    console.log(branch);
-
+    if (branch == 'master') {
+    this.dispatch(meltdown())
+    this.dispatch(updateLog(this.safemsg))
+  } else {this.dispatch(updateLog(this.msg))}
   }
 }

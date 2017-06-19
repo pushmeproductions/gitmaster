@@ -17,7 +17,7 @@ class Corridor extends React.Component {
     this.state = {
       authorised: this.props.authorised,
       worldItems: this.props.worldItems,
-      
+
     }
   }
 
@@ -133,7 +133,8 @@ const mapStateToProps = (state) => {
     inventory: state.inventory,
     activeItem: state.activeItem,
     worldItems: state.worldItems,
-    func: state.func
+    func: state.func,
+    meltdown: state.meltdown
   }
 }
 
