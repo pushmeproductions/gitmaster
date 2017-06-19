@@ -1,7 +1,5 @@
 import InventoryItem from './InventoryItem'
 
-import {updateLog} from '../../../actions/currentLog'
-
 
 export default class Cookie extends InventoryItem {
   constructor(dispatch) {
@@ -18,9 +16,4 @@ export default class Cookie extends InventoryItem {
       zIndex: 5
     }
   }
-
-  mouseClick() {
-      this.dispatch(updateLog(this.msg))
-  }
-
 }

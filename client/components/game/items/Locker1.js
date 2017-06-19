@@ -1,14 +1,15 @@
-import Item from './Item'
+import ThingGiver from './ThingGiver'
 
-import {updateLog} from '../../../actions/currentLog'
-import {deleteItem} from '../../../actions/worldItems'
+import Crowbar from '../items/Crowbar'
 
-export default class Locker1 extends Item {
+
+export default class Locker1 extends ThingGiver {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/Locker1.png'
     this.msg = 'You find a crowbar in here.'
     this.name = 'locker1'
+    this.item = new Crowbar (this.dispatch)
     this.roomStyle = {
       width: '80px',
       height: '230px',
@@ -18,17 +19,4 @@ export default class Locker1 extends Item {
       zIndex: 5
     }
   }
-  mouseClick() {
-    // // this.dispatch(addToInv( new Crowbar(this.dispatch) ))
-    this.dispatch(deleteItem(this.name))
-    this.dispatch(updateLog(this.msg))
-  }
-  mouseOver() {
-
-  }
-
-  mouseOff() {
-
-  }
-
 }

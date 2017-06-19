@@ -1,10 +1,13 @@
 import CodeGiver from './CodeGiver'
 
+
 export default class Moustache extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)
-    this.code = 'code5'
+    this.name = 'moustache'
+    this.code = 5
     this.img = 'images/items/Mo.png'
+    this.msg = 'a curly boy has come'
     this.activeStyle = {
       width: '58px',
       height: '14px',
@@ -23,19 +26,4 @@ export default class Moustache extends CodeGiver {
     }
   }
 
-  mouseClick() {
-    // console.log("Mooooustache");
-  }
-
-  mouseOver() {
-
-  }
-
-  mouseOff() {
-
-  }
-
-  send2Func() {
-
-  }
 }
