@@ -73,6 +73,7 @@ class ReactCore extends React.Component {
 
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     location: state.location,
     inventory: state.inventory,
