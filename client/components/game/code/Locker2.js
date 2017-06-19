@@ -9,11 +9,11 @@ export default class Locker2 extends CodeGiver {
     this.msg = 'You find some code in here.'
     this.name = 'locker2'
     this.roomStyle = {
-      width: '171px',
-      height: '299px',
+      width: '80px',
+      height: '230px',
       position: 'absolute',
-      top: '20%',
-      left: '27%',
+      top: '34%',
+      left: '62%',
       zIndex: 5
     }
 
