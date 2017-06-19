@@ -9,11 +9,11 @@ export default class ConsoleScreen extends Item {
     this.msg = 'The console'
     this.name = 'consolescreen'
     this.roomStyle = {
-      width: '146px',
-      height: '220px',
+      width: '67px',
+      height: '32px',
       position: 'absolute',
-      top: '31%',
-      left: '29%',
+      top: '70%',
+      left: '76%',
       zIndex: 5
     }
   }
