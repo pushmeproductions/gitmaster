@@ -9,7 +9,8 @@ import activeItem from './activeItem'
 import authorised from './authorised'
 import func from './function'
 import loggedIn from './loggedIn'
-import switchBranch from './branch'
+import branch from './branch'
+import meltdown from './meltdown'
 
 export default combineReducers({
   inventory,
@@ -21,5 +22,6 @@ export default combineReducers({
   authorised,
   func,
   loggedIn,
-  switchBranch
+  branch,
+  meltdown
 })
