@@ -8,6 +8,8 @@ import currentLog from './currentLog'
 import activeItem from './activeItem'
 import authorised from './authorised'
 import func from './function'
+import loggedIn from './loggedIn'
+import switchBranch from './branch'
 
 export default combineReducers({
   inventory,
@@ -17,5 +19,7 @@ export default combineReducers({
   currentLog,
   activeItem,
   authorised,
-  func
+  func,
+  loggedIn,
+  switchBranch
 })
