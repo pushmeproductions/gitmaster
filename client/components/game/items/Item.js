@@ -13,10 +13,10 @@ export default class Item {
   }
 
   mouseOver(){
-    //make glow
+
   }
 
   mouseOff(){
-    //make not glow
+
   }
 }

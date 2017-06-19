@@ -87,8 +87,16 @@ h1 {
   margin: 0;
 }
 
-
 p {
   padding-bottom: 20px;
   font-size: 30px
+}
+
+.glow {
+border: 3px solid;
+border-color: rgba(127, 255, 0, 0.6);
+z-index: 8;
+background-color: rgba(127, 255, 0, 0.4);
+border-radius: 50%;
+
 }

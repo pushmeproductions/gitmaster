@@ -30,7 +30,6 @@ class Cell extends React.Component {
       cellLocked: nextProps.cellLocked,
       func: nextProps.func
     })
-    {console.log(nextProps)}
   }
 
   populateRoom() {
@@ -46,6 +45,7 @@ class Cell extends React.Component {
     if (this.state.worldItems.indexOf(item.name) > -1) {
       return (<img key={i}
         src={item.img}
+        className={item.class}
         style={item.roomStyle}
         onClick={() => item.mouseClick()}
         onMouseOver={() => item.mouseOver()}
