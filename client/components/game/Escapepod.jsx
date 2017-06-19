@@ -1,19 +1,23 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
+import EscapePanel from './items/EscapePanel'
+
 class Escapepod extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-
+      meltdown: this.props.meltdown
     }
   }
+
 
   render() {
       return (
         <div className='window'>
           <img className='background-img' src='images/backgrounds/Staffroom.png'/>
+            <EscapePanel />
         </div>
     )
   }
@@ -22,5 +26,4 @@ class Escapepod extends React.Component {
 const mapStateToProps = (state) => {
 return {state}
 }
-
 export default connect(mapStateToProps)(Escapepod)
