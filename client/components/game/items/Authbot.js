@@ -20,7 +20,7 @@ export default class Authbot extends Item {
     }
     this.idleStyle =  {
       width: '176px',
-      height: '230',
+      height: '230px',
       position: 'absolute',
       top: '41%',
       left: '1%',

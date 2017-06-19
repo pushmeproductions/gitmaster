@@ -10,11 +10,11 @@ export default class Button extends Item {
     this.msg = 'You pushed a button'
     this.name = 'button'
     this.roomStyle = {
-      width: '140px',
-      height: '160px',
+      width: '34px',
+      height: '32px',
       position: 'absolute',
-      top: '58%',
-      left: '58%',
+      top: '69%',
+      left: '85%',
       zIndex: 5
     }
   }

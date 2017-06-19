@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 
 import Button from './items/Button'
 import ConsoleScreen from './items/ConsoleScreen'
-import ConsoleFull from './items/ConsoleFull'
 import ReactEscapeDoor from './Door/ReactEscapeDoor'
 
 class ReactCore extends React.Component {
@@ -19,7 +18,6 @@ class ReactCore extends React.Component {
     this.setState({
       button: new Button(this.props.dispatch),
       consolescreen: new ConsoleScreen(this.props.dispatch),
-      consolefull: new ConsoleFull(this.props.dispatch),
       reactescapedoor: new ReactEscapeDoor(this.props.dispatch)
 
     })
@@ -47,14 +45,6 @@ class ReactCore extends React.Component {
     )
   }
 
-  renderConsoleFull(consolefull) {
-    return (<img
-      src={consolefull.img} style={consolefull.roomStyle}
-      onClick={() => consolefull.mouseClick('click')}
-      onMouseOver={() => consolefull.mouseOver()}
-      onMouseOut={() => consolefull.mouseOff()}/>
-    )
-  }
 
   renderReactEscapeDoor(redoor) {
     return (<img
@@ -73,7 +63,6 @@ class ReactCore extends React.Component {
         <img className='background-img' src='images/backgrounds/Reactcore.png'/>
         {this.renderButton(this.state.button)}
         {this.renderConsoleScreen(this.state.consolescreen)}
-        {this.renderConsoleFull(this.state.consolescreen)}
         {this.renderReactEscapeDoor(this.state.reactescapedoor)}
       </div>
     )
