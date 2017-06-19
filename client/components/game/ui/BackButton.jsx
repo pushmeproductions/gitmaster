@@ -1,10 +1,13 @@
 import {locChange} from '../../../actions/door'
 import {updateLog} from '../../../actions/currentLog'
 import {connect} from 'react-redux'
+import React from 'react'
 
- class BackButton {
-  constructor (dispatch) {
-    this.dispatch = dispatch
+
+ class BackButton extends React.Component {
+  constructor (props) {
+    super(props)
+    this.dispatch = props.dispatch
   }
 
   mouseClick() {
@@ -29,9 +32,20 @@ import {connect} from 'react-redux'
       this.dispatch(locChange('reactcore'))
       this.dispatch(updateLog('You are back in the React-core room. Were you really trying to escape?!'))
       break;
-
     }
   }
+
+render() {
+  return (
+    <div>
+      <img id="backbtn" src='images/backgrounds/BackButton.png' onClick={() => this.mouseClick()}/>
+    </div>
+  )
+}
+
+}
+
+
 
 
   const mapStateToProps = (state) => {
@@ -40,6 +54,5 @@ import {connect} from 'react-redux'
     }
   }
 
-}
 
 export default connect(mapStateToProps)(BackButton)
