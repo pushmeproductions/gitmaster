@@ -27,7 +27,8 @@ export default class ReactEscapeDoor extends Door {
     } else if (activeItem == 'crowbar') {
       this.dispatch(jamDoor()) //write me
     } else if (tries > 0) {
-
+      this.dispatch(countDown())  // WRITE ME
+      this.dispatch(updateLog('The door looks like it\'s about to come down on you! Perhaps use something to jam it open.'))
     } else {
       // badEnding
     }
