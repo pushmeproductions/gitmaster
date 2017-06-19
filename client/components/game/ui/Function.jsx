@@ -52,6 +52,7 @@ class Function extends React.Component {
 const mapStateToProps = (state) => {
   return {
     func: state.func
+
   }
 }
 

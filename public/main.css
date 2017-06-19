@@ -52,6 +52,15 @@
     height: 500px;
   }
 
+  #backbtn{
+    position: fixed;
+    left: 70.5%;
+    top: 84%;
+    width: 85px;
+    height: 75px;
+    z-index: 5;
+  }
+
 /* home page */
 
 .home-container {

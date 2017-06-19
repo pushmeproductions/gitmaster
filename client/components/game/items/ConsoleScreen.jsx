@@ -1,0 +1,24 @@
+import Item from './Item'
+import {updateLog} from '../../../actions/currentLog'
+
+
+export default class ConsoleScreen extends Item {
+  constructor(dispatch) {
+    super(dispatch)
+    this.img = 'images/items/ConsoleScreen.png'
+    this.msg = 'The console'
+    this.name = 'consolescreen'
+    this.roomStyle = {
+      width: '67px',
+      height: '32px',
+      position: 'absolute',
+      top: '70%',
+      left: '76%',
+      zIndex: 5
+    }
+  }
+
+  mouseClick(){
+    this.dispatch(updateLog(this.msg))
+  }
+}

@@ -68,7 +68,7 @@ class Cell extends React.Component {
     return (
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Cell.png'/>
-        <div>
+        <div className='cellItemsDiv'>
           {this.state.roomItems.map((item, i) => {
             return this.renderItem(item, i)
           })}

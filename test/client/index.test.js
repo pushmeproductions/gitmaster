@@ -52,8 +52,8 @@ test('Corridor background image rendering', t => {
   t.is(wrapper.find('.window').contains(<img
   className='background-img' src='images/backgrounds/Corridor.png'/>), true)
 })
-//
-// test('corridor', t => {
-//   const wrapper = shallow(<Corridor />)
-//   t.is(wrapper.find())
-// })
+
+test('Items are rendering in Cell', t => {
+  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
+  t.is(wrapper.find(".cellItemsDiv").exists(), true)  
+})
