@@ -11,7 +11,7 @@ import {updateLog} from '../../client/actions/currentLog'
 import {locChange} from '../../client/actions/door'
 import location from '../../client/reducers/location'
 import {sendToFunc} from  '../../client/actions/sendToFunction'
-import sendToFunction from '../../client/reducers/sendToFunction'
+import func from '../../client/reducers/function'
 
 test('The default state of inventory is an empty array', t => {
   const initialState = inventory(undefined, {})
@@ -45,6 +45,6 @@ test('Location change', t => {
 })
 
 test('Recieves function code', t => {
-  const nextState = sendToFunction('', sendToFunc('}'))
-  t.is(nextState, '}')
+  const nextState = func([], sendToFunc(1))
+  t.is(nextState.length, 1)
 })
