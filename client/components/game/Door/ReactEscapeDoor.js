@@ -2,6 +2,7 @@ import Door from './Door'
 
 import {updateLog} from '../../../actions/currentLog'
 import {locChange} from '../../../actions/door'
+import {jamDoor, countDown} from '../../../actions/reDoor'
 
 
 export default class ReactEscapeDoor extends Door {
@@ -25,9 +26,9 @@ export default class ReactEscapeDoor extends Door {
     if(!meltdown || doorJammed) {
       super.mouseClick()
     } else if (activeItem == 'crowbar') {
-      this.dispatch(jamDoor()) //write me
+      this.dispatch(jamDoor())
     } else if (tries > 0) {
-      this.dispatch(countDown())  // WRITE ME
+      this.dispatch(countDown())
       this.dispatch(updateLog('The door looks like it\'s about to come down on you! Perhaps use something to jam it open.'))
     } else {
       // badEnding
