@@ -7,6 +7,7 @@ import {authorised} from '../../../actions/authorised'
 export default class Authbot extends CodeGiver {
   constructor (dispatch) {
     super (dispatch)
+    this.code = 3
     this.img = 'images/items/AuthBot.png'
     this.msg = 'Authbot: "AUTHORISE YOURSELF"'
     this.authmsg = 'Authbot smiles benignly and lets you pass and...gives you some code?'
@@ -32,7 +33,7 @@ export default class Authbot extends CodeGiver {
 
   mouseClick(activeItem) {
     if (activeItem == 'cookie') {
-      this.dispatch(sendToFunc('code3'))
+      this.dispatch(sendToFunc(this.code))
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
     } else {

@@ -5,27 +5,45 @@ import {connect} from 'react-redux'
 class Function extends React.Component {
   constructor(props) {
     super(props)
-    this.empty1 = 'images/function/empty/line1.png'
-    this.empty2 = 'images/function/empty/line2.png'
-    this.empty3 = 'images/function/empty/line3.png'
-    this.empty4 = 'images/function/empty/line4.png'
-    this.empty5 = 'images/function/empty/closingBrace.png'
-    this.empty6 = 'images/function/empty/line5.png'
+    this.img1 = 'images/function/empty/line1.png'
+    this.img2 = 'images/function/empty/line2.png'
+    this.img3 = 'images/function/empty/line3.png'
+    this.img4 = 'images/function/empty/line4.png'
+    this.img5 = 'images/function/empty/closingBrace.png'
+    this.img6 = 'images/function/empty/line5.png'
   }
 
-componentWillReceiveProps() {
-this.dispatch(sendToFunc(this.props))
-}
+  componentWillReceiveProps (nextProps) {
+    switch(nextProps.func[nextProps.func.length-1]) {
+      case 1:
+        this.img1 = 'images/function/full/line1.png';
+        break;
+      case 2:
+        this.img2 = 'images/function/full/line2.png';
+        break;
+      case 3:
+        this.img3 = 'images/function/full/line3.png';
+        break;
+      case 4:
+        this.img4 =
+        'images/function/full/line4.png';
+        break;
+      case 5:
+        this.img6 = 'images/function/full/closingBrace.png';
+        console.log("naming conventions are the worst");
+        break;
+      }
+  }
 
   render() {
     return (
       <div id='function'>
-        <div><img src={`${this.empty1}`}></img></div>
-        <div><img src={`${this.empty2}`}></img></div>
-        <div><img src={`${this.empty3}`}></img></div>
-        <div><img src={`${this.empty4}`}></img></div>
-        <div><img src={`${this.empty5}`}></img></div>
-        <div><img src={`${this.empty6}`}></img></div>
+        <div><img src={this.img1}></img></div>
+        <div><img src={this.img2}></img></div>
+        <div><img src={this.img3}></img></div>
+        <div><img src={this.img4}></img></div>
+        <div><img src={this.img5}></img></div>
+        <div><img src={this.img6}></img></div>
       </div>
     )
   }
@@ -33,7 +51,7 @@ this.dispatch(sendToFunc(this.props))
 
 const mapStateToProps = (state) => {
   return {
-    sendToFunc: state.sendToFunc
+    func: state.func
   }
 }
 

@@ -4,13 +4,14 @@ import {connect} from 'react-redux'
 import StaffLog from './items/Stafflog'
 import Password from './items/Password'
 import Locker1 from './items/Locker1'
+import Locker2 from './code/Locker2'
 import Locker3 from './items/Locker3'
 
 class StaffRoom extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      worldItems: this.props.worldItems
+      worldItems: this.props.worldItems,
     }
   }
 
@@ -18,13 +19,15 @@ class StaffRoom extends React.Component {
     this.setState({
       stafflog: new StaffLog(this.props.dispatch),
       locker1: new Locker1(this.props.dispatch),
+      locker2: new Locker2(this.props.dispatch),
       locker3: new Locker3(this.props.dispatch)
     })
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      worldItems: nextProps.worldItems
+      worldItems: nextProps.worldItems,
+      func: nextProps.func
     })
   }
 
@@ -37,6 +40,18 @@ renderLocker1(locker1){
       onClick={() => locker1.mouseClick('click')}
       onMouseOver={() => locker1.mouseOver()}
       onMouseOut={() => locker1.mouseOff()}/>
+      )
+  }
+}
+
+renderLocker2(locker2){
+  if (this.state.worldItems.indexOf(locker2.name) > -1) {
+    return (<img
+      src={locker2.img}
+      style={locker2.roomStyle}
+      onClick={() => locker2.mouseClick('click')}
+      onMouseOver={() => locker2.mouseOver()}
+      onMouseOut={() => locker2.mouseOff()}/>
       )
   }
 }
@@ -71,6 +86,7 @@ renderLocker3(locker){
         <img className='background-img' src='images/backgrounds/Staffroom.png'/>
         {this.renderStaffLog(this.state.stafflog)}
         {this.renderLocker1(this.state.locker1)}
+        {this.renderLocker2(this.state.locker2)}
         {this.renderLocker3(this.state.locker3)}
       </div>
     )
@@ -80,7 +96,8 @@ renderLocker3(locker){
 const mapStateToProps = (state) => {
   return {
   worldItems: state.worldItems,
-  activeItem: state.activeItem
+  activeItem: state.activeItem,
+  func: state.func
   }
 }
 
