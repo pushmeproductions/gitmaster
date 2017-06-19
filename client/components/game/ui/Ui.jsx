@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 
 import Inventory from './Inventory'
 import Function from './Function'
-
+import BackButton from './BackButton'
 
 class Ui extends React.Component {
   constructor (props) {
@@ -26,6 +26,7 @@ class Ui extends React.Component {
         <img id='overlay' src='images/backgrounds/UI.png' />
         <Inventory />
         <Function />
+        <BackButton />
         <div id='log'>
           {this.state.currentLog}
         </div>

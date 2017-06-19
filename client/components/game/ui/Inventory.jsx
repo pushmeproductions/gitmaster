@@ -9,6 +9,7 @@ class Inventory extends React.Component {
     }
   }
 
+
   componentWillReceiveProps (nextProps) {
     this.setState({
       items: nextProps.items
