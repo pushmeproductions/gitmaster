@@ -82,7 +82,13 @@ class ReactCore extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  return {state}
+  return {
+    location: state.location,
+    inventory: state.inventory,
+    activeItem: state.activeItem,
+    worldItems: state.worldItems,
+    func: state.func
+  }
 }
 
 export default connect(mapStateToProps)(ReactCore)
