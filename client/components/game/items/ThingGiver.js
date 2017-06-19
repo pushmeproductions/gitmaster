@@ -1,6 +1,6 @@
 import Item from './Item'
 import {addToInv} from '../../../actions/inventory'
-import {activateItem, deactivateItem} from '../../../actions/activeItem'
+// import {activateItem, deactivateItem} from '../../../actions/activeItem'
 
 
 export default class ThingGiver extends Item {
