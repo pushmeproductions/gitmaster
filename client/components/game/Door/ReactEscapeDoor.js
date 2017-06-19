@@ -1,7 +1,7 @@
 import Door from './Door'
 
-import {updateLog} from '../../../actions/currentLog'
-import {locChange} from '../../../actions/door'
+// import {updateLog} from '../../../actions/currentLog'
+// import {locChange} from '../../../actions/door'
 
 
 export default class ReactEscapeDoor extends Door {

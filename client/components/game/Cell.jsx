@@ -48,8 +48,8 @@ class Cell extends React.Component {
         className={item.class}
         style={item.roomStyle}
         onClick={() => item.mouseClick()}
-        onMouseOver={() => item.mouseOver()}
-        onMouseOut={() => item.mouseOff()}
+        onMouseOver={item.mouseOver}
+        onMouseOut={item.mouseOff}
        />)
     }
   }

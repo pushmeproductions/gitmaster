@@ -7,6 +7,7 @@ export default class Skull extends InventoryItem {
     this.img = 'images/items/Skull.png'
     this.msg = 'You feel like you are being watched...'
     this.name = 'skull'
+    this.class = 'main'
     this.roomStyle = {
       width: '110px',
       height: '100px',

@@ -13,7 +13,6 @@ class StaffRoom extends React.Component {
     this.state = {
       worldItems: this.props.worldItems,
     }
-    console.log(this.state);
   }
 
   componentWillMount(props) {
@@ -38,6 +37,7 @@ renderLocker1(locker1){
     return (<img
       src={locker1.img}
       style={locker1.roomStyle}
+      className={locker1.class}
       onClick={() => locker1.mouseClick('click')}
       onMouseOver={() => locker1.mouseOver()}
       onMouseOut={() => locker1.mouseOff()}/>
@@ -50,6 +50,7 @@ renderLocker2(locker2){
     return (<img
       src={locker2.img}
       style={locker2.roomStyle}
+      className={locker2.class}
       onClick={() => locker2.mouseClick('click')}
       onMouseOver={() => locker2.mouseOver()}
       onMouseOut={() => locker2.mouseOff()}/>
@@ -62,6 +63,7 @@ renderLocker3(locker){
     return (<img
       src={locker.img}
       style={locker.roomStyle}
+      className={locker.class}
       onClick={() => locker.mouseClick('click')}
       onMouseOver={() => locker.mouseOver()}
       onMouseOut={() => locker.mouseOff()}/>
@@ -74,6 +76,7 @@ renderLocker3(locker){
     return (<img
       src={log.img}
       style={log.roomStyle}
+      className={log.class}
       onClick={() => log.mouseClick(this.props.activeItem)}
       onMouseOver={() => log.mouseOver()}
       onMouseOut={() => log.mouseOff()}/>

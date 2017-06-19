@@ -9,6 +9,7 @@ export default class Bucket extends InventoryItem {
     this.img = 'images/items/Bucket.png'
     this.msg = 'The contents of this bucket glow strangely, you wonder if they might be corrosive...'
     this.name = 'bucket'
+    this.class = 'main'
     this.roomStyle = {
       width: '140px',
       height: '160px',

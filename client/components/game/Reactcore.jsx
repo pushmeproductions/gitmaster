@@ -13,7 +13,6 @@ class ReactCore extends React.Component {
       func:this.props.func,
       branch: this.props.branch
     }
-    console.log(this.state);
   }
 
   componentWillMount(props) {
