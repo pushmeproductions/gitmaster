@@ -53,7 +53,7 @@
   }
 
   #backbtn{
-    position: fixed;
+    position: absolute;
     left: 70.5%;
     top: 84%;
     width: 85px;
