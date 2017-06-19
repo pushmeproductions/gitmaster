@@ -1,8 +1,5 @@
 import CodeGiver from './CodeGiver'
 
-import Item from './Item'
-
-
 export default class Brick extends CodeGiver {
   constructor (dispatch) {
     super (dispatch)

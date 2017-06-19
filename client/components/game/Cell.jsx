@@ -30,6 +30,7 @@ class Cell extends React.Component {
       cellLocked: nextProps.cellLocked,
       func: nextProps.func
     })
+    {console.log(nextProps)}
   }
 
   populateRoom() {

@@ -29,7 +29,8 @@ class Function extends React.Component {
         'images/function/full/line4.png';
         break;
       case 5:
-        this.img5 = 'images/function/full/closingBrace.png';
+        this.img6 = 'images/function/full/closingBrace.png';
+        console.log("naming conventions are the worst");
         break;
       }
   }

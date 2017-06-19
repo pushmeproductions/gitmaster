@@ -16,7 +16,8 @@ class Corridor extends React.Component {
 
     this.state = {
       authorised: this.props.authorised,
-      worldItems: this.props.worldItems
+      worldItems: this.props.worldItems,
+      
     }
   }
 
@@ -34,8 +35,10 @@ class Corridor extends React.Component {
   componentWillReceiveProps(nextProps) {
     this.setState({
       authorised: nextProps.authorised,
-      worldItems: nextProps.worldItems
+      worldItems: nextProps.worldItems,
+      func: nextProps.func
     })
+    {console.log(nextProps)}
   }
 
   renderReactSign(sign) {
@@ -71,15 +74,16 @@ class Corridor extends React.Component {
   }
 
   renderMo(mo) {
-    return (<img
-      src={mo.img}
-      style={this.props.authorised ?
-      mo.idleStyle : mo.activeStyle}
-      onClick={() => mo.mouseClick()}
-      onMouseOver={() => mo.mouseOver()}
-      onMouseOut={() => mo.mouseOff()}
-    />
-      )
+    if (this.state.worldItems.indexOf(mo.name) > -1) {
+      return (<img
+        src={mo.img}
+        style={this.props.authorised ?
+        mo.idleStyle : mo.activeStyle}
+        onClick={() => mo.mouseClick()}
+        onMouseOver={() => mo.mouseOver()}
+        onMouseOut={() => mo.mouseOff()}
+      />)
+    }
   }
 
 
