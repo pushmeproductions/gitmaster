@@ -87,12 +87,15 @@ test('Reactcore background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
   t.is(wrapper.find('.window').contains(<img
   className='background-img' src='images/backgrounds/Reactcore.png'/>), true)
+})
 
-  
 test('Items are rendering in Cell', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
   t.is(wrapper.find(".cellItemsDiv").exists(), true)
 })
+
+
+
 
 
 // Test Items to see if they are Clickable
@@ -145,6 +148,7 @@ test('corridorCell1 is Clickable', t => {
   wrapper.find('#cell1').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
+
 test('corridorCell2 is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
   wrapper.find('#cell2').simulate('click' )

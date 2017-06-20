@@ -8,7 +8,6 @@ class Escapepod extends React.Component {
     super(props)
 
     this.state = {
-      meltdown: this.props.meltdown
     }
   }
 
