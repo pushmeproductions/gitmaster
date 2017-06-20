@@ -9,6 +9,7 @@ export default class Bucket extends InventoryItem {
     this.img = 'images/items/Bucket.png'
     this.msg = 'The contents of this bucket glow strangely, you wonder if they might be corrosive...'
     this.name = 'bucket'
+    this.class = 'main'
     this.roomStyle = {
       width: '140px',
       height: '160px',
@@ -18,11 +19,11 @@ export default class Bucket extends InventoryItem {
       zIndex: 5
     }
     this.invStyle =  {
-      width: '68px',
-      height: '80px',
+      width: '78px',
+      height: '72px',
       position: 'absolute',
-      top: '0%',
-      left: '56%',
+      top: '0.5%',
+      left: '53%',
       zIndex: 5
     }
   }

@@ -1,7 +1,5 @@
 import CodeGiver from './CodeGiver'
 
-import {updateLog} from '../../../actions/currentLog'
-
 export default class CorridorCell1 extends CodeGiver {
   constructor(dispatch) {
     super(dispatch)

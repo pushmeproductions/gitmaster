@@ -7,6 +7,7 @@ export default class Skull extends InventoryItem {
     this.img = 'images/items/Skull.png'
     this.msg = 'You feel like you are being watched...'
     this.name = 'skull'
+    this.class = 'main'
     this.roomStyle = {
       width: '110px',
       height: '100px',
@@ -16,11 +17,11 @@ export default class Skull extends InventoryItem {
       zIndex: 5
     }
     this.invStyle = {
-      width: '90px',
-      height: '80px',
+      width: '79px',
+      height: '73px',
       position: 'absolute',
-      top: '0%',
-      left: '0%',
+      top: '0.5%',
+      left: '3%',
       zIndex: 5
     }
   }

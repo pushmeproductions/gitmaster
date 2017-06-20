@@ -17,7 +17,7 @@ class Corridor extends React.Component {
     this.state = {
       authorised: this.props.authorised,
       worldItems: this.props.worldItems,
-      
+
     }
   }
 
@@ -38,73 +38,71 @@ class Corridor extends React.Component {
       worldItems: nextProps.worldItems,
       func: nextProps.func
     })
-    {console.log(nextProps)}
   }
 
   renderReactSign(sign) {
-    return (<img
+    return (<img id='reactsign'
       src={sign.img}
       style={sign.roomStyle}
       onClick={() => sign.mouseClick(this.props.authorised)}
-      onMouseOver={() => sign.mouseOver()}
-      onMouseOut={() => sign.mouseOff()}/>
+      onMouseOver={sign.mouseOver}
+      onMouseOff={sign.mouseOff}/>
     )
   }
 
   renderStaffRoom(sign) {
-    return (<img
+    return (<img id='staffroom'
       src={sign.img}
       style={sign.roomStyle}
       onClick={() => sign.mouseClick(this.props.authorised)}
-      onMouseOver={() => sign.mouseOver()}
-      onMouseOut={() => sign.mouseOff()}/>
+      onMouseOver={sign.mouseOver}
+      onMouseOff={sign.mouseOff}/>
     )
   }
 
 
   renderAuthbot(bot) {
-    return (<img
+    return (<img id='authbot'
       src={bot.img}
       style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
-      onClick={() =>
-      bot.mouseClick(this.props.activeItem)}
-      onMouseOver={() => bot.mouseOver()}
-      onMouseOut={() => bot.mouseOff()}/>
+      onClick={() => bot.mouseClick(this.props.activeItem)}
+      onMouseOver={bot.mouseOver}
+      onMouseOff={bot.mouseOff}/>
     )
   }
 
   renderMo(mo) {
     if (this.state.worldItems.indexOf(mo.name) > -1) {
-      return (<img
+      return (<img id='mo'
         src={mo.img}
         style={this.props.authorised ?
         mo.idleStyle : mo.activeStyle}
         onClick={() => mo.mouseClick()}
-        onMouseOver={() => mo.mouseOver()}
-        onMouseOut={() => mo.mouseOff()}
-      />)
+        onMouseOver={mo.mouseOver}
+        onMouseOff={mo.mouseOff}/>
+      )
     }
-  }
+ }
 
 
   renderCorridorCell1(cell) {
-    return (<img
+    return (<img id='cell1'
       src={cell.img}
       style={cell.roomStyle}
       onClick={() => cell.mouseClick('click')}
-      onMouseOver={() => cell.mouseOver()}
-      onMouseOut={() => cell.mouseOff()}/>
+      onMouseOver={cell.mouseOver}
+      onMouseOff={cell.mouseOff}/>
     )
   }
 
   renderCorridorCell2(cell) {
     if (this.state.worldItems.indexOf(cell.name) > -1) {
-      return (<img
+      return (<img id='cell2'
         src={cell.img}
         style={cell.roomStyle}
         onClick={() => cell.mouseClick(this.props.activeItem)}
-        onMouseOver={() => cell.mouseOver()}
-        onMouseOut={() => cell.mouseOff()}/>
+        onMouseOver={cell.mouseOver}
+        onMouseOff={cell.mouseOff}/>
       )
     }
   }
@@ -133,7 +131,8 @@ const mapStateToProps = (state) => {
     inventory: state.inventory,
     activeItem: state.activeItem,
     worldItems: state.worldItems,
-    func: state.func
+    func: state.func,
+    meltdown: state.meltdown
   }
 }
 

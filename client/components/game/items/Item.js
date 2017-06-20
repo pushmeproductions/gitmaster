@@ -5,6 +5,8 @@ import {updateLog} from '../../../actions/currentLog'
 export default class Item {
   constructor (dispatch) {
     this.dispatch = dispatch
+
+
   }
 
   mouseClick() {
@@ -12,11 +14,13 @@ export default class Item {
     this.dispatch(updateLog(this.msg))
   }
 
-  mouseOver(){
-    //make glow
+
+  mouseOver(e){
+    e.target.style.cursor = 'pointer'
+
   }
 
-  mouseOff(){
-    //make not glow
+  mouseOff(e){
+    e.target.style.cursor = 'none'
   }
 }

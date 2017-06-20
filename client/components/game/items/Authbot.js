@@ -20,7 +20,7 @@ export default class Authbot extends Item {
     }
     this.idleStyle =  {
       width: '176px',
-      height: '230',
+      height: '230px',
       position: 'absolute',
       top: '41%',
       left: '1%',
@@ -31,18 +31,6 @@ export default class Authbot extends Item {
     if (activeItem == 'cookie') {
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
-      // console.log("bot has been authorised");
-    } else {
-      this.dispatch(updateLog(this.msg))
-      // console.log("bot is not authorised")
-    }
-  }
-
-  mouseOver(){
-    //make glow
-  }
-
-  mouseOff(){
-    //make not glow
+    } else {this.dispatch(updateLog(this.msg))}
   }
 }

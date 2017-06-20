@@ -30,7 +30,6 @@ class Function extends React.Component {
         break;
       case 5:
         this.img6 = 'images/function/full/closingBrace.png';
-        console.log("naming conventions are the worst");
         break;
       }
   }
@@ -52,6 +51,7 @@ class Function extends React.Component {
 const mapStateToProps = (state) => {
   return {
     func: state.func
+
   }
 }
 
