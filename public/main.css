@@ -54,7 +54,8 @@
 
   #backbtn{
     position: absolute;
-    left: 70.5%;
+    left: 50%;
+    margin-left: 258px;
     top: 84%;
     width: 85px;
     height: 75px;

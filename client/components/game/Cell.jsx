@@ -13,7 +13,7 @@ class Cell extends React.Component {
     this.state = {
       worldItems: this.props.worldItems,
       cellLocked: this.props.cellLocked,
-      func: this.props.func
+      func: this.props.func,
     }
   }
 
@@ -86,7 +86,8 @@ const mapStateToProps = (state) => {
     inventory: state.inventory,
     activeItem: state.activeItem,
     location: state.location,
-    func: state.func
+    func: state.func,
+    meltdown: state.meltdown
   }
 }
 

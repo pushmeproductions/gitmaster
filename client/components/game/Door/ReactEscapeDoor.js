@@ -9,6 +9,7 @@ export default class ReactEscapeDoor extends Door {
     super (dispatch)
     this.img = 'images/items/ReactEscapeDoor.png'
     this.msg = 'The Escape Pod! Relief surges through you. Now how does this thing work?'
+    this.exitMsg = 'You are in the escapepod do you really want to leave?'
     this.name = 'reactEscapeDoor'
     this.nextLoc = 'escapepod'
     this.roomStyle = {
