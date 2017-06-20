@@ -7,11 +7,11 @@ export default class Photo extends InventoryItem {
     this.msg = "This is bob's family Photo"
     this.name = 'Photo'
     this.invStyle = {
-      width: '82px',
-      height: '81px',
+      width: '78px',
+      height: '75px',
       position: 'absolute',
       top: '34%',
-      left: '4%',
+      left: '3%',
       zIndex: 5
     }
   }

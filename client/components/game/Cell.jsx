@@ -13,7 +13,7 @@ class Cell extends React.Component {
     this.state = {
       worldItems: this.props.worldItems,
       cellLocked: this.props.cellLocked,
-      func: this.props.func
+      func: this.props.func,
     }
   }
 
@@ -30,7 +30,6 @@ class Cell extends React.Component {
       cellLocked: nextProps.cellLocked,
       func: nextProps.func
     })
-    {console.log(nextProps)}
   }
 
   populateRoom() {
@@ -44,23 +43,24 @@ class Cell extends React.Component {
 
   renderItem(item, i) {
     if (this.state.worldItems.indexOf(item.name) > -1) {
-      return (<img key={i}
+      return (<img id={`item-${item.name}`}key={i}
         src={item.img}
+        className={item.class}
         style={item.roomStyle}
         onClick={() => item.mouseClick()}
-        onMouseOver={() => item.mouseOver()}
-        onMouseOut={() => item.mouseOff()}
+        onMouseOver={item.mouseOver}
+        onMouseOut={item.mouseOff}
        />)
     }
   }
 
   renderDoor(door) {
-    return (<img
+    return (<img id='celldoor'
       src={door.img}
       style={door.roomStyle}
       onClick={() => door.mouseClick(this.props.activeItem, this.props.cellLocked)}
-      onMouseOver={() => door.mouseOver()}
-      onMouseOut={() => door.mouseOff()}/>
+      onMouseOver= {door.mouseOver}
+      onMouseOut= {door.mouseOff}/>
     )
   }
 
@@ -68,7 +68,7 @@ class Cell extends React.Component {
     return (
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Cell.png'/>
-        <div>
+        <div className='cellItemsDiv'>
           {this.state.roomItems.map((item, i) => {
             return this.renderItem(item, i)
           })}
@@ -86,7 +86,8 @@ const mapStateToProps = (state) => {
     inventory: state.inventory,
     activeItem: state.activeItem,
     location: state.location,
-    func: state.func
+    func: state.func,
+    meltdown: state.meltdown
   }
 }
 

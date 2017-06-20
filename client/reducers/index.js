@@ -8,6 +8,12 @@ import currentLog from './currentLog'
 import activeItem from './activeItem'
 import authorised from './authorised'
 import func from './function'
+import loggedIn from './loggedIn'
+import consolePopUp from './consolePopUp'
+import branch from './branch'
+import meltdown from './meltdown'
+import doorJammed from './doorJammed'
+import tries from './tries'
 
 export default combineReducers({
   inventory,
@@ -17,5 +23,11 @@ export default combineReducers({
   currentLog,
   activeItem,
   authorised,
-  func
+  func,
+  loggedIn,
+  consolePopUp,
+  branch,
+  meltdown,
+  doorJammed,
+  tries
 })

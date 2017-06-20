@@ -14,7 +14,6 @@ export default class InventoryItem extends Item {
   }
 
   toggleActive(currentActive) {
-    // console.log(currentActive + ' is the active item')
     if (this.name == currentActive ) {
       this.dispatch(deactivateItem())
     } else {

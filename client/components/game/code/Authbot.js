@@ -36,17 +36,6 @@ export default class Authbot extends CodeGiver {
       this.dispatch(sendToFunc(this.code))
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
-    } else {
-      this.dispatch(updateLog(this.msg))
-
-    }
-  }
-
-  mouseOver(){
-    //make glow
-  }
-
-  mouseOff(){
-    //make not glow
+    } else {this.dispatch(updateLog(this.msg))}
   }
 }

@@ -8,6 +8,7 @@ export default class StaffLog extends ThingGiver {
     this.img = 'images/items/Book.png'
     this.msg = "ENTRY 3876: Lucky, I didn't double checked this morning, I was about to push to master!! That would have been a disaster. ENTRY 3100: System password update: 1000001"
     this.name = 'stafflog'
+    this.className = 'main'
     this.item = new Password(this.dispatch)
     this.roomStyle = {
       width: '68px',

@@ -1,5 +1,10 @@
 import test from 'ava'
 
+import {countDown, jamDoor} from '../../client/actions/reDoor'
+import {meltdown} from '../../client/actions/meltdown'
+import {logIn} from '../../client/actions/loggedIn'
+import {openConsole, closeConsole} from '../../client/actions/consolePopUp'
+import {branch} from '../../client/actions/branch'
 import {activateItem, deactivateItem} from '../../client/actions/activeItem'
 import {addToInv, dropFromInv} from '../../client/actions/inventory'
 import {deleteItem} from '../../client/actions/worldItems'
@@ -8,6 +13,41 @@ import {openCell, locChange} from '../../client/actions/door'
 import {authorised} from '../../client/actions/authorised'
 import {sendToFunc} from '../../client/actions/sendToFunction'
 
+test('jamDoor action creator works correctly', t => {
+  let doorJammer = jamDoor()
+  t.is(doorJammer.type, 'JAM_DOOR')
+})
+
+test('countDown action creator works correctly', t => {
+  let countReduces = countDown()
+  t.is(countReduces.type, 'COUNTDOWN')
+})
+
+test('meltdown action creator works correctly', t => {
+  let theMeltdown = meltdown()
+  t.is(theMeltdown.type, 'MELTDOWN')
+})
+
+test('logIn action creator works correctly', t => {
+  let logMeIn = logIn()
+  t.is(logMeIn.type, 'LOG_IN')
+})
+
+test('closeConsole action creator works correctly', t => {
+  let closeScreen = closeConsole()
+  t.is(closeScreen.type, 'CLOSE_CONSOLE')
+})
+
+test('openConsole action creator works correctly', t => {
+  let openScreen = openConsole()
+  t.is(openScreen.type, 'OPEN_CONSOLE')
+})
+
+test('branch action creator works correctly', t => {
+  let changeBranch = branch('master')
+  t.is(changeBranch.type, 'SWITCH_BRANCH')
+  t.is(changeBranch.branch, 'master')
+})
 test('activateItem item, activates an item', t => {
   let activeItem = activateItem('bucket')
   t.is(activeItem.type, 'ACTIVATE_ITEM')
