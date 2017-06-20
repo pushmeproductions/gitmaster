@@ -11,6 +11,7 @@ export default class CellDoor extends Door {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/CellDoor.png'
+    this.imgOpen = 'images/items/OpenDoor.png'
     this.nextLoc = 'corridor'
     this.lockmsg = 'The door is locked...'
     this.openmsg = 'Spark! Flash! The door melts before your very eyes'
@@ -32,7 +33,6 @@ export default class CellDoor extends Door {
     if(activeItem == 'bucket') {
       this.dispatch(updateLog(this.openmsg))
       this.dispatch(openCell())
-      this.img = 'images/items/OpenDoor.png'
       this.dispatch(deactivateItem())
     } else if (!cellLocked) {
        super.mouseClick()
@@ -44,7 +44,7 @@ export default class CellDoor extends Door {
 
   render(activeItem, cellLocked){
     return (<img id='celldoor'
-      src={this.img}
+      src={cellLocked ? this.img : this.imgOpen}
       style={this.roomStyle}
       onClick={() => this.mouseClick(activeItem, cellLocked)}
       onMouseOver= {this.mouseOver}
