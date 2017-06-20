@@ -13,9 +13,7 @@ export default class SolutionBranch extends ConsoleInteraction {
       position: 'absolute',
       top: '56%',
       left: '55%',
-      zIndex: 9,
-      backgroundColor: 'white'
-
+      zIndex: 9
     }
   }
 }

@@ -13,8 +13,7 @@ export default class TestBranch extends ConsoleInteraction {
       position: 'absolute',
       top: '47%',
       left: '55%',
-      zIndex: 9,
-      backgroundColor: 'white'
+      zIndex: 9
     }
   }
 }
