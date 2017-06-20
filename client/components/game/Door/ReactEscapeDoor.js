@@ -5,13 +5,16 @@ import {locChange} from '../../../actions/door'
 import {jamDoor, countDown} from '../../../actions/reDoor'
 
 
+
 export default class ReactEscapeDoor extends Door {
   constructor (dispatch) {
     super (dispatch)
+    this.img = 'images/items/ReactEscapeDoor.png'
+    this.msg = 'The Escape Pod! Relief surges through you. Now how does this thing work?'
+    this.exitMsg = 'You are in the escapepod do you really want to leave?'
     this.name = 'reactEscapeDoor'
     this.nextLoc = 'escapepod'
     this.img = 'images/items/ReactEscapeDoor.png'
-    this.exitMsg = 'The Escape Pod! Relief surges through you. Now how does this thing work?'
     this.roomStyle = {
       width: '33.5px',
       height: '81px',
@@ -32,7 +35,7 @@ export default class ReactEscapeDoor extends Door {
       this.dispatch(countDown())
       this.dispatch(updateLog('The door looks like it\'s about to come down on you! Perhaps use something to jam it open.'))
     } else {
-      // badEnding
+  
     }
   }
 
