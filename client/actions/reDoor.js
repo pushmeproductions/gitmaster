@@ -1,5 +1,5 @@
 
-export const countDown = (name) => {
+export const countDown = () => {
   return {
     type: 'COUNTDOWN'
   }

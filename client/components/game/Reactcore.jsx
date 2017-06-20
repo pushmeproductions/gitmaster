@@ -76,7 +76,7 @@ class ReactCore extends React.Component {
   renderReactEscapeDoor(redoor) {
     return (<img
       src={redoor.img} style={redoor.roomStyle}
-      onClick={ => redoor.mouseClick(this.props.meltdown, this.props.doorJammed, this.props.activeItem, this.props.tries)}
+      onClick={() => redoor.mouseClick(this.props.meltdown, this.props.doorJammed, this.props.activeItem, this.props.tries)}
       onMouseOver={redoor.mouseOver}
       onMouseOut={redoor.mouseOff}/>
     )
