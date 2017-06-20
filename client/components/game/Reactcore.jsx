@@ -111,7 +111,6 @@ class ReactCore extends React.Component {
   }
 
   renderCloseConsoleButton(button){
-    console.log("close console button getting hit")
     return ( <img
       src={button.img}
       style={button.style}
@@ -132,7 +131,6 @@ class ReactCore extends React.Component {
         {this.props.consolePopUp && this.renderConsolePopUp(this.state.consolepopup)}
         {this.props.consolePopUp && this.renderCloseConsoleButton(this.state.closebutton)}
         {this.props.consolePopUp && this.props.loggedIn && this.renderBranches(this.state.branches)}
-        {console.log(this.props)}
       </div>
     )
   }

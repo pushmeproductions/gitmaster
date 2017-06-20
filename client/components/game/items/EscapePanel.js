@@ -22,7 +22,6 @@ class EscapePanel extends React.Component {
     }
   }
 mouseClick() {
-  console.log(this.props.func)
     if (this.props.meltdown && this.props.func.length < 5) {
       //bad
       this.dispatch(updateLog(this.lostMsg))
