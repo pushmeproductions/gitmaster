@@ -1,7 +1,7 @@
 import Door from './Door'
 
 import {updateLog} from '../../../actions/currentLog'
-import {locChange} from '../../../actions/door'
+// import {locChange} from '../../../actions/door'
 import {jamDoor, countDown} from '../../../actions/reDoor'
 
 
