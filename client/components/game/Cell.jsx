@@ -6,21 +6,21 @@ import Bucket from './items/Bucket'
 import Brick from './code/Brick'
 import CellDoor from './Door/CellDoor'
 
+
 class Cell extends React.Component {
   constructor(props) {
     super(props)
     this.cellDoor = new CellDoor(this.props.dispatch)
+    this.roomItems = [
+      new Skull(this.props.dispatch),
+      new Brick(this.props.dispatch),
+      new Bucket(this.props.dispatch)
+    ]
     this.state = {
       worldItems: this.props.worldItems,
       cellLocked: this.props.cellLocked,
       func: this.props.func,
     }
-  }
-
-  componentWillMount(props) {
-    this.setState({
-      roomItems: this.populateRoom(),
-    })
   }
 
   componentWillReceiveProps(nextProps) {
@@ -31,17 +31,8 @@ class Cell extends React.Component {
     })
   }
 
-  populateRoom() {
-
-    return [
-      new Skull(this.props.dispatch),
-      new Brick(this.props.dispatch),
-      new Bucket(this.props.dispatch)
-    ]
-  }
-
   renderItems() {
-    return this.state.roomItems.map((item, i) => {
+    return this.roomItems.map((item, i) => {
       if (this.state.worldItems.indexOf(item.name) > -1) {
         return item.render(i)
       }
@@ -65,11 +56,8 @@ const mapStateToProps = (state) => {
   return {
     worldItems: state.worldItems,
     cellLocked: state.cellLocked,
-    inventory: state.inventory,
     activeItem: state.activeItem,
-    location: state.location,
-    func: state.func,
-    meltdown: state.meltdown
+    func: state.func
   }
 }
 

@@ -7,8 +7,6 @@ import {updateLog} from '../../../actions/currentLog'
 export default class Item {
   constructor (dispatch) {
     this.dispatch = dispatch
-
-
   }
 
   mouseClick() {
@@ -19,7 +17,6 @@ export default class Item {
 
   mouseOver(e){
     e.target.style.cursor = 'pointer'
-
   }
 
   mouseOff(e){
