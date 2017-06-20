@@ -43,7 +43,7 @@ class Cell extends React.Component {
 
   renderItem(item, i) {
     if (this.state.worldItems.indexOf(item.name) > -1) {
-      return (<img key={i}
+      return (<img id={`item-${item.name}`}key={i}
         src={item.img}
         className={item.class}
         style={item.roomStyle}
@@ -55,7 +55,7 @@ class Cell extends React.Component {
   }
 
   renderDoor(door) {
-    return (<img
+    return (<img id='celldoor'
       src={door.img}
       style={door.roomStyle}
       onClick={() => door.mouseClick(this.props.activeItem, this.props.cellLocked)}
