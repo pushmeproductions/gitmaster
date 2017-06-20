@@ -1,9 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import {updateLog} from '../../../actions/currentLog'
-import {locChange} from '../../../actions/door'
-
 
 class EscapePanel extends React.Component {
   constructor(props) {
@@ -34,11 +33,19 @@ mouseClick() {
     }
   }
   render(){
-    return (<img
-      src={this.img}
-      style={this.roomStyle}
-      onClick={() => this.mouseClick()}/>
-    )
+    if(this.props.meltdown){
+      return (<Link to='/end'><img
+        src={this.img}
+        style={this.roomStyle}
+        onClick={() => this.mouseClick()}/></Link>
+      )
+    } else {
+      return (<img
+        src={this.img}
+        style={this.roomStyle}
+        onClick={() => this.mouseClick()}/>
+      )
+    }
   }
 }
 
