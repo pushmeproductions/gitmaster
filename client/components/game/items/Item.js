@@ -14,7 +14,6 @@ export default class Item {
     this.dispatch(updateLog(this.msg))
   }
 
-
   mouseOver(e){
     e.target.style.cursor = 'pointer'
   }
