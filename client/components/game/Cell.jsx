@@ -9,7 +9,7 @@ import CellDoor from './Door/CellDoor'
 class Cell extends React.Component {
   constructor(props) {
     super(props)
-
+    this.cellDoor = new CellDoor(this.props.dispatch)
     this.state = {
       worldItems: this.props.worldItems,
       cellLocked: this.props.cellLocked,
@@ -20,7 +20,6 @@ class Cell extends React.Component {
   componentWillMount(props) {
     this.setState({
       roomItems: this.populateRoom(),
-      cellDoor: new CellDoor(this.props.dispatch)
     })
   }
 
@@ -54,16 +53,6 @@ class Cell extends React.Component {
     }
   }
 
-  renderDoor(door) {
-    return (<img id='celldoor'
-      src={door.img}
-      style={door.roomStyle}
-      onClick={() => door.mouseClick(this.props.activeItem, this.props.cellLocked)}
-      onMouseOver= {door.mouseOver}
-      onMouseOut= {door.mouseOff}/>
-    )
-  }
-
   render() {
     return (
       <div className='window'>
@@ -73,7 +62,7 @@ class Cell extends React.Component {
             return this.renderItem(item, i)
           })}
         </div>
-        {this.renderDoor(this.state.cellDoor)}
+        {this.cellDoor.render(this.props.activeItem, this.props.cellLocked)}
       </div>
     )
   }
