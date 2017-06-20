@@ -1,5 +1,6 @@
 import Item from './Item'
 import {updateLog} from '../../../actions/currentLog'
+import {openConsole} from '../../../actions/consolePopUp'
 
 
 export default class ConsoleScreen extends Item {
@@ -19,6 +20,6 @@ export default class ConsoleScreen extends Item {
   }
 
   mouseClick(){
-    this.dispatch(updateLog(this.msg))
+    this.dispatch(openConsole())
   }
 }
