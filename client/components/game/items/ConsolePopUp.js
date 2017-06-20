@@ -1,5 +1,5 @@
 import Item from './Item'
-import {logIn} from '../../actions/loggedIn'
+import {logIn} from '../../../actions/loggedIn'
 
 
 export default class ConsolePopUp extends Item {
@@ -10,18 +10,20 @@ export default class ConsolePopUp extends Item {
     this.msg = 'The console'
     this.name = 'consolepopup'
     this.style = {
-      width: '146px',
-      height: '220px',
+      width: '378px',
+      height: '290px',
       position: 'absolute',
-      top: '31%',
-      left: '29%',
-      zIndex: 5
+      top: '24%',
+      left: '20%',
+      zIndex: 7
     }
   }
 
   mouseClick(activeItem){
+    console.log(activeItem)
     if (activeItem == 'password') {
       this.dispatch(logIn())
+      console.log("i am getting a click")
     }
   }
 }

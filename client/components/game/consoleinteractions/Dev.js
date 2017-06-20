@@ -7,12 +7,14 @@ export default class DevelopBranch extends ConsoleInteraction {
     this.msg = "You've checked out to 'Develop'"
     this.name = 'developbranch'
     this.branch = 'develop'
-    this.roomStyle = {
-      width: '67px',
-      height: '32px',
+    this.style = {
+      width: '60px',
+      height: '35px',
       position: 'absolute',
-      top: '70%',
-      left: '76%',
-      zIndex: 5
+      top: '47%',
+      left: '43%',
+      zIndex: 9,
+      backgroundColor: 'white'
     }
   }
+}

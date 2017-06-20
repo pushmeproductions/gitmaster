@@ -8,13 +8,13 @@ export default class  CloseConsoleButton extends Item {
     this.img = 'images/Console/closeButt.png'
     this.msg = 'You close the console'
     this.name = 'closeconsolebutton'
-    this.roomStyle = {
-      width: '67px',
-      height: '32px',
+    this.style = {
+      width: '32px',
+      height: '24px',
       position: 'absolute',
-      top: '70%',
-      left: '76%',
-      zIndex: 5
+      top: '25%',
+      left: '69.5%',
+      zIndex: 8
     }
   }
 

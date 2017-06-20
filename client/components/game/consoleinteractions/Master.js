@@ -7,12 +7,14 @@ export default class MasterBranch extends ConsoleInteraction {
     this.msg = "You've checked out to 'Master'"
     this.name = 'masterbranch'
     this.branch = 'master'
-    this.roomStyle = {
-      width: '67px',
-      height: '32px',
+    this.style = {
+      width: '60px',
+      height: '35px',
       position: 'absolute',
-      top: '70%',
-      left: '76%',
-      zIndex: 5
+      top: '65%',
+      left: '49%',
+      zIndex: 9,
+      backgroundColor: 'white'
     }
   }
+}
