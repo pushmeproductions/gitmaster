@@ -22,7 +22,8 @@ class ReactCore extends React.Component {
       func: this.props.func,
       consolePopUp: this.props.consolePopUp,
       loggedIn: this.props.loggedIn,
-      branch: this.props.branch
+      branch: this.props.branch,
+      doorJammed: this.props.doorJammed
     }
   }
 
@@ -50,7 +51,8 @@ class ReactCore extends React.Component {
       switchBranch: nextprops.switchBranch,
       consolePopUp: nextprops.consolePopUp,
       loggedIn: nextprops.loggedIn,
-      branch: nextprops.branch
+      branch: nextprops.branch,
+      doorJammed: nextprops.doorJammed
     })
 
   }
@@ -74,9 +76,9 @@ class ReactCore extends React.Component {
   }
 
 
-  renderReactEscapeDoor(redoor) {
+  renderReactEscapeDoor(redoor, jammed) {
     return (<img
-      src={this.props.doorJammed ? redoor.imgjam :redoor.img} style={redoor.roomStyle}
+      src={jammed ? redoor.imgjam : redoor.img} style={redoor.roomStyle}
       onClick={() => redoor.mouseClick(this.props.meltdown,this.props.doorJammed, this.props.activeItem, this.props.tries)}
       onMouseOver={redoor.mouseOver}
       onMouseOut={redoor.mouseOff}/>
@@ -109,7 +111,6 @@ class ReactCore extends React.Component {
   }
 
   renderCloseConsoleButton(button){
-    console.log("close console button getting hit")
     return ( <img
       src={button.img}
       style={button.style}
@@ -126,11 +127,10 @@ class ReactCore extends React.Component {
         <img className='background-img' src='images/backgrounds/Reactcore.png'/>
         {this.renderButton(this.state.button)}
         {this.renderConsoleScreen(this.state.consolescreen)}
-        {this.renderReactEscapeDoor(this.state.reactescapedoor)}
+        {this.renderReactEscapeDoor(this.state.reactescapedoor, this.state.doorJammed)}
         {this.props.consolePopUp && this.renderConsolePopUp(this.state.consolepopup)}
         {this.props.consolePopUp && this.renderCloseConsoleButton(this.state.closebutton)}
         {this.props.consolePopUp && this.props.loggedIn && this.renderBranches(this.state.branches)}
-        {console.log(this.props)}
       </div>
     )
   }

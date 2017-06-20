@@ -16,7 +16,7 @@ export default class ReactEscapeDoor extends Door {
     this.img = 'images/items/ReactEscapeDoor.png'
     this.imgjam = 'images/items/JammedDoor.png'
     this.roomStyle = {
-      width: '33.5px',
+      width: '37.5px',
       height: '81px',
       position: 'absolute',
       top: '48.5%',
@@ -26,7 +26,6 @@ export default class ReactEscapeDoor extends Door {
   }
 
   mouseClick (meltdown, doorJammed, activeItem, tries) {
-    console.log('click happened', meltdown, doorJammed, activeItem, tries)
     if(!meltdown || doorJammed) {
       super.mouseClick()
     } else if (activeItem == 'crowbar') {
