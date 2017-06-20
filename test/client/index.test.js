@@ -11,6 +11,8 @@ import Game from '../../client/components/game/Game'
 // import Ui from '../../client/components/game/ui/Ui'
 import Cell from '../../client/components/game/Cell'
 import Corridor from '../../client/components/game/Corridor'
+import Staffroom from '../../client/components/game/Staffroom'
+import Reactcore from '../../client/components/game/Reactcore'
 
 
 //Homepage TESTS
@@ -36,7 +38,7 @@ test('Description rendering', t => {
   t.is(wrapper.find(".introtxt").exists(), true)
 })
 
-//Cell TESTS
+//Cell Tests
 test('Cell is rendering correct container & items', t => {
   const wrapper = mount(<Provider store={store}><Game /></Provider>)
   t.is(wrapper.find(".window").exists(), true)
@@ -48,12 +50,45 @@ test('Cell background image rendering', t => {
   t.is(wrapper.find('.window').contains(<img className='background-img' src='images/backgrounds/Cell.png'/>), true)
 })
 
+test('Items are rendering in Cell', t => {
+  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
+  t.is(wrapper.find(".cellItemsDiv").exists(), true)
+})
+
+//Corridor Tests
 test('Corridor background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Corridor /></Provider>)
   t.is(wrapper.find('.window').contains(<img
   className='background-img' src='images/backgrounds/Corridor.png'/>), true)
 })
 
+
+
+//Staffroom Tests
+test('Staffroom background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/Staffroom.png'/>), true)
+})
+
+test('Staffroom items rendering', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/Book.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker1.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker2.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker3.png"]').exists(), true)
+
+
+})
+
+
+//Reactcore Tests
+test('Reactcore background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/Reactcore.png'/>), true)
+
+  
 test('Items are rendering in Cell', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
   t.is(wrapper.find(".cellItemsDiv").exists(), true)

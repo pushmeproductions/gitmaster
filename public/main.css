@@ -1,3 +1,5 @@
+/* Ui */
+
 .window {
   width: 680px;
   height: 450px;
@@ -52,6 +54,8 @@
     height: 500px;
   }
 
+/* backbutton */
+
   #backbtn{
     position: absolute;
     left: 50%;
@@ -64,6 +68,10 @@
 
 /* home page */
 
+body {
+  background-color: darkGrey;
+}
+
 .home-container {
   text-align: center;
   margin: 15vh;
@@ -71,42 +79,61 @@
   letter-spacing: 1.8px;
 }
 
+/* home button */
+
 a {
   text-decoration: none;
   display:inline-block;
-  font-size: 40px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
   padding: 15px 20px 10px 20px;
   color: black;
   border: 3px black solid;
+  animation-name: flash;
+  animation-duration: 0.8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-play-state: running;
+  font-size: 50px;
+  font-weight: bold;
 }
 
+@keyframes flash {
+  from {background-color: green;}
+  to {background-color: white;}
+}
 a:hover {
-  background-color: #7FFF00;
+  background-color: green;
   color: white;
 }
 
-.Gitmaster {
-font-size: 50px;
-}
+/* home page heading */
 
 h1 {
   padding: 0;
   margin: 0;
 }
 
+.Gitmaster {
+    font-size: 50px;
+}
+
+/* home page text */
+
 p {
   padding-bottom: 20px;
   font-size: 30px
 }
 
-.glow {
-border: 3px solid;
-border-color: rgba(127, 255, 0, 0.6);
-z-index: 8;
-background-color: rgba(127, 255, 0, 0.4);
-border-radius: 50%;
+/* class used for active items */
 
+.glow {
+/*background-position:center;
+background-size: 30px;*/
+background-color: #F5F5DC;
+border: 3px  #F5F5DC solid;
+z-index: 8;
+border-radius: 50%; 
 }

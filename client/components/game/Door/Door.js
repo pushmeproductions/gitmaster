@@ -12,5 +12,11 @@ export default class Door extends Item {
     this.dispatch(locChange(this.nextLoc))
     this.dispatch(updateLog(this.exitMsg))
   }
+  mouseOver(e){
+    e.target.style.cursor = 'pointer'
+  }
 
+  mouseOut(e){
+    e.target.style.cursor = 'none'
+  }
 }

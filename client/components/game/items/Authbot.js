@@ -31,18 +31,6 @@ export default class Authbot extends Item {
     if (activeItem == 'cookie') {
       this.dispatch(updateLog(this.authmsg))
       this.dispatch(authorised())
-      // console.log("bot has been authorised");
-    } else {
-      this.dispatch(updateLog(this.msg))
-      // console.log("bot is not authorised")
-    }
-  }
-
-  mouseOver(){
-    //make glow
-  }
-
-  mouseOff(){
-    //make not glow
+    } else {this.dispatch(updateLog(this.msg))}
   }
 }

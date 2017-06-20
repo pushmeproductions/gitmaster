@@ -58,8 +58,8 @@ class ReactCore extends React.Component {
     return (<img
       src={button.img} style={button.roomStyle}
       onClick={() => button.mouseClick(this.state.branch)}
-      onMouseOver={() => button.mouseOver()}
-      onMouseOut={() => button.mouseOff()}/>
+      onMouseOver={button.mouseOver}
+      onMouseOut={button.mouseOff}/>
     )
   }
 
@@ -67,8 +67,8 @@ class ReactCore extends React.Component {
     return (<img
       src={screen.img} style={screen.roomStyle}
       onClick={() => screen.mouseClick('click')}
-      onMouseOver={() => screen.mouseOver()}
-      onMouseOut={() => screen.mouseOff()}/>
+      onMouseOver={screen.mouseOver}
+      onMouseOut={screen.mouseOff}/>
     )
   }
 
@@ -77,8 +77,8 @@ class ReactCore extends React.Component {
     return (<img
       src={redoor.img} style={redoor.roomStyle}
       onClick={() => redoor.mouseClick('click')}
-      onMouseOver={() => redoor.mouseOver()}
-      onMouseOut={() => redoor.mouseOff()}/>
+      onMouseOver={redoor.mouseOver}
+      onMouseOut={redoor.mouseOff}/>
     )
   }
 
