@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Inventory from './Inventory'
-import Function from './Function'
+import FunctionCode from './FunctionCode'
 import BackButton from './BackButton'
 
 class Ui extends React.Component {
@@ -25,7 +25,7 @@ class Ui extends React.Component {
       <div className='ui-container'>
         <img id='overlay' src='images/backgrounds/UI.png' />
         <Inventory />
-        <Function />
+        <FunctionCode />
         <BackButton />
         <div id='log'>
           {this.state.currentLog}
