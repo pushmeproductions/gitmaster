@@ -1,4 +1,6 @@
 import Door from './Door'
+import React from 'react'
+
 
 import {deactivateItem} from '../../../actions/activeItem'
 import {openCell} from '../../../actions/door'
@@ -38,6 +40,16 @@ export default class CellDoor extends Door {
         this.dispatch(updateLog(this.lockmsg))
         if(activeItem) this.dispatch(updateLog(this.error))
     }
+  }
+
+  render(activeItem, cellLocked){
+    return (<img id='celldoor'
+      src={this.img}
+      style={this.roomStyle}
+      onClick={() => this.mouseClick(activeItem, cellLocked)}
+      onMouseOver= {this.mouseOver}
+      onMouseOut= {this.mouseOff}/>
+    )
   }
 
 }
