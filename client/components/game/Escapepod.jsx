@@ -15,7 +15,7 @@ class Escapepod extends React.Component {
   render() {
       return (
         <div className='window'>
-          <img className='background-img' src='images/backgrounds/Staffroom.png'/>
+          <img className='background-img' src='images/backgrounds/EscapePod.png'/>
             <EscapePanel />
         </div>
     )

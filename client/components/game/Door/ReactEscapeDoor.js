@@ -9,12 +9,12 @@ import {jamDoor, countDown} from '../../../actions/reDoor'
 export default class ReactEscapeDoor extends Door {
   constructor (dispatch) {
     super (dispatch)
-    this.img = 'images/items/ReactEscapeDoor.png'
     this.msg = 'The Escape Pod! Relief surges through you. Now how does this thing work?'
     this.exitMsg = 'You are in the escapepod do you really want to leave?'
     this.name = 'reactEscapeDoor'
     this.nextLoc = 'escapepod'
     this.img = 'images/items/ReactEscapeDoor.png'
+    this.imgjam = 'images/items/JammedDoor.png'
     this.roomStyle = {
       width: '33.5px',
       height: '81px',
@@ -26,6 +26,7 @@ export default class ReactEscapeDoor extends Door {
   }
 
   mouseClick (meltdown, doorJammed, activeItem, tries) {
+    console.log('click happened', meltdown, doorJammed, activeItem, tries)
     if(!meltdown || doorJammed) {
       super.mouseClick()
     } else if (activeItem == 'crowbar') {
@@ -35,7 +36,7 @@ export default class ReactEscapeDoor extends Door {
       this.dispatch(countDown())
       this.dispatch(updateLog('The door looks like it\'s about to come down on you! Perhaps use something to jam it open.'))
     } else {
-  
+
     }
   }
 
