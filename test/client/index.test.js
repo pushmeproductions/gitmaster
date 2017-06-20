@@ -54,51 +54,6 @@ test('Items are rendering in Cell', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
   t.is(wrapper.find(".cellItemsDiv").exists(), true)
 })
-
-//Corridor Tests
-test('Corridor background image rendering', t => {
-  const wrapper = mount(<Provider store={store}><Corridor /></Provider>)
-  t.is(wrapper.find('.window').contains(<img
-  className='background-img' src='images/backgrounds/Corridor.png'/>), true)
-})
-
-
-
-//Staffroom Tests
-test('Staffroom background image rendering', t => {
-  const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
-  t.is(wrapper.find('.window').contains(<img
-  className='background-img' src='images/backgrounds/Staffroom.png'/>), true)
-})
-
-test('Staffroom items rendering', t => {
-  const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
-  t.is(wrapper.find('.window img[src="images/items/Book.png"]').exists(), true)
-  t.is(wrapper.find('.window img[src="images/items/Locker1.png"]').exists(), true)
-  t.is(wrapper.find('.window img[src="images/items/Locker2.png"]').exists(), true)
-  t.is(wrapper.find('.window img[src="images/items/Locker3.png"]').exists(), true)
-
-
-})
-
-
-//Reactcore Tests
-test('Reactcore background image rendering', t => {
-  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
-  t.is(wrapper.find('.window').contains(<img
-  className='background-img' src='images/backgrounds/Reactcore.png'/>), true)
-})
-
-test('Items are rendering in Cell', t => {
-  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
-  t.is(wrapper.find(".cellItemsDiv").exists(), true)
-})
-
-
-
-
-
-// Test Items to see if they are Clickable
 test('Skull is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Cell/></Provider>)
   wrapper.find('#item-skull').simulate('click' )
@@ -122,13 +77,13 @@ test('CellDoor is Clickable', t => {
   t.is(wrapper.find(".window").exists(), true)
 })
 
-test('ReactSign is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#reactsign').simulate('click' )
-  t.is(wrapper.find(".window").exists(), true)
+//Corridor Tests
+test('Corridor background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Corridor /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/Corridor.png'/>), true)
 })
-
-test('Staffroom is Clickable', t => {
+test('Staffroom sign is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
   wrapper.find('#staffroom').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
@@ -153,4 +108,52 @@ test('corridorCell2 is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
   wrapper.find('#cell2').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
+})
+
+test('ReactSign is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#reactsign').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+
+//Staffroom Tests
+test('Staffroom background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/Staffroom.png'/>), true)
+})
+
+test('Staffroom items rendering', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/Book.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker1.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker2.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker3.png"]').exists(), true)
+})
+
+test('Lockers in the Staffroom are clickable', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom/></Provider>)
+  wrapper.find('#locker1').simulate('click')
+  wrapper.find('#locker2').simulate('click')
+  wrapper.find('#locker3').simulate('click')
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('Stafflog is clickable', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom/></Provider>)
+  wrapper.find('#staff-log').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+//Reactcore Tests
+test('Reactcore background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/Reactcore.png'/>), true)
+})
+
+test('Items are rendering in Cell', t => {
+  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
+  t.is(wrapper.find(".cellItemsDiv").exists(), true)
 })

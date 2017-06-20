@@ -34,7 +34,7 @@ class StaffRoom extends React.Component {
 
 renderLocker1(locker1){
   if (this.state.worldItems.indexOf(locker1.name) > -1) {
-    return (<img
+    return (<img id='locker1'
       src={locker1.img}
       style={locker1.roomStyle}
       className={locker1.class}
@@ -47,7 +47,7 @@ renderLocker1(locker1){
 
 renderLocker2(locker2){
   if (this.state.worldItems.indexOf(locker2.name) > -1) {
-    return (<img
+    return (<img id='locker2'
       src={locker2.img}
       style={locker2.roomStyle}
       className={locker2.class}
@@ -60,7 +60,7 @@ renderLocker2(locker2){
 
 renderLocker3(locker){
   if (this.state.worldItems.indexOf(locker.name) > -1) {
-    return (<img
+    return (<img id='locker3'
       src={locker.img}
       style={locker.roomStyle}
       className={locker.class}
@@ -73,7 +73,7 @@ renderLocker3(locker){
 
   renderStaffLog(log) {
     if (this.state.worldItems.indexOf(log.name) > -1) {
-    return (<img
+    return (<img id='staff-log'
       src={log.img}
       style={log.roomStyle}
       className={log.class}
