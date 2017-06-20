@@ -13,6 +13,8 @@ import Cell from '../../client/components/game/Cell'
 import Corridor from '../../client/components/game/Corridor'
 import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
+
+
 //Homepage TESTS
 
 test('Heading renders on App', t => {
@@ -61,6 +63,7 @@ test('Corridor background image rendering', t => {
 })
 
 
+
 //Staffroom Tests
 test('Staffroom background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
@@ -84,4 +87,66 @@ test('Reactcore background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
   t.is(wrapper.find('.window').contains(<img
   className='background-img' src='images/backgrounds/Reactcore.png'/>), true)
+
+  
+test('Items are rendering in Cell', t => {
+  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
+  t.is(wrapper.find(".cellItemsDiv").exists(), true)
+})
+
+
+// Test Items to see if they are Clickable
+test('Skull is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#item-skull').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('Bucket is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#item-bucket').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('Brick is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#item-brick').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('CellDoor is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#celldoor').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('ReactSign is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#reactsign').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('Staffroom is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#staffroom').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('Authbot is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#authbot').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('Mustache is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#mo').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('corridorCell1 is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#cell1').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('corridorCell2 is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#cell2').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
 })

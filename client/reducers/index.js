@@ -9,6 +9,7 @@ import activeItem from './activeItem'
 import authorised from './authorised'
 import func from './function'
 import loggedIn from './loggedIn'
+import consolePopUp from './consolePopUp'
 import branch from './branch'
 import meltdown from './meltdown'
 
@@ -22,6 +23,7 @@ export default combineReducers({
   authorised,
   func,
   loggedIn,
+  consolePopUp,
   branch,
   meltdown
 })

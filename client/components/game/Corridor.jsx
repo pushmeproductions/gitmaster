@@ -42,7 +42,7 @@ class Corridor extends React.Component {
   }
 
   renderReactSign(sign) {
-    return (<img
+    return (<img id='reactsign'
       src={sign.img}
       style={sign.roomStyle}
       onClick={() => sign.mouseClick(this.props.authorised)}
@@ -52,7 +52,7 @@ class Corridor extends React.Component {
   }
 
   renderStaffRoom(sign) {
-    return (<img
+    return (<img id='staffroom'
       src={sign.img}
       style={sign.roomStyle}
       onClick={() => sign.mouseClick(this.props.authorised)}
@@ -63,7 +63,7 @@ class Corridor extends React.Component {
 
 
   renderAuthbot(bot) {
-    return (<img
+    return (<img id='authbot'
       src={bot.img}
       style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
       onClick={() => bot.mouseClick(this.props.activeItem)}
@@ -74,7 +74,7 @@ class Corridor extends React.Component {
 
   renderMo(mo) {
     if (this.state.worldItems.indexOf(mo.name) > -1) {
-      return (<img
+      return (<img id='mo'
         src={mo.img}
         style={this.props.authorised ?
         mo.idleStyle : mo.activeStyle}
@@ -87,7 +87,7 @@ class Corridor extends React.Component {
 
 
   renderCorridorCell1(cell) {
-    return (<img
+    return (<img id='cell1'
       src={cell.img}
       style={cell.roomStyle}
       onClick={() => cell.mouseClick('click')}
@@ -98,7 +98,7 @@ class Corridor extends React.Component {
 
   renderCorridorCell2(cell) {
     if (this.state.worldItems.indexOf(cell.name) > -1) {
-      return (<img
+      return (<img id='cell2'
         src={cell.img}
         style={cell.roomStyle}
         onClick={() => cell.mouseClick(this.props.activeItem)}

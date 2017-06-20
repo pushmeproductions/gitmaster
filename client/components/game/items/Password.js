@@ -7,7 +7,7 @@ export default class Password extends InventoryItem {
     super(dispatch)
     this.img = 'images/items/Password.png'
     this.msg = "System password update: 1000001"
-    this.name = 'corridorCell2'
+    this.name = 'password'
     this.exit = ''
     this.invStyle = {
       width: '80px',
