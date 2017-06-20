@@ -13,8 +13,7 @@ export default class DevelopBranch extends ConsoleInteraction {
       position: 'absolute',
       top: '47%',
       left: '43%',
-      zIndex: 9,
-      backgroundColor: 'white'
+      zIndex: 9
     }
   }
 }
