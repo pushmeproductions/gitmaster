@@ -28,8 +28,6 @@ class Inventory extends React.Component {
           key={i}
           style={item.invStyle}
           onClick={()=> item.toggleActive(this.props.activeItem)}
-          mouseOn={this.mouseOver}
-          mouseOff={this.mouseOff}
       /> )
     })
   }
