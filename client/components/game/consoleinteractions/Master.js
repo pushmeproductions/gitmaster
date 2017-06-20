@@ -13,8 +13,6 @@ export default class MasterBranch extends ConsoleInteraction {
       position: 'absolute',
       top: '65%',
       left: '49%',
-      zIndex: 9,
-      backgroundColor: 'white'
-    }
+      zIndex: 9    }
   }
 }
