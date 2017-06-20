@@ -8,12 +8,22 @@ import {Provider} from 'react-redux'
 import Homepage from '../../client/components/Homepage'
 import App from '../../client/components/App'
 import Game from '../../client/components/game/Game'
-// import Ui from '../../client/components/game/ui/Ui'
 import Cell from '../../client/components/game/Cell'
 import Corridor from '../../client/components/game/Corridor'
 import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
+import Escapepod from '../../client/components/game/Escapepod'
 
+//Game
+
+test('UI is rendering in game', t => {
+  const wrapper = mount(<Provider store={store}><Game /></Provider>)
+  t.is(wrapper.find('.ui-container img[src="images/backgrounds/UI.png"]').exists(), true)
+  t.is(wrapper.find('.ui-container img[src="images/function/empty/line1.png"]').exists(), true)
+  t.is(wrapper.find('.ui-container img[src="images/function/empty/line3.png"]').exists(), true)
+  t.is(wrapper.find('.ui-container img[src="images/function/empty/line5.png"]').exists(), true)
+
+})
 
 //Homepage TESTS
 
@@ -156,4 +166,11 @@ test('Reactcore background image rendering', t => {
 test('Items are rendering in Cell', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
   t.is(wrapper.find(".cellItemsDiv").exists(), true)
+})
+
+//escapepod Tests
+test('escape background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Escapepod /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/EscapePod.png'/>), true)
 })
