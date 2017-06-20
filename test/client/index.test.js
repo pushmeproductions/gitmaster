@@ -62,7 +62,7 @@ test('Skull is Clickable', t => {
 
 test('Bucket is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Cell/></Provider>)
-  wrapper.find('#item-bucket').simulate('click' )
+  wrapper.find('#item-bucket').simulate('click')
   t.is(wrapper.find(".window").exists(), true)
 })
 
