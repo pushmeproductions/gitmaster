@@ -87,13 +87,15 @@ class Corridor extends React.Component {
 
 
   renderCorridorCell1(cell) {
+    if (this.state.worldItems.indexOf(cell.name) > -1) {
     return (<img id='cell1'
       src={cell.img}
       style={cell.roomStyle}
       onClick={() => cell.mouseClick('click')}
       onMouseOver={cell.mouseOver}
       onMouseOff={cell.mouseOff}/>
-    )
+      )
+    }
   }
 
   renderCorridorCell2(cell) {
