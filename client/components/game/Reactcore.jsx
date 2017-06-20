@@ -58,7 +58,7 @@ class ReactCore extends React.Component {
   }
 
   renderButton(button) {
-    return (<img
+    return (<img id='button'
       src={button.img} style={button.roomStyle}
       onClick={() => button.mouseClick(this.state.branch)}
       onMouseOver={button.mouseOver}
@@ -67,7 +67,7 @@ class ReactCore extends React.Component {
   }
 
   renderConsoleScreen(screen) {
-    return (<img
+    return (<img id='consolescreen'
       src={screen.img} style={screen.roomStyle}
       onClick={() => screen.mouseClick('click')}
       onMouseOver={screen.mouseOver}
@@ -77,7 +77,7 @@ class ReactCore extends React.Component {
 
 
   renderReactEscapeDoor(redoor, jammed) {
-    return (<img
+    return (<img id='escapedoor'
       src={jammed ? redoor.imgjam : redoor.img} style={redoor.roomStyle}
       onClick={() => redoor.mouseClick(this.props.meltdown,this.props.doorJammed, this.props.activeItem, this.props.tries)}
       onMouseOver={redoor.mouseOver}
@@ -89,7 +89,7 @@ class ReactCore extends React.Component {
     return(
       branches.map((branch, i) => {
         return(
-          <img
+          <img id={`branch-${branch.name}`}
             key={i}
             src={branch.img} style={branch.style}
             onClick={() =>branch.mouseClick('click')} />
@@ -99,7 +99,7 @@ class ReactCore extends React.Component {
   }
 
   renderConsolePopUp(popup) {
-    return ( <img
+    return ( <img id='popup'
       src={this.props.loggedIn ?
       popup.openimg : popup.lockimg}
       style={popup.style}
@@ -111,7 +111,7 @@ class ReactCore extends React.Component {
   }
 
   renderCloseConsoleButton(button){
-    return ( <img
+    return ( <img id={`button-${button.name}`}
       src={button.img}
       style={button.style}
       onClick={() =>

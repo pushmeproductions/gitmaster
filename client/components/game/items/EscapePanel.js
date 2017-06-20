@@ -40,7 +40,7 @@ mouseClick() {
         onClick={() => this.mouseClick()}/></Link>
       )
     } else {
-      return (<img
+      return (<img id='esc'
         src={this.img}
         style={this.roomStyle}
         onClick={() => this.mouseClick()}/>

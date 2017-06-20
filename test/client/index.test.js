@@ -1,6 +1,7 @@
 import './setup-dom'
 import React from 'react'
 import test from 'ava'
+import sinon from 'sinon'
 import { shallow, mount } from 'enzyme'
 import store from '../../client/store'
 import {Provider} from 'react-redux'
@@ -13,6 +14,7 @@ import Cell from '../../client/components/game/Cell'
 import Corridor from '../../client/components/game/Corridor'
 import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
+import Escapepod from '../../client/components/game/Escapepod'
 
 
 //Homepage TESTS
@@ -105,10 +107,17 @@ test('corridorCell1 is Clickable', t => {
 })
 
 test('corridorCell2 is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  sinon.stub(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Corridor/>
+  </Provider>)
+
   wrapper.find('#cell2').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
+
 
 test('ReactSign is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
@@ -156,4 +165,53 @@ test('Reactcore background image rendering', t => {
 test('Items are rendering in Cell', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
   t.is(wrapper.find(".cellItemsDiv").exists(), true)
+})
+
+test('ReactEscapeDoor is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#escapedoor').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('ConsoleScreen is Clickable', t => {
+  sinon.mock(store, 'dispatch');
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#consolescreen').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('The push button is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#button').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+
+test('The ESC button is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Escapepod/>
+  </Provider>)
+
+  wrapper.find('#esc').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
 })
