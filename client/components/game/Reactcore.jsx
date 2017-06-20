@@ -20,9 +20,9 @@ class ReactCore extends React.Component {
 
     this.state = {
       func: this.props.func,
-      switchBranch: this.props.switchBranch,
       consolePopUp: this.props.consolePopUp,
-      loggedIn: this.props.loggedIn
+      loggedIn: this.props.loggedIn,
+      branch: this.props.branch
     }
   }
 
@@ -57,7 +57,7 @@ class ReactCore extends React.Component {
   renderButton(button) {
     return (<img
       src={button.img} style={button.roomStyle}
-      onClick={() => button.mouseClick('click')}
+      onClick={() => button.mouseClick(this.state.branch)}
       onMouseOver={() => button.mouseOver()}
       onMouseOut={() => button.mouseOff()}/>
     )
@@ -145,7 +145,8 @@ const mapStateToProps = (state) => {
     func: state.func,
     loggedIn: state.loggedIn,
     consolePopUp: state.consolePopUp,
-    switchBranch: state.switchBranch
+    branch: state.branch,
+    meltdown: state.meltdown
   }
 }
 

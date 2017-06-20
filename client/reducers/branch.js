@@ -1,4 +1,4 @@
-function switchBranch (state = 'dev', action) {
+function branch (state = 'dev', action) {
   switch(action.type) {
     case 'SWITCH_BRANCH':
       return action.branch
@@ -7,4 +7,4 @@ function switchBranch (state = 'dev', action) {
   }
 }
 
-export default switchBranch
+export default branch
