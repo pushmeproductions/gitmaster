@@ -59,8 +59,8 @@ class Cell extends React.Component {
       src={door.img}
       style={door.roomStyle}
       onClick={() => door.mouseClick(this.props.activeItem, this.props.cellLocked)}
-      onMouseOver={() => door.mouseOver()}
-      onMouseOut={() => door.mouseOff()}/>
+      onMouseOver= {door.mouseOver}
+      onMouseOut= {door.mouseOff}/>
     )
   }
 

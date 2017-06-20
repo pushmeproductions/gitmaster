@@ -10,11 +10,11 @@ export default class Password extends InventoryItem {
     this.name = 'corridorCell2'
     this.exit = ''
     this.invStyle = {
-      width: '51px',
-      height: '29px',
+      width: '80px',
+      height: '66px',
       position: 'absolute',
-      top: '21%',
-      left: '10%',
+      top: '18%',
+      left: '3%',
       zIndex: 5
     }
   }

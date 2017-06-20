@@ -19,11 +19,11 @@ export default class Bucket extends InventoryItem {
       zIndex: 5
     }
     this.invStyle =  {
-      width: '68px',
-      height: '80px',
+      width: '78px',
+      height: '72px',
       position: 'absolute',
-      top: '0%',
-      left: '56%',
+      top: '0.5%',
+      left: '53%',
       zIndex: 5
     }
   }

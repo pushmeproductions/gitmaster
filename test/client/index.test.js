@@ -64,11 +64,20 @@ test('Corridor background image rendering', t => {
 //Staffroom Tests
 test('Staffroom background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
-  t.is(wrapper.find().exists(), true)
-  t.is(wrapper.find('img[src="locker1.img"]').exists(), true)
-  t.is(wrapper.find('img[src="locker2.img"]').exists(), true)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/Staffroom.png'/>), true)
+})
+
+test('Staffroom items rendering', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/Book.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker1.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker2.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Locker3.png"]').exists(), true)
+
 
 })
+
 
 //Reactcore Tests
 test('Reactcore background image rendering', t => {

@@ -16,11 +16,11 @@ export default class Item {
 
 
   mouseOver(e){
-    e.target.style.border = '1px solid green'
+    e.target.style.cursor = 'pointer'
 
   }
 
   mouseOff(e){
-    e.target.style.border = 'none'
+    e.target.style.cursor = 'none'
   }
 }

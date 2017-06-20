@@ -132,13 +132,8 @@ p {
 .glow {
 /*background-position:center;
 background-size: 30px;*/
-background-color: green;
+background-color: #F5F5DC;
+border: 3px  #F5F5DC solid;
 z-index: 8;
-border-radius: 50%;
-}
-
-.highlight {
-  background-color: blue;
-  border-radius: 50%;
-  z-index: 10;
+border-radius: 50%; 
 }

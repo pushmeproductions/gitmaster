@@ -39,8 +39,8 @@ renderLocker1(locker1){
       style={locker1.roomStyle}
       className={locker1.class}
       onClick={() => locker1.mouseClick('click')}
-      onMouseOver={() => locker1.mouseOver()}
-      onMouseOut={() => locker1.mouseOff()}/>
+      onMouseOver={locker1.mouseOver}
+      onMouseOut={locker1.mouseOff}/>
       )
   }
 }
@@ -52,8 +52,8 @@ renderLocker2(locker2){
       style={locker2.roomStyle}
       className={locker2.class}
       onClick={() => locker2.mouseClick('click')}
-      onMouseOver={() => locker2.mouseOver()}
-      onMouseOut={() => locker2.mouseOff()}/>
+      onMouseOver={locker2.mouseOver}
+      onMouseOut={locker2.mouseOff}/>
       )
   }
 }
@@ -65,8 +65,8 @@ renderLocker3(locker){
       style={locker.roomStyle}
       className={locker.class}
       onClick={() => locker.mouseClick('click')}
-      onMouseOver={() => locker.mouseOver()}
-      onMouseOut={() => locker.mouseOff()}/>
+      onMouseOver={locker.mouseOver}
+      onMouseOut={locker.mouseOff}/>
       )
   }
 }
@@ -78,8 +78,8 @@ renderLocker3(locker){
       style={log.roomStyle}
       className={log.class}
       onClick={() => log.mouseClick(this.props.activeItem)}
-      onMouseOver={() => log.mouseOver()}
-      onMouseOut={() => log.mouseOff()}/>
+      onMouseOver={log.mouseOver}
+      onMouseOut={log.mouseOff}/>
       )
     }
   }
