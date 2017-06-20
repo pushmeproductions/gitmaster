@@ -12,11 +12,11 @@ export default class ConsoleInteraction {
     this.dispatch(branch(this.branch))
   }
 
-  mouseOver(){
-
+  mouseOver(e){
+    e.target.style.cursor = 'pointer'
   }
 
-  mouseOff(){
-
+  mouseOff(e){
+    e.target.style.cursor = 'none'
   }
 }

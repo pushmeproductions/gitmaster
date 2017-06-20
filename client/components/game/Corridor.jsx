@@ -38,7 +38,6 @@ class Corridor extends React.Component {
       worldItems: nextProps.worldItems,
       func: nextProps.func
     })
-    {console.log(nextProps)}
   }
 
   renderReactSign(sign) {
