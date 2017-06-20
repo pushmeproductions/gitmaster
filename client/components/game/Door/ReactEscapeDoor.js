@@ -1,7 +1,7 @@
 import Door from './Door'
 
 import {updateLog} from '../../../actions/currentLog'
-import {locChange} from '../../../actions/door'
+// import {locChange} from '../../../actions/door'
 import {jamDoor, countDown} from '../../../actions/reDoor'
 
 
@@ -26,7 +26,7 @@ export default class ReactEscapeDoor extends Door {
   }
 
   mouseClick (meltdown, doorJammed, activeItem, tries) {
-    console.log('click happened', meltdown, doorJammed, activeItem, tries)
+    // console.log('click happened', meltdown, doorJammed, activeItem, tries)
     if(!meltdown || doorJammed) {
       super.mouseClick()
     } else if (activeItem == 'crowbar') {

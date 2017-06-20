@@ -8,7 +8,7 @@ import {locChange} from '../../../actions/door'
 class EscapePanel extends React.Component {
   constructor(props) {
   super(props)
-  this.dispatch = props.dispatch
+  this.dispatch = dispatch
   this.tryagain = 'Have you been been trying'
   this.lostMsg = "Hahaha you have been defeat by SVN!!"
   this.wonMsg = 'Wow you defeated the evil SVN!'
@@ -23,7 +23,6 @@ class EscapePanel extends React.Component {
     }
   }
 mouseClick() {
-  console.log(this.props.func)
     if (this.props.meltdown && this.props.func.length < 5) {
       //bad
       this.dispatch(updateLog(this.lostMsg))
