@@ -170,11 +170,10 @@ test('Reactcore background image rendering', t => {
 
 test('Reactcore room items are rendering', t => {
   const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
-  t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]'), true)
-  t.is(wrapper.find('.window img[src="images/items/Button.png"]'), true)
-  t.is(wrapper.find('.window img[src="images/items/ReactEscapeDoor.png"]'), true)
+  t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Button.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/ReactEscapeDoor.png"]').exists(), true)
 })
-
 
 //escapepod Tests
 test('escape background image rendering', t => {
