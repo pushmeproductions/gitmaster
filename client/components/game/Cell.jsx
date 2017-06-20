@@ -40,17 +40,12 @@ class Cell extends React.Component {
     ]
   }
 
-  renderItem(item, i) {
-    if (this.state.worldItems.indexOf(item.name) > -1) {
-      return (<img id={`item-${item.name}`}key={i}
-        src={item.img}
-        className={item.class}
-        style={item.roomStyle}
-        onClick={() => item.mouseClick()}
-        onMouseOver={item.mouseOver}
-        onMouseOut={item.mouseOff}
-       />)
-    }
+  renderItems() {
+    return this.state.roomItems.map((item, i) => {
+      if (this.state.worldItems.indexOf(item.name) > -1) {
+        return item.render(i)
+      }
+    })
   }
 
   render() {
@@ -58,9 +53,7 @@ class Cell extends React.Component {
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Cell.png'/>
         <div className='cellItemsDiv'>
-          {this.state.roomItems.map((item, i) => {
-            return this.renderItem(item, i)
-          })}
+          {this.renderItems()}
         </div>
         {this.cellDoor.render(this.props.activeItem, this.props.cellLocked)}
       </div>

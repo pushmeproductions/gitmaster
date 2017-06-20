@@ -1,3 +1,5 @@
+import React from 'react'
+
 import {deleteItem} from '../../../actions/worldItems'
 import {updateLog} from '../../../actions/currentLog'
 
@@ -23,4 +25,16 @@ export default class Item {
   mouseOff(e){
     e.target.style.cursor = 'none'
   }
+
+  render(i){
+    return (<img id={`item-${this.name}`} key={i}
+      src={this.img}
+      className={this.class}
+      style={this.roomStyle}
+      onClick={() => this.mouseClick()}
+      onMouseOver={this.mouseOver}
+      onMouseOut={this.mouseOff}
+     />)
+  }
+
 }
