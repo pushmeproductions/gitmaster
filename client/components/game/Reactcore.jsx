@@ -20,7 +20,7 @@ class ReactCore extends React.Component {
 
     this.state = {
       func: this.props.func,
-      branch: this.props.banch,
+      switchBranch: this.props.switchBranch,
       consolePopUp: this.props.consolePopUp,
       loggedIn: this.props.loggedIn
     }
@@ -47,11 +47,9 @@ class ReactCore extends React.Component {
 
   componentWillReceiveProps(nextprops) {
     this.setState({
-      switchBranch: this.props.switchBranch,
-      consolePopUp: this.props.consolePopUp,
-      loggedIn: this.props.loggedIn,
-      branch: this.props.branch
-
+      switchBranch: nextprops.switchBranch,
+      consolePopUp: nextprops.consolePopUp,
+      loggedIn: nextprops.loggedIn,
     })
 
   }
@@ -84,14 +82,14 @@ class ReactCore extends React.Component {
     )
   }
 
-  renderBranches(branches, i) {
+  renderBranches(branches) {
     return(
-      branches.map((branch) => {
+      branches.map((branch, i) => {
         return(
           <img
             key={i}
             src={branch.img} style={branch.style}
-            onClick={() =>popup.mouseClick('click')} />
+            onClick={() =>branch.mouseClick('click')} />
         )
       })
     )
@@ -115,7 +113,7 @@ class ReactCore extends React.Component {
       src={button.img}
       style={button.style}
       onClick={() =>
-      popup.mouseClick('click')}
+      button.mouseClick('click')}
       onMouseOver={() => button.mouseOver()}
       onMouseOut={() => button.mouseOff()}/>
     )
@@ -130,7 +128,7 @@ class ReactCore extends React.Component {
         {this.renderReactEscapeDoor(this.state.reactescapedoor)}
         {this.props.consolePopUp && this.renderConsolePopUp(this.state.consolepopup)}
         {this.props.consolePopUp && this.renderCloseConsoleButton(this.state.closebutton)}
-        {this.props.loggedIn && this.renderBranches(this.state.branches)}
+        {this.props.consolePopUp && this.props.loggedIn && this.renderBranches(this.state.branches)}
         {console.log(this.state)}
       </div>
     )
@@ -147,7 +145,7 @@ const mapStateToProps = (state) => {
     func: state.func,
     loggedIn: state.loggedIn,
     consolePopUp: state.consolePopUp,
-    branch: state.branch
+    switchBranch: state.switchBranch
   }
 }
 
