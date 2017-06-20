@@ -7,7 +7,7 @@ import {updateLog} from '../../../actions/currentLog'
 class EscapePanel extends React.Component {
   constructor(props) {
   super(props)
-  this.dispatch = dispatch
+  this.dispatch = props.dispatch
   this.tryagain = 'Have you been been trying'
   this.lostMsg = "Hahaha you have been defeat by SVN!!"
   this.wonMsg = 'Wow you defeated the evil SVN!'
