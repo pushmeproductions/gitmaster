@@ -20,10 +20,8 @@ export default class ConsolePopUp extends Item {
   }
 
   mouseClick(activeItem){
-    console.log(activeItem)
     if (activeItem == 'password') {
       this.dispatch(logIn())
-      console.log("i am getting a click")
     }
   }
 }

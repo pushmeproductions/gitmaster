@@ -50,6 +50,7 @@ class ReactCore extends React.Component {
       switchBranch: nextprops.switchBranch,
       consolePopUp: nextprops.consolePopUp,
       loggedIn: nextprops.loggedIn,
+      branch: nextprops.branch
     })
 
   }
@@ -75,8 +76,8 @@ class ReactCore extends React.Component {
 
   renderReactEscapeDoor(redoor) {
     return (<img
-      src={redoor.img} style={redoor.roomStyle}
-      onClick={ => redoor.mouseClick(this.props.meltdown, this.props.doorJammed, this.props.activeItem, this.props.tries)}
+      src={this.props.doorJammed ? redoor.imgjam :redoor.img} style={redoor.roomStyle}
+      onClick={() => redoor.mouseClick(this.props.meltdown,this.props.doorJammed, this.props.activeItem, this.props.tries)}
       onMouseOver={redoor.mouseOver}
       onMouseOut={redoor.mouseOff}/>
     )
@@ -102,8 +103,8 @@ class ReactCore extends React.Component {
       style={popup.style}
       onClick={() =>
       popup.mouseClick(this.props.activeItem)}
-      onMouseOver={() => popup.mouseOver()}
-      onMouseOut={() => popup.mouseOff()}/>
+      onMouseOver={popup.mouseOver}
+      onMouseOut={popup.mouseOff}/>
     )
   }
 
@@ -114,8 +115,8 @@ class ReactCore extends React.Component {
       style={button.style}
       onClick={() =>
       button.mouseClick('click')}
-      onMouseOver={() => button.mouseOver()}
-      onMouseOut={() => button.mouseOff()}/>
+      onMouseOver={button.mouseOver}
+      onMouseOut={button.mouseOff}/>
     )
   }
 
@@ -129,7 +130,7 @@ class ReactCore extends React.Component {
         {this.props.consolePopUp && this.renderConsolePopUp(this.state.consolepopup)}
         {this.props.consolePopUp && this.renderCloseConsoleButton(this.state.closebutton)}
         {this.props.consolePopUp && this.props.loggedIn && this.renderBranches(this.state.branches)}
-        {console.log(this.state)}
+        {console.log(this.props)}
       </div>
     )
   }
@@ -137,7 +138,6 @@ class ReactCore extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     location: state.location,
     inventory: state.inventory,

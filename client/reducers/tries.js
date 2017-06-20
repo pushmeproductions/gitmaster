@@ -1,7 +1,7 @@
 function doorJammed (state = 2, action) {
   switch(action.type) {
     case 'COUNTDOWN':
-      return state--
+      return state-1
     default:
       return state
   }

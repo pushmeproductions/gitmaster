@@ -12,22 +12,23 @@ class EscapePanel extends React.Component {
   this.tryagain = 'Have you been been trying'
   this.lostMsg = "Hahaha you have been defeat by SVN!!"
   this.wonMsg = 'Wow you defeated the evil SVN!'
-  this.img = 'images/items/Photo.png'
+  this.img = 'images/items/EscKey.png'
   this.roomStyle = {
-    width: '69px',
-    height: '234px',
+    width: '58px',
+    height: '47px',
     position: 'absolute',
-    top: '37%',
-    left: '70%',
+    top: '45%',
+    left: '23%',
     zIndex: 5
     }
   }
 mouseClick() {
-    if (this.props.meltdown && this.props.func < 5) {
-      this.dispatch(locChange('badending'))
+  console.log(this.props.func)
+    if (this.props.meltdown && this.props.func.length < 5) {
+      //bad
       this.dispatch(updateLog(this.lostMsg))
-    } else if (this.props.meltdown && this.props.func == 5) {
-      this.dispatch(locChange('happyending'))
+    } else if (this.props.meltdown && this.props.func.length == 5) {
+      // good
       this.dispatch(updateLog(this.wonMsg))
     } else {
       this.dispatch(updateLog(this.tryagain))
