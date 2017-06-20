@@ -76,7 +76,7 @@ class ReactCore extends React.Component {
   renderReactEscapeDoor(redoor) {
     return (<img
       src={redoor.img} style={redoor.roomStyle}
-      onClick={() => redoor.mouseClick('click')}
+      onClick={ => redoor.mouseClick(this.props.meltdown, this.props.doorJammed, this.props.activeItem, this.props.tries)}
       onMouseOver={redoor.mouseOver}
       onMouseOut={redoor.mouseOff}/>
     )
@@ -137,6 +137,7 @@ class ReactCore extends React.Component {
 
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     location: state.location,
     inventory: state.inventory,
@@ -146,7 +147,9 @@ const mapStateToProps = (state) => {
     loggedIn: state.loggedIn,
     consolePopUp: state.consolePopUp,
     branch: state.branch,
-    meltdown: state.meltdown
+    meltdown: state.meltdown,
+    doorJammed: state.doorJammed,
+    tries: state.tries
   }
 }
 
