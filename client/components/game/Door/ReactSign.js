@@ -6,7 +6,7 @@ export default class ReactSign extends Door {
   constructor (dispatch) {
     super (dispatch)
     this.img = 'images/items/ReactSign.png'
-    this.exitMsg = 'Welcome to the React Room'
+    this.exitMsg = "You've reached the React Core! Hurry!"
     this.error = 'AuthBot: "You are not AUTHORISED to pass."'
     this.name = 'reactSign'
     this.nextLoc = 'reactcore'
