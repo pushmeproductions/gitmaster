@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import {updateLog} from '../../../actions/currentLog'
+import {goodEnding} from '../../../actions/ending'
 
 class EscapePanel extends React.Component {
   constructor(props) {
@@ -20,32 +21,46 @@ class EscapePanel extends React.Component {
     left: '23%',
     zIndex: 5
     }
+    this.state = {
+      location: this.props.location,
+      meltdown: this.props.meltdown,
+      func: this.props.func,
+      goodEnding: this.props.goodEnding
+    }
   }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      goodEnding: nextProps.goodEnding
+    })
+  }
+
+
 mouseClick() {
+  console.log(this.props)
     if (this.props.meltdown && this.props.func.length < 5) {
-      //bad
       this.dispatch(updateLog(this.lostMsg))
+      //bad
+      window.location.href = '/#/end'
+      console.log("this should be bad ending")
+
     } else if (this.props.meltdown && this.props.func.length == 5) {
+      this.dispatch(goodEnding())
+      window.location.href = '/#/end'
+      console.log("this should be good ending");
       // good
       this.dispatch(updateLog(this.wonMsg))
     } else {
       this.dispatch(updateLog(this.tryagain))
     }
   }
+
   render(){
-    if(this.props.meltdown){
-      return (<Link to='/end'><img
-        src={this.img}
-        style={this.roomStyle}
-        onClick={() => this.mouseClick()}/></Link>
-      )
-    } else {
-      return (<img
-        src={this.img}
-        style={this.roomStyle}
-        onClick={() => this.mouseClick()}/>
-      )
-    }
+    return (<img id='esc'
+      src={this.img}
+      style={this.roomStyle}
+      onClick={() => this.mouseClick()}/>
+    )
   }
 }
 
@@ -53,9 +68,14 @@ mouseClick() {
     return {
       location: state.location,
       meltdown: state.meltdown,
-      func: state.func
-
+      func: state.func,
+      goodEnding: state.goodEnding
     }
   }
 
 export default connect(mapStateToProps)(EscapePanel)
+//
+// <Link to='/end'><img
+//   src={this.img}
+//   style={this.roomStyle}
+//   onClick={() => this.mouseClick()}/></Link>
