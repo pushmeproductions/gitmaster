@@ -116,7 +116,7 @@ test('Mustache is Clickable', t => {
 })
 test('corridorCell1 is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#cell1').simulate('click' )
+  wrapper.find('#item-corridorCell1').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
@@ -128,7 +128,7 @@ test('corridorCell2 is Clickable', t => {
   <Corridor/>
   </Provider>)
 
-  wrapper.find('#cell2').simulate('click' )
+  wrapper.find('#item-corridorCell2').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
