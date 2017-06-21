@@ -2,7 +2,6 @@ import React from 'react'
 
 import Item from './Item'
 import {logIn} from '../../../actions/loggedIn'
-import {activeItem} from '../../../actions/activeItem'
 
 
 export default class ConsolePopUp extends Item {
@@ -28,7 +27,7 @@ export default class ConsolePopUp extends Item {
     }
   }
 
-  render(activeItem, loggedIn) {    
+  render(activeItem, loggedIn) {
     return ( <img id='popup'
       src={loggedIn ?
       this.openimg : this.lockimg}
