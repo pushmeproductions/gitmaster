@@ -16,6 +16,7 @@ class Corridor extends React.Component {
     this.reactSign = new ReactSign(this.props.dispatch)
     this.staffRoom = new StaffRoom(this.props.dispatch)
     this.mo = new Moustache(this.props.dispatch)
+    this.authbot = new Authbot(this.props.dispatch)
     this.roomItems = [
       new CorridorCell1(this.props.dispatch),
       new CorridorCell2(this.props.dispatch),
@@ -28,11 +29,6 @@ class Corridor extends React.Component {
     }
   }
 
-  componentWillMount(props) {
-    this.setState({
-      authbot: new Authbot(this.props.dispatch),
-    })
-  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -41,30 +37,6 @@ class Corridor extends React.Component {
       func: nextProps.func
     })
   }
-
-
-  renderAuthbot(bot) {
-    return (<img id='authbot'
-      src={bot.img}
-      style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
-      onClick={() => bot.mouseClick(this.props.activeItem)}
-      onMouseOver={bot.mouseOver}
-      onMouseLeave={bot.mouseOff}/>
-    )
-  }
-
- //  renderMo(mo) {
- //    if (this.state.worldItems.indexOf(mo.name) > -1) {
- //      return (<img id='mo'
- //        src={mo.img}
- //        style={this.props.authorised ?
- //        mo.idleStyle : mo.activeStyle}
- //        onClick={() => mo.mouseClick()}
- //        onMouseOver={mo.mouseOver}
- //        onMouseLeave={mo.mouseOff}/>
- //      )
- //    }
- // }
 
   renderItems() {
     return this.roomItems.map((item, i) => {
@@ -80,7 +52,7 @@ class Corridor extends React.Component {
         <img className='background-img' src='images/backgrounds/Corridor.png'/>
           {this.reactSign.render(this.props.authorised)}
           {this.staffRoom.render(this.props.authorised)}
-          {this.renderAuthbot(this.state.authbot)}
+          {this.authbot.render(this.props.authorised, this.props.activeItem)}
           {this.renderItems()}
           {this.mo.render(this.state.worldItems, this.props.authorised)}
         )
@@ -91,13 +63,10 @@ class Corridor extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.location,
     authorised: state.authorised,
-    inventory: state.inventory,
     activeItem: state.activeItem,
     worldItems: state.worldItems,
-    func: state.func,
-    meltdown: state.meltdown
+    func: state.func
   }
 }
 
