@@ -68,6 +68,6 @@ class EscapePanel extends React.Component {
     }
   }
 
-EscapePanel.propTypes = { func: React.PropTypes.array, meltdown: React.PropTypes.boolean, dispatch: React.PropTypes.object, location: React.PropTypes.string, goodEnding: React.PropTypes.object};
+EscapePanel.propTypes = { func: React.PropTypes.array, meltdown: React.PropTypes.boolean, dispatch: React.PropTypes.object, location: React.PropTypes.string, goodEnding: React.PropTypes.object }
 
 export default connect(mapStateToProps)(EscapePanel)
