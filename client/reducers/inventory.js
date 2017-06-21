@@ -4,6 +4,8 @@ function inventory (state = [], action) {
       return [...state, action.item]
     case 'DROP_INV':
       return state.filter(item => item !== action.item)
+    case 'INITIALISE':
+      return []
     default:
       return state
   }

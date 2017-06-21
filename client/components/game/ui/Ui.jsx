@@ -5,12 +5,18 @@ import Inventory from './Inventory'
 import FunctionCode from './FunctionCode'
 import BackButton from './BackButton'
 
+import {initialise} from '../../../actions/gameSetup'
+
 class Ui extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
       currentLog: 'You awaken in a cell..'
     }
+  }
+
+  componentWillMount () {
+    this.props.dispatch(initialise())
   }
 
   componentWillReceiveProps (nextProps) {

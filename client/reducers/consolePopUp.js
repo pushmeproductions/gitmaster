@@ -4,6 +4,8 @@ function consolePopUp (state = false, action) {
       return true
     case 'CLOSE_CONSOLE':
       return false
+    case 'INITIALISE':
+      return false
     default:
       return state
   }
