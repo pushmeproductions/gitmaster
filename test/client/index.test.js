@@ -24,7 +24,7 @@ import BackButton from '../../client/components/game/ui/BackButton'
 
 test('UI is rendering in game', t => {
   const wrapper = mount(<Provider store={store}><Game /></Provider>)
-  t.is(wrapper.find('.ui-container img[src="images/backgrounds/UI.png"]').exists(), true)
+  t.is(wrapper.find('.ui-container img[src="images/backgrounds/UI-view1.png"]').exists(), true)
   t.is(wrapper.find('.ui-container img[src="images/function/empty/line1.png"]').exists(), true)
   t.is(wrapper.find('.ui-container img[src="images/function/empty/line3.png"]').exists(), true)
   t.is(wrapper.find('.ui-container img[src="images/function/empty/line5.png"]').exists(), true)
