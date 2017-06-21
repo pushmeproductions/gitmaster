@@ -1,6 +1,7 @@
 import './setup-dom'
 import React from 'react'
 import test from 'ava'
+import sinon from 'sinon'
 import { shallow, mount } from 'enzyme'
 import store from '../../client/store'
 import {Provider} from 'react-redux'
@@ -115,10 +116,17 @@ test('corridorCell1 is Clickable', t => {
 })
 
 test('corridorCell2 is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  sinon.stub(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Corridor/>
+  </Provider>)
+
   wrapper.find('#cell2').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
+
 
 test('ReactSign is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
@@ -168,9 +176,59 @@ test('Items are rendering in Cell', t => {
   t.is(wrapper.find(".cellItemsDiv").exists(), true)
 })
 
+
+test('ReactEscapeDoor is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#escapedoor').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('ConsoleScreen is Clickable', t => {
+  sinon.mock(store, 'dispatch');
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#consolescreen').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('The push button is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#button').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
 //escapepod Tests
 test('escape background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Escapepod /></Provider>)
   t.is(wrapper.find('.window').contains(<img
   className='background-img' src='images/backgrounds/EscapePod.png'/>), true)
+
+})
+
+test('The ESC button is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Escapepod/>
+  </Provider>)
+
+  wrapper.find('#esc').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
 })
