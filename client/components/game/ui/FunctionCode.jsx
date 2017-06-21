@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 
-class Function extends React.Component {
+class FunctionCode extends React.Component {
   constructor(props) {
     super(props)
     this.img1 = 'images/function/empty/line1.png'
@@ -55,4 +55,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(Function)
+export default connect(mapStateToProps)(FunctionCode)

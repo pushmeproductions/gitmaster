@@ -30,9 +30,9 @@
   color: white;
   z-index: 2;
   left: 50%;
-  margin-left: -160px;
-  top: 550px;
-  width: 360px;
+  margin-left: -395px;
+  top: 543px;
+  width: 380px;
 }
 
 #function {
@@ -40,18 +40,18 @@
   color: white;
   z-index: 2;
   left: 50%;
-  margin-left: -427px;
-  top: 523px;
+  margin-left: 253px;
+  top: 205px;
 }
 
   #inventory {
     position: absolute;
     z-index: 2;
     left: 50%;
-    margin-left: 258px;
-    top: 132px;
-    width: 194px;
-    height: 500px;
+    margin-left: 243px;
+    top: 321px;
+    width: 225px;
+    height: 318px;
   }
 
 /* backbutton */
@@ -59,8 +59,8 @@
   #backbtn{
     position: absolute;
     left: 50%;
-    margin-left: 258px;
-    top: 84%;
+    margin-left: 91px;
+    top: 540px;
     width: 85px;
     height: 75px;
     z-index: 5;
@@ -69,7 +69,7 @@
 /* home page */
 
 body {
-  background-color: darkGrey;
+  background-color: #aca5a7;
 }
 
 .home-container {
@@ -135,5 +135,22 @@ background-size: 30px;*/
 background-color: #F5F5DC;
 border: 3px  #F5F5DC solid;
 z-index: 8;
-border-radius: 50%; 
+border-radius: 50%;
+}
+
+/*ENDSCREEN*/
+.end-container {
+  text-align: center;
+  margin: 15vh;
+  font-family: 'Orbitron';
+  letter-spacing: 1.8px;
+}
+
+.ending-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer {
+  padding: 10px;
 }

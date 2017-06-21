@@ -2,8 +2,10 @@ import React from 'react'
 import {connect} from 'react-redux'
 
 import Inventory from './Inventory'
-import Function from './Function'
+import FunctionCode from './FunctionCode'
 import BackButton from './BackButton'
+
+import {initialise} from '../../../actions/gameSetup'
 
 class Ui extends React.Component {
   constructor (props) {
@@ -11,6 +13,10 @@ class Ui extends React.Component {
     this.state = {
       currentLog: 'You awaken in a cell..'
     }
+  }
+
+  componentWillMount () {
+    this.props.dispatch(initialise())
   }
 
   componentWillReceiveProps (nextProps) {
@@ -23,9 +29,9 @@ class Ui extends React.Component {
   render () {
     return (
       <div className='ui-container'>
-        <img id='overlay' src='images/backgrounds/UI.png' />
+        <img id='overlay' src='images/backgrounds/UI-view1.png' />
         <Inventory />
-        <Function />
+        <FunctionCode />
         <BackButton />
         <div id='log'>
           {this.state.currentLog}

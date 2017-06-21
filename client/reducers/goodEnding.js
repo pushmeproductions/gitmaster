@@ -1,12 +1,12 @@
-function loggedIn (state = false, action) {
+function goodEnding (state = false, action) {
   switch(action.type) {
-    case 'LOG_IN':
+    case 'GOOD_ENDING':
       return true
     case 'INITIALISE':
       return false
     default:
       return state
-    }
+  }
 }
 
-export default loggedIn
+export default goodEnding

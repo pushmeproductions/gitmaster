@@ -7,8 +7,9 @@ export default class Locker1 extends ThingGiver {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/Locker1.png'
-    this.msg = 'You find a crowbar in here.'
+    this.msg = 'You find a crowbar'
     this.name = 'locker1'
+    this.id = 'locker1'
     this.item = new Crowbar (this.dispatch)
     this.roomStyle = {
       width: '80px',

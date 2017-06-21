@@ -1,4 +1,5 @@
 import CodeGiver from './CodeGiver'
+import React from 'react'
 
 
 export default class Moustache extends CodeGiver {
@@ -7,7 +8,7 @@ export default class Moustache extends CodeGiver {
     this.name = 'moustache'
     this.code = 5
     this.img = 'images/items/Mo.png'
-    this.msg = 'a curly boy has come'
+    this.msg = 'You find some code'
     this.activeStyle = {
       width: '58px',
       height: '14px',
@@ -26,4 +27,16 @@ export default class Moustache extends CodeGiver {
     }
   }
 
+render (worldItems, authorised){
+  if (worldItems.indexOf(this.name) > -1) {
+    return (<img id='mo'
+    src={this.img}
+    style={authorised ?
+      this.idleStyle : this.activeStyle}
+      onClick={() => this.mouseClick()}
+      onMouseOver={this.mouseOver}
+      onMouseLeave={this.mouseOff}/>
+    )
+  }
+}
 }

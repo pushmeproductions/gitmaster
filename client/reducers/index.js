@@ -14,6 +14,7 @@ import branch from './branch'
 import meltdown from './meltdown'
 import doorJammed from './doorJammed'
 import tries from './tries'
+import goodEnding from './goodEnding'
 
 export default combineReducers({
   inventory,
@@ -29,5 +30,6 @@ export default combineReducers({
   branch,
   meltdown,
   doorJammed,
-  tries
+  tries,
+  goodEnding
 })

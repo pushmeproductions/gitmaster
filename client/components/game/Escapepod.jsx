@@ -7,23 +7,16 @@ import EscapePanel from './items/EscapePanel'
 class Escapepod extends React.Component {
   constructor(props) {
     super(props)
-
-    this.state = {
-    }
   }
 
-
   render() {
-      return (
-        <div className='window'>
-          <img className='background-img' src='images/backgrounds/EscapePod.png'/>
-            <EscapePanel />
-        </div>
+    return (
+      <div className='window'>
+        <img className='background-img' src='images/backgrounds/EscapePod.png'/>
+        <EscapePanel />
+      </div>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-return {state}
-}
-export default connect(mapStateToProps)(Escapepod)
+export default connect()(Escapepod)

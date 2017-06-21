@@ -1,7 +1,8 @@
+import React from 'react'
+
 import Door from './Door'
 
 import {updateLog} from '../../../actions/currentLog'
-// import {locChange} from '../../../actions/door'
 import {jamDoor, countDown} from '../../../actions/reDoor'
 
 
@@ -15,6 +16,7 @@ export default class ReactEscapeDoor extends Door {
     this.nextLoc = 'escapepod'
     this.img = 'images/items/ReactEscapeDoor.png'
     this.imgjam = 'images/items/JammedDoor.png'
+    this.imgMeltdown = 'images/items/MeltdownDoor.png'
     this.roomStyle = {
       width: '37.5px',
       height: '81px',
@@ -30,13 +32,29 @@ export default class ReactEscapeDoor extends Door {
       super.mouseClick()
     } else if (activeItem == 'crowbar') {
       this.dispatch(jamDoor())
-      this.dispatch(updateLog('You stick the crowbar in the doorway. I hope this holds!.'))
+      this.dispatch(updateLog('You stick the crowbar in the doorway and hope it holds'))
     } else if (tries > 0) {
       this.dispatch(countDown())
-      this.dispatch(updateLog('The door looks like it\'s about to come down on you! Perhaps use something to jam it open.'))
+      this.dispatch(updateLog('The door looks like it\'s about to come down on you! If only you had something to jam it open...'))
     } else {
-
+      window.location.href = '/#/end'
     }
   }
 
+  correctDoorImg (meltdown, doorJammed) {
+    if(meltdown) {
+      return doorJammed ? this.imgjam : this.imgMeltdown
+    } else {
+      return this.img
+    }
+  }
+
+  render(doorJammed, meltdown, activeItem, tries){
+    return(<img id='escapedoor'
+      src={this.correctDoorImg(meltdown, doorJammed)} style={this.roomStyle}
+      onClick={() => this.mouseClick(meltdown, doorJammed, activeItem, tries)}
+      onMouseOver={this.mouseOver}
+      onMouseOut={this.mouseOff}/>
+    )
+  }
 }

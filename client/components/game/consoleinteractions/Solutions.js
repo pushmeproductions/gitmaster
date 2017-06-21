@@ -9,9 +9,9 @@ export default class SolutionBranch extends ConsoleInteraction {
     this.branch = 'solution'
     this.style = {
       width: '60px',
-      height: '35px',
+      height: '25px',
       position: 'absolute',
-      top: '56%',
+      top: '57%',
       left: '55%',
       zIndex: 9
     }
