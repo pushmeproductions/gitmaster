@@ -24,6 +24,14 @@ import activeItem from '../../client/reducers/activeItem'
 import {openConsole, closeConsole} from '../../client/actions/consolePopUp'
 import consolePopUp from '../../client/reducers/consolePopUp'
 
+import {funEnding} from '../../client/actions/ending'
+import goodEnding from '../../client/reducers/goodEnding'
+
+test('The state in ending starts as false', t => {
+  const nextState = goodEnding(false, funEnding())
+  t.is(nextState, true)
+})
+
 test('The console popup opens, state is true', t => {
   const nextState = consolePopUp(true, openConsole())
   t.is(nextState, true)

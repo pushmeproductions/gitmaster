@@ -14,6 +14,7 @@ import Corridor from '../../client/components/game/Corridor'
 import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
 import Escapepod from '../../client/components/game/Escapepod'
+import Endscreen from '../../client/components/Endscreen'
 
 //Game
 
@@ -25,6 +26,7 @@ test('UI is rendering in game', t => {
   t.is(wrapper.find('.ui-container img[src="images/function/empty/line5.png"]').exists(), true)
 
 })
+
 
 //Homepage TESTS
 
@@ -157,15 +159,15 @@ test('Staffroom items rendering', t => {
 
 test('Lockers in the Staffroom are clickable', t => {
   const wrapper = mount(<Provider store={store}><Staffroom/></Provider>)
-  wrapper.find('#locker1').simulate('click')
-  wrapper.find('#locker2').simulate('click')
-  wrapper.find('#locker3').simulate('click')
+  wrapper.find('#item-locker1').simulate('click')
+  wrapper.find('#item-locker2').simulate('click')
+  wrapper.find('#item-locker3').simulate('click')
   t.is(wrapper.find(".window").exists(), true)
 })
 
 test('Stafflog is clickable', t => {
   const wrapper = mount(<Provider store={store}><Staffroom/></Provider>)
-  wrapper.find('#staff-log').simulate('click' )
+  wrapper.find('#item-stafflog').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
@@ -238,4 +240,11 @@ test('The ESC button is Clickable', t => {
 
   wrapper.find('#esc').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
+})
+
+//Ending Tests
+
+test.skip('End Screen is rendering correctly', t => {
+  const wrapper = mount(<Provider store={store}><Endscreen /></Provider>)
+  t.is(wrapper.find('.ending-picture img[src="images/backgrounds/GoodEnding.png"]').exists(), true)
 })
