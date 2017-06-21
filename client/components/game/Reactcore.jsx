@@ -75,7 +75,6 @@ class ReactCore extends React.Component {
     )
   }
 
-
   renderReactEscapeDoor(redoor, jammed) {
     return (<img id='escapedoor'
       src={jammed ? redoor.imgjam : redoor.img} style={redoor.roomStyle}
