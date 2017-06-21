@@ -8,10 +8,10 @@ export default class Photo extends InventoryItem {
     this.name = 'Photo'
     this.invStyle = {
       width: '78px',
-      height: '75px',
+      height: '78px',
       position: 'absolute',
-      top: '34%',
-      left: '3%',
+      top: '72%',
+      left: '6%',
       zIndex: 5
     }
   }
