@@ -7,7 +7,7 @@ export default class Moustache extends CodeGiver {
     this.name = 'moustache'
     this.code = 5
     this.img = 'images/items/Mo.png'
-    this.msg = 'a curly boy has come'
+    this.msg = 'You find some code'
     this.activeStyle = {
       width: '58px',
       height: '14px',

@@ -9,9 +9,9 @@ export default class Button extends Item {
   constructor(dispatch) {
     super (dispatch)
     this.img = 'images/items/Button.png'
-    this.meltdownmsg = 'Noooo....what were you thinking? NEVER push to master! ..Meltdown initiated'
+    this.meltdownmsg = 'PUSH TO MASTER...MELTDOWN INITIATED...10...9...8...'
     this.name = 'button'
-    this.safemsg = 'Well done...you obviously know what will happen if you push to master'
+    this.safemsg = 'Ouch'
     this.roomStyle = {
       width: '34px',
       height: '32px',

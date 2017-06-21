@@ -9,7 +9,7 @@ class EscapePanel extends React.Component {
   constructor(props) {
   super(props)
   this.dispatch = props.dispatch
-  this.tryagain = 'Have you been been trying'
+  this.tryagain = 'ERROR: FUNCTION INCOMPLETE'
   this.lostMsg = "Hahaha you have been defeat by SVN!!"
   this.wonMsg = 'Wow you defeated the evil SVN!'
   this.img = 'images/items/EscKey.png'

@@ -6,7 +6,7 @@ export default class Locker2 extends CodeGiver {
 
     this.code = 4
     this.img = 'images/items/Locker2.png'
-    this.msg = 'You find some code in here.'
+    this.msg = 'You find some code'
     this.name = 'locker2'
     this.roomStyle = {
       width: '80px',

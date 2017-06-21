@@ -13,7 +13,7 @@ export default class CellDoor extends Door {
     this.imgOpen = 'images/items/OpenDoor.png'
     this.nextLoc = 'corridor'
     this.lockmsg = 'The door is locked...'
-    this.openmsg = 'Spark! Flash! The door melts before your very eyes'
+    this.openmsg = 'The door melts before your very eyes!'
     this.name = 'cellDoor'
     this.exitMsg = 'You find yourself in the corridor.'
     this.error = "This item can't open the door...try another one"
