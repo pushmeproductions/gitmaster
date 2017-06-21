@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Item from './Item'
 import {updateLog} from '../../../actions/currentLog'
 import {openConsole} from '../../../actions/consolePopUp'
@@ -21,5 +23,15 @@ export default class ConsoleScreen extends Item {
 
   mouseClick(){
     this.dispatch(openConsole())
+  }
+
+  render() {
+    return(
+      <img id='consolescreen'
+        src={this.img} style={this.roomStyle}
+        onClick={() => this.mouseClick()}
+        onMouseOver={this.mouseOver}
+        onMouseOut={this.mouseOff}/>
+    )
   }
 }

@@ -1,6 +1,9 @@
+import React from 'react'
+
 import Item from './Item'
 import {updateLog} from '../../../actions/currentLog'
 import {meltdown} from '../../../actions/meltdown'
+
 
 export default class Button extends Item {
   constructor(dispatch) {
@@ -24,5 +27,14 @@ export default class Button extends Item {
       this.dispatch(meltdown())
       this.dispatch(updateLog(this.meltdownmsg))
   } else {this.dispatch(updateLog(this.safemsg))}
+  }
+
+  render(branch) {
+    return (<img id='button'
+      src={this.img} style={this.roomStyle}
+      onClick={() => this.mouseClick(branch)}
+      onMouseOver={this.mouseOver}
+      onMouseOut={this.mouseOff}/>
+    )
   }
 }
