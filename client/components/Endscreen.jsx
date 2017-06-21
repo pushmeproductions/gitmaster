@@ -11,6 +11,10 @@ class Endscreen extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    goodEnding: nextProps.goodEnding
+  }
+
   renderCorrectEndImage() {
     return (
       <img className='ending-picture' src={this.props.goodEnding ? 'images/backgrounds/GoodEnding.png'
