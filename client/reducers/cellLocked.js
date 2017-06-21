@@ -4,6 +4,8 @@ function cellLocked (state = true, action) {
       return false
     case 'LOCK_CELL':
       return true
+    case 'INITIALISE':
+      return true
     default:
       return state
   }

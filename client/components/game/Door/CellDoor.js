@@ -1,7 +1,6 @@
 import Door from './Door'
 import React from 'react'
 
-
 import {deactivateItem} from '../../../actions/activeItem'
 import {openCell} from '../../../actions/door'
 import {updateLog} from '../../../actions/currentLog'
@@ -28,17 +27,16 @@ export default class CellDoor extends Door {
     }
   }
 
-
   mouseClick(activeItem, cellLocked) {
     if(activeItem == 'bucket') {
       this.dispatch(updateLog(this.openmsg))
       this.dispatch(openCell())
       this.dispatch(deactivateItem())
     } else if (!cellLocked) {
-       super.mouseClick()
+      super.mouseClick()
     } else {
-        this.dispatch(updateLog(this.lockmsg))
-        if(activeItem) this.dispatch(updateLog(this.error))
+      this.dispatch(updateLog(this.lockmsg))
+      if(activeItem) this.dispatch(updateLog(this.error))
     }
   }
 
