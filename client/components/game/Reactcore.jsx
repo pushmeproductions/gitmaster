@@ -23,7 +23,8 @@ class ReactCore extends React.Component {
       consolePopUp: this.props.consolePopUp,
       loggedIn: this.props.loggedIn,
       branch: this.props.branch,
-      doorJammed: this.props.doorJammed
+      doorJammed: this.props.doorJammed,
+      meltdown: this.props.meltdown
     }
   }
 
@@ -52,9 +53,9 @@ class ReactCore extends React.Component {
       consolePopUp: nextprops.consolePopUp,
       loggedIn: nextprops.loggedIn,
       branch: nextprops.branch,
-      doorJammed: nextprops.doorJammed
+      doorJammed: nextprops.doorJammed,
+      meltdown: nextprops.meltdown
     })
-
   }
 
   renderButton(button) {
@@ -75,9 +76,17 @@ class ReactCore extends React.Component {
     )
   }
 
-  renderReactEscapeDoor(redoor, jammed) {
+  correctReactDoor(door, jammed, meltdown) {
+    if(meltdown){
+      return jammed ? door.imgjam : door.imgMeltdown
+    } else {
+      return door.img
+    }
+  }
+
+  renderReactEscapeDoor(redoor, jammed, meltdown) {
     return (<img id='escapedoor'
-      src={jammed ? redoor.imgjam : redoor.img} style={redoor.roomStyle}
+      src={this.correctReactDoor(redoor, jammed, meltdown)} style={redoor.roomStyle}
       onClick={() => redoor.mouseClick(this.props.meltdown,this.props.doorJammed, this.props.activeItem, this.props.tries)}
       onMouseOver={redoor.mouseOver}
       onMouseOut={redoor.mouseOff}/>
@@ -126,7 +135,7 @@ class ReactCore extends React.Component {
         <img className='background-img' src='images/backgrounds/Reactcore.png'/>
         {this.renderButton(this.state.button)}
         {this.renderConsoleScreen(this.state.consolescreen)}
-        {this.renderReactEscapeDoor(this.state.reactescapedoor, this.state.doorJammed)}
+        {this.renderReactEscapeDoor(this.state.reactescapedoor, this.state.doorJammed, this.state.meltdown)}
         {this.props.consolePopUp && this.renderConsolePopUp(this.state.consolepopup)}
         {this.props.consolePopUp && this.renderCloseConsoleButton(this.state.closebutton)}
         {this.props.consolePopUp && this.props.loggedIn && this.renderBranches(this.state.branches)}
