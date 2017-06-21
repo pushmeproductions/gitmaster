@@ -35,7 +35,9 @@ class EscapePanel extends React.Component {
     })
   }
 
-  mouseClick() {
+
+mouseClick() {
+
     if (this.props.meltdown && this.props.func.length < 5) {
       this.dispatch(updateLog(this.lostMsg))
       window.location.href = '/#/end'
