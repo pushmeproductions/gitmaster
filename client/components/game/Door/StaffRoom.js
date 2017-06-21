@@ -7,7 +7,7 @@ export default class Staffroom extends Door {
     super (dispatch)
     this.img = 'images/items/StaffroomSign.png'
     this.exitMsg = 'The Staff Room'
-    this.error = 'AuthBot: "Sorry you are not AUTHORISED to pass."'
+    this.error = 'AuthBot: "You are not AUTHORISED to pass."'
     this.name = 'staffroom'
     this.nextLoc = 'staffroom'
     this.roomStyle = {

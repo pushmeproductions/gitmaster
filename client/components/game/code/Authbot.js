@@ -13,10 +13,10 @@ export default class Authbot extends CodeGiver {
     super (dispatch)
     this.code = 3
     this.img = 'images/items/AuthBot.png'
-    this.msg = 'Authbot: I /moustache/ you to AUTHORISE yourself'
+    this.msg = 'Authbot: I MOUSTACHE you to authorise yourself'
     this.msg2 = 'Authbot: "AUTHORISE YOURSELF"'
     this.msg3 = 'Authbot puts you back in your cell'
-    this.authmsg = 'Authbot smiles benignly and lets you pass and...gives you some code?'
+    this.authmsg = 'Authbot smiles benignly, lets you pass and...gives you some code?'
     this.name = 'authbot'
     this.chances = 2
     this.activeStyle = {
