@@ -1,4 +1,4 @@
-export const goodEnding = () => {
+export const funEnding = () => {
   return {
     type: 'GOOD_ENDING'
   }
