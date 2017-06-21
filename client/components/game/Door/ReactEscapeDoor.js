@@ -16,6 +16,7 @@ export default class ReactEscapeDoor extends Door {
     this.nextLoc = 'escapepod'
     this.img = 'images/items/ReactEscapeDoor.png'
     this.imgjam = 'images/items/JammedDoor.png'
+    this.imgMeltdown = 'images/items/MeltdownDoor.png'
     this.roomStyle = {
       width: '37.5px',
       height: '81px',

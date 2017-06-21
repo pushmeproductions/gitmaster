@@ -11,8 +11,8 @@ export default class Cookie extends InventoryItem {
       width: '85px',
       height: '65px',
       position: 'absolute',
-      top: '18%',
-      left: '51%',
+      top: '40%',
+      left: '55%',
       zIndex: 5
     }
   }

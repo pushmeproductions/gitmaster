@@ -1,4 +1,5 @@
 import CodeGiver from './CodeGiver'
+import React from 'react'
 
 
 export default class Moustache extends CodeGiver {
@@ -26,4 +27,16 @@ export default class Moustache extends CodeGiver {
     }
   }
 
+render (worldItems, authorised){
+  if (worldItems.indexOf(this.name) > -1) {
+    return (<img id='mo'
+    src={this.img}
+    style={authorised ?
+      this.idleStyle : this.activeStyle}
+      onClick={() => this.mouseClick()}
+      onMouseOver={this.mouseOver}
+      onMouseLeave={this.mouseOff}/>
+    )
+  }
+}
 }

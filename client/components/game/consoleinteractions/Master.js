@@ -9,7 +9,7 @@ export default class MasterBranch extends ConsoleInteraction {
     this.branch = 'master'
     this.style = {
       width: '60px',
-      height: '35px',
+      height: '25px',
       position: 'absolute',
       top: '65%',
       left: '49%',

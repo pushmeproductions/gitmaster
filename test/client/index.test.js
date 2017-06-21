@@ -5,6 +5,7 @@ import sinon from 'sinon'
 import { shallow, mount } from 'enzyme'
 import store from '../../client/store'
 import {Provider} from 'react-redux'
+import {MemoryRouter} from 'react-router'
 
 import Homepage from '../../client/components/Homepage'
 import App from '../../client/components/App'
@@ -15,6 +16,9 @@ import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
 import Escapepod from '../../client/components/game/Escapepod'
 import Endscreen from '../../client/components/Endscreen'
+import Ui from '../../client/components/game/ui/Ui'
+import BackButton from '../../client/components/game/ui/BackButton'
+
 
 //Game
 
@@ -103,7 +107,7 @@ test('Corridor background image rendering', t => {
 })
 test('Staffroom sign is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#staffroom').simulate('click' )
+  wrapper.find('#sign-staffroom').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 test('Authbot is Clickable', t => {
@@ -118,7 +122,7 @@ test('Mustache is Clickable', t => {
 })
 test('corridorCell1 is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#cell1').simulate('click' )
+  wrapper.find('#item-corridorCell1').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
@@ -130,14 +134,14 @@ test('corridorCell2 is Clickable', t => {
   <Corridor/>
   </Provider>)
 
-  wrapper.find('#cell2').simulate('click' )
+  wrapper.find('#item-corridorCell2').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
 
 test('ReactSign is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#reactsign').simulate('click' )
+  wrapper.find('#sign-reactSign').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
@@ -183,6 +187,33 @@ test('Reactcore room items are rendering', t => {
   t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]').exists(), true)
   t.is(wrapper.find('.window img[src="images/items/Button.png"]').exists(), true)
   t.is(wrapper.find('.window img[src="images/items/ReactEscapeDoor.png"]').exists(), true)
+})
+
+test('Backbutton renders in UI', t => {
+  const wrapper = mount(<Provider store={store}><Ui /></Provider>)
+  t.is(wrapper.find('.ui-container img[src="images/backgrounds/BackButton.png"]').exists(), true)
+})
+
+test('Backbutton', t => {
+  const wrapper = mount(<Provider store={store}><BackButton /></Provider>)
+  t.is(wrapper.find('#backbtn img[src="images/backgrounds/BackButton.png"]').exists(), true)
+})
+
+test('ConsoleScreen', t => {
+  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]').exists(), true)
+})
+
+test('ReactEscapeDoor is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#escapedoor').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
 })
 
 
@@ -244,7 +275,17 @@ test('The ESC button is Clickable', t => {
 
 //Ending Tests
 
-test.skip('End Screen is rendering correctly', t => {
-  const wrapper = mount(<Provider store={store}><Endscreen /></Provider>)
-  t.is(wrapper.find('.ending-picture img[src="images/backgrounds/GoodEnding.png"]').exists(), true)
+test('Restart button rendering', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.start-button').text(), 'Play Again')
+})
+
+test('Endscreen footer is rendering', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.footer').text(), 'A Push Me Productions Presentation')
+})
+
+test('The default end screen image renders', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.end-container img[src="images/backgrounds/BadEnding.png"]').exists(), true)
 })

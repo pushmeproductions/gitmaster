@@ -35,7 +35,8 @@ class ReactCore extends React.Component {
       consolePopUp: this.props.consolePopUp,
       loggedIn: this.props.loggedIn,
       branch: this.props.branch,
-      doorJammed: this.props.doorJammed
+      doorJammed: this.props.doorJammed,
+      meltdown: this.props.meltdown
     }
   }
 
@@ -50,10 +51,11 @@ class ReactCore extends React.Component {
       consolePopUp: nextprops.consolePopUp,
       loggedIn: nextprops.loggedIn,
       branch: nextprops.branch,
-      doorJammed: nextprops.doorJammed
+      doorJammed: nextprops.doorJammed,
+      meltdown: nextprops.meltdown
     })
-
   }
+
 
   renderBranches(branches) {
     return(
