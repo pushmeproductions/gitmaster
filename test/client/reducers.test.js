@@ -21,6 +21,27 @@ import func from '../../client/reducers/function'
 import {activateItem, deactivateItem} from '../../client/actions/activeItem'
 import activeItem from '../../client/reducers/activeItem'
 
+import {openConsole, closeConsole} from '../../client/actions/consolePopUp'
+import consolePopUp from '../../client/reducers/consolePopUp'
+
+import {funEnding} from '../../client/actions/ending'
+import goodEnding from '../../client/reducers/goodEnding'
+
+test('The state in ending starts as false', t => {
+  const nextState = goodEnding(false, funEnding())
+  t.is(nextState, true)
+})
+
+test('The console popup opens, state is true', t => {
+  const nextState = consolePopUp(true, openConsole())
+  t.is(nextState, true)
+})
+
+test('The console popup closes, state is false', t => {
+  const nextState = consolePopUp(false, closeConsole())
+  t.is(nextState, false)
+})
+
 test('The default state of inventory is an empty array', t => {
   const initialState = inventory(undefined, {})
   t.is(initialState.length, 0)

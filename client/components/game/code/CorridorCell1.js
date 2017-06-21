@@ -5,7 +5,7 @@ export default class CorridorCell1 extends CodeGiver {
     super(dispatch)
     this.img = 'images/items/CorridorCell1.png'
     this.code = 2
-    this.msg = 'The door is locked...maybe there is a key somewhere?'
+    this.msg = 'You rummage around and find some code'
     this.name = 'corridorCell1'
     this.roomStyle = {
       width: '75px',

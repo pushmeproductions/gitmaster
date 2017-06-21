@@ -17,11 +17,11 @@ export default class Skull extends InventoryItem {
       zIndex: 5
     }
     this.invStyle = {
-      width: '79px',
-      height: '73px',
+      width: '90px',
+      height: '90px',
       position: 'absolute',
-      top: '0.5%',
-      left: '3%',
+      top: '2%',
+      left: '3.5%',
       zIndex: 5
     }
   }

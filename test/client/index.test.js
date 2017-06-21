@@ -1,18 +1,35 @@
 import './setup-dom'
 import React from 'react'
 import test from 'ava'
+import sinon from 'sinon'
 import { shallow, mount } from 'enzyme'
 import store from '../../client/store'
 import {Provider} from 'react-redux'
+import {MemoryRouter} from 'react-router'
 
 import Homepage from '../../client/components/Homepage'
 import App from '../../client/components/App'
 import Game from '../../client/components/game/Game'
-// import Ui from '../../client/components/game/ui/Ui'
 import Cell from '../../client/components/game/Cell'
 import Corridor from '../../client/components/game/Corridor'
 import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
+import Escapepod from '../../client/components/game/Escapepod'
+import Endscreen from '../../client/components/Endscreen'
+import Ui from '../../client/components/game/ui/Ui'
+import BackButton from '../../client/components/game/ui/BackButton'
+
+
+//Game
+
+test('UI is rendering in game', t => {
+  const wrapper = mount(<Provider store={store}><Game /></Provider>)
+  t.is(wrapper.find('.ui-container img[src="images/backgrounds/UI-view1.png"]').exists(), true)
+  t.is(wrapper.find('.ui-container img[src="images/function/empty/line1.png"]').exists(), true)
+  t.is(wrapper.find('.ui-container img[src="images/function/empty/line3.png"]').exists(), true)
+  t.is(wrapper.find('.ui-container img[src="images/function/empty/line5.png"]').exists(), true)
+
+})
 
 
 //Homepage TESTS
@@ -44,6 +61,10 @@ test('Cell is rendering correct container & items', t => {
   t.is(wrapper.find(".window").exists(), true)
 
 })
+test('Items are rendering in Cell', t => {
+  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
+  t.is(wrapper.find(".cellItemsDiv").exists(), true)
+})
 
 test('Cell background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
@@ -55,13 +76,74 @@ test('Items are rendering in Cell', t => {
   t.is(wrapper.find(".cellItemsDiv").exists(), true)
 })
 
+test('Skull is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#item-skull').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('Bucket is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#item-bucket').simulate('click')
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('Brick is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#item-brick').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('CellDoor is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
+  wrapper.find('#celldoor').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
 //Corridor Tests
 test('Corridor background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Corridor /></Provider>)
   t.is(wrapper.find('.window').contains(<img
   className='background-img' src='images/backgrounds/Corridor.png'/>), true)
 })
+test('Staffroom sign is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#sign-staffroom').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('Authbot is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#authbot').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('Mustache is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#mo').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+test('corridorCell1 is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#item-corridorCell1').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
 
+test('corridorCell2 is Clickable', t => {
+  sinon.stub(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Corridor/>
+  </Provider>)
+
+  wrapper.find('#item-corridorCell2').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+
+test('ReactSign is Clickable', t => {
+  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
+  wrapper.find('#sign-reactSign').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
 
 
 //Staffroom Tests
@@ -77,10 +159,21 @@ test('Staffroom items rendering', t => {
   t.is(wrapper.find('.window img[src="images/items/Locker1.png"]').exists(), true)
   t.is(wrapper.find('.window img[src="images/items/Locker2.png"]').exists(), true)
   t.is(wrapper.find('.window img[src="images/items/Locker3.png"]').exists(), true)
-
-
 })
 
+test('Lockers in the Staffroom are clickable', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom/></Provider>)
+  wrapper.find('#item-locker1').simulate('click')
+  wrapper.find('#item-locker2').simulate('click')
+  wrapper.find('#item-locker3').simulate('click')
+  t.is(wrapper.find(".window").exists(), true)
+})
+
+test('Stafflog is clickable', t => {
+  const wrapper = mount(<Provider store={store}><Staffroom/></Provider>)
+  wrapper.find('#item-stafflog').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
 
 //Reactcore Tests
 test('Reactcore background image rendering', t => {
@@ -89,68 +182,110 @@ test('Reactcore background image rendering', t => {
   className='background-img' src='images/backgrounds/Reactcore.png'/>), true)
 })
 
-test('Items are rendering in Cell', t => {
-  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
-  t.is(wrapper.find(".cellItemsDiv").exists(), true)
+test('Reactcore room items are rendering', t => {
+  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Button.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/ReactEscapeDoor.png"]').exists(), true)
 })
 
+test('Backbutton renders in UI', t => {
+  const wrapper = mount(<Provider store={store}><Ui /></Provider>)
+  t.is(wrapper.find('.ui-container img[src="images/backgrounds/BackButton.png"]').exists(), true)
+})
 
+test('Backbutton', t => {
+  const wrapper = mount(<Provider store={store}><BackButton /></Provider>)
+  t.is(wrapper.find('#backbtn img[src="images/backgrounds/BackButton.png"]').exists(), true)
+})
 
+test('ConsoleScreen', t => {
+  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]').exists(), true)
+})
 
+test('ReactEscapeDoor is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
 
-// Test Items to see if they are Clickable
-test('Skull is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
-  wrapper.find('#item-skull').simulate('click' )
+  wrapper.find('#escapedoor').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
-test('Bucket is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
-  wrapper.find('#item-bucket').simulate('click' )
+
+test('ReactEscapeDoor is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#escapedoor').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
-test('Brick is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
-  wrapper.find('#item-brick').simulate('click' )
-  t.is(wrapper.find(".window").exists(), true)
-})
-test('CellDoor is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Cell/></Provider>)
-  wrapper.find('#celldoor').simulate('click' )
+test('ConsoleScreen is Clickable', t => {
+  sinon.mock(store, 'dispatch');
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#consolescreen').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
-test('ReactSign is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#reactsign').simulate('click' )
+test('The push button is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#button').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
-test('Staffroom is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#staffroom').simulate('click' )
-  t.is(wrapper.find(".window").exists(), true)
+//escapepod Tests
+test('escape background image rendering', t => {
+  const wrapper = mount(<Provider store={store}><Escapepod /></Provider>)
+  t.is(wrapper.find('.window').contains(<img
+  className='background-img' src='images/backgrounds/EscapePod.png'/>), true)
+
 })
-test('Authbot is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#authbot').simulate('click' )
-  t.is(wrapper.find(".window").exists(), true)
-})
-test('Mustache is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#mo').simulate('click' )
-  t.is(wrapper.find(".window").exists(), true)
-})
-test('corridorCell1 is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#cell1').simulate('click' )
+
+test('The ESC button is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Escapepod/>
+  </Provider>)
+
+  wrapper.find('#esc').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
-test('corridorCell2 is Clickable', t => {
-  const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#cell2').simulate('click' )
-  t.is(wrapper.find(".window").exists(), true)
+//Ending Tests
+
+test('Restart button rendering', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.start-button').text(), 'Play Again')
+})
+
+test('Endscreen footer is rendering', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.footer').text(), 'A Push Me Productions Presentation')
+})
+
+test('The default end screen image renders', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.end-container img[src="images/backgrounds/BadEnding.png"]').exists(), true)
 })

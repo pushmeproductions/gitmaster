@@ -7,7 +7,7 @@ export default class Locker3 extends ThingGiver {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/Locker3.png'
-    this.msg = 'You find a picture of family in here.'
+    this.msg = 'A family photo'
     this.name = 'locker3'
     this.item = new Photo (this.dispatch)
     this.roomStyle = {

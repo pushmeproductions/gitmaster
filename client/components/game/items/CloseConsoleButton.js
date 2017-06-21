@@ -1,3 +1,5 @@
+import React from 'react'
+
 import Item from './Item'
 import {closeConsole} from '../../../actions/consolePopUp'
 
@@ -20,5 +22,16 @@ export default class  CloseConsoleButton extends Item {
 
   mouseClick(){
     this.dispatch(closeConsole())
+  }
+
+  render(){
+    return(<img id={`button-${this.name}`}
+      src={this.img}
+      style={this.style}
+      onClick={() =>
+      this.mouseClick()}
+      onMouseOver={this.mouseOver}
+      onMouseOut={this.mouseOff}/>
+    )
   }
 }
