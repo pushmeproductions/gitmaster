@@ -55,6 +55,10 @@ test('Cell is rendering correct container & items', t => {
   t.is(wrapper.find(".window").exists(), true)
 
 })
+test('Items are rendering in Cell', t => {
+  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
+  t.is(wrapper.find(".cellItemsDiv").exists(), true)
+})
 
 test('Cell background image rendering', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
@@ -65,6 +69,7 @@ test('Items are rendering in Cell', t => {
   const wrapper = mount(<Provider store={store}><Cell /></Provider>)
   t.is(wrapper.find(".cellItemsDiv").exists(), true)
 })
+
 test('Skull is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Cell/></Provider>)
   wrapper.find('#item-skull').simulate('click' )
@@ -171,9 +176,11 @@ test('Reactcore background image rendering', t => {
   className='background-img' src='images/backgrounds/Reactcore.png'/>), true)
 })
 
-test('Items are rendering in Cell', t => {
-  const wrapper = mount(<Provider store={store}><Cell /></Provider>)
-  t.is(wrapper.find(".cellItemsDiv").exists(), true)
+test('Reactcore room items are rendering', t => {
+  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/Button.png"]').exists(), true)
+  t.is(wrapper.find('.window img[src="images/items/ReactEscapeDoor.png"]').exists(), true)
 })
 
 
