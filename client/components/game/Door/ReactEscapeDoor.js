@@ -41,9 +41,17 @@ export default class ReactEscapeDoor extends Door {
     }
   }
 
+  correctDoorImg (meltdown, doorJammed) {
+    if(meltdown) {
+      return doorJammed ? this.imgjam : this.imgMeltdown
+    } else {
+      return this.img
+    }
+  }
+
   render(doorJammed, meltdown, activeItem, tries){
     return(<img id='escapedoor'
-      src={doorJammed ? this.imgjam : this.img} style={this.roomStyle}
+      src={this.correctDoorImg(meltdown, doorJammed)} style={this.roomStyle}
       onClick={() => this.mouseClick(meltdown, doorJammed, activeItem, tries)}
       onMouseOver={this.mouseOver}
       onMouseOut={this.mouseOff}/>
