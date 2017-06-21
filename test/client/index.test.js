@@ -15,6 +15,8 @@ import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
 import Escapepod from '../../client/components/game/Escapepod'
 import Endscreen from '../../client/components/Endscreen'
+import EscapePanel from '../../client/components/game/items/EscapePanel'
+
 
 //Game
 
@@ -246,5 +248,10 @@ test('The ESC button is Clickable', t => {
 
 test.skip('End Screen is rendering correctly', t => {
   const wrapper = mount(<Provider store={store}><Endscreen /></Provider>)
-  t.is(wrapper.find('.ending-picture img[src="images/backgrounds/GoodEnding.png"]').exists(), true)
+  t.is(wrapper.find('. img[src="images/backgrounds/GoodEnding.png"]').exists(), true)
+})
+
+test('Restart button rendering', t => {
+  const wrapper = mount(<Provider store={store}><Endscreen/></Provider>)
+  t.is(wrapper.find('Link').text(), 'Play Again')
 })
