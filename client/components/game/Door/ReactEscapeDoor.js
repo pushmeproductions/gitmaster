@@ -1,7 +1,8 @@
+import React from 'react'
+
 import Door from './Door'
 
 import {updateLog} from '../../../actions/currentLog'
-// import {locChange} from '../../../actions/door'
 import {jamDoor, countDown} from '../../../actions/reDoor'
 
 
@@ -39,4 +40,12 @@ export default class ReactEscapeDoor extends Door {
     }
   }
 
+  render(doorJammed, meltdown, activeItem, tries){
+    return(<img id='escapedoor'
+      src={doorJammed ? this.imgjam : this.img} style={this.roomStyle}
+      onClick={() => this.mouseClick(meltdown, doorJammed, activeItem, tries)}
+      onMouseOver={this.mouseOver}
+      onMouseOut={this.mouseOff}/>
+    )
+  }
 }
