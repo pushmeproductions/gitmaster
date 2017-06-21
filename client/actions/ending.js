@@ -1,5 +1,5 @@
 export const goodEnding = () => {
   return {
-    type: 'GOODENDING'
+    type: 'GOOD_ENDING'
   }
 }

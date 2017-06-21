@@ -19,7 +19,10 @@
   "ava": {
     "require": "babel-register",
     "babel": "inherit",
-    "extensions": [".js", ".jsx"]
+    "extensions": [
+      ".js",
+      ".jsx"
+    ]
   },
   "babel": {
     "presets": [
