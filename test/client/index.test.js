@@ -5,6 +5,7 @@ import sinon from 'sinon'
 import { shallow, mount } from 'enzyme'
 import store from '../../client/store'
 import {Provider} from 'react-redux'
+import {MemoryRouter} from 'react-router'
 
 import Homepage from '../../client/components/Homepage'
 import App from '../../client/components/App'
@@ -15,7 +16,6 @@ import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
 import Escapepod from '../../client/components/game/Escapepod'
 import Endscreen from '../../client/components/Endscreen'
-import EscapePanel from '../../client/components/game/items/EscapePanel'
 
 
 //Game
@@ -246,12 +246,12 @@ test('The ESC button is Clickable', t => {
 
 //Ending Tests
 
-test.skip('End Screen is rendering correctly', t => {
-  const wrapper = mount(<Provider store={store}><Endscreen /></Provider>)
-  t.is(wrapper.find('. img[src="images/backgrounds/GoodEnding.png"]').exists(), true)
+test('Restart button rendering', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.start-button').text(), 'Play Again')
 })
 
-test('Restart button rendering', t => {
-  const wrapper = mount(<Provider store={store}><Endscreen/></Provider>)
-  t.is(wrapper.find('Link').text(), 'Play Again')
+test('Endscreen footer is rendering', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.footer').text(), 'A Push Me Productions Presentation')
 })
