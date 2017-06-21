@@ -16,6 +16,8 @@ import Staffroom from '../../client/components/game/Staffroom'
 import Reactcore from '../../client/components/game/Reactcore'
 import Escapepod from '../../client/components/game/Escapepod'
 import Endscreen from '../../client/components/Endscreen'
+import Ui from '../../client/components/game/ui/Ui'
+import BackButton from '../../client/components/game/ui/BackButton'
 
 
 //Game
@@ -187,6 +189,33 @@ test('Reactcore room items are rendering', t => {
   t.is(wrapper.find('.window img[src="images/items/ReactEscapeDoor.png"]').exists(), true)
 })
 
+test('Backbutton renders in UI', t => {
+  const wrapper = mount(<Provider store={store}><Ui /></Provider>)
+  t.is(wrapper.find('.ui-container img[src="images/backgrounds/BackButton.png"]').exists(), true)
+})
+
+test('Backbutton', t => {
+  const wrapper = mount(<Provider store={store}><BackButton /></Provider>)
+  t.is(wrapper.find('#backbtn img[src="images/backgrounds/BackButton.png"]').exists(), true)
+})
+
+test('ConsoleScreen', t => {
+  const wrapper = mount(<Provider store={store}><Reactcore /></Provider>)
+  t.is(wrapper.find('.window img[src="images/items/ConsoleScreen.png"]').exists(), true)
+})
+
+test('ReactEscapeDoor is Clickable', t => {
+  sinon.mock(store, 'dispatch')
+  const wrapper = mount(
+  <Provider
+    store={store}>
+  <Reactcore/>
+  </Provider>)
+
+  wrapper.find('#escapedoor').simulate('click' )
+  t.is(wrapper.find(".window").exists(), true)
+})
+
 
 test('ReactEscapeDoor is Clickable', t => {
   sinon.mock(store, 'dispatch')
@@ -254,4 +283,9 @@ test('Restart button rendering', t => {
 test('Endscreen footer is rendering', t => {
   const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
   t.is(wrapper.find('.footer').text(), 'A Push Me Productions Presentation')
+})
+
+test('The default end screen image renders', t => {
+  const wrapper = mount(<Provider store={store}><MemoryRouter><Endscreen/></MemoryRouter></Provider>)
+  t.is(wrapper.find('.end-container img[src="images/backgrounds/BadEnding.png"]').exists(), true)
 })
