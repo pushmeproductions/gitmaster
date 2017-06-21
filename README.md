@@ -1,7 +1,7 @@
 # GITMASTER
  
 "It is the year 3000. Organic lifeforms battle for freedom against their robot overlords. The Version Control wars have been
-raging since before you were born. You are the most recent in the line of Gitmasters, and have been captured after your defeat
+raging since before you were born. You are the last in the line of Gitmasters, and have been captured after your defeat
 in the most recent Merge Conflict. 
 You awaken in a cell…"
  
@@ -19,13 +19,13 @@ puzzles to win. The aim of the game is to blow up the React Core and exit the ba
  
 ## MVP
  
-- [ ] Home screen
-- [ ] Interactive Items
-- [ ] An inventory to store and use items from 
-- [ ] Log to read item and story messages
-- [ ] Five different locations: Cell, Corridor, Staffroom, React Core, Escape Pod
-- [ ] Back arrow moves player back to previous area
-- [ ] End screen
+- [x] Home screen
+- [x] Interactive Items
+- [x] An inventory to store and use items from 
+- [x] Log to read item and story messages
+- [x] Five different locations: Cell, Corridor, Staffroom, React Core, Escape Pod
+- [x] Back arrow moves player back to previous area
+- [x] End screen
  
  
 ## Stretch Goals
@@ -33,32 +33,17 @@ puzzles to win. The aim of the game is to blow up the React Core and exit the ba
 - [ ] Exit to Home screen at any point in the game
 - [ ] Winners table
 - [ ] Sound effects
-- [ ] Easter egg collectibles
+- [x] Easter egg collectibles
  
 ## User stories
  
-- [ ] As a user, I want to be able to click items to pick them up
-- [ ] As a user, I want to be able to move between different rooms
-- [ ] As a user, I want to be able to choose items from my inventory and use them to interact    with other items
-- [ ] As a user, I want to be able to move back to the previous room easily
-- [ ] As a user, I want to be able to read story and item messages in the log
+- [x] As a user, I want to be able to click items to pick them up
+- [x] As a user, I want to be able to move between different rooms
+- [x] As a user, I want to be able to choose items from my inventory and use them to interact    with other items
+- [x] As a user, I want to be able to move back to the previous room easily
+- [x] As a user, I want to be able to read story and item messages in the log
 - [ ] As a user, I want to be able to exit to the home screen
 - [ ] As a user, I want to be able to compare my game time with other players
- 
-## Features
- 
-* App
-	* UI
-		* Inventory
-		* Function
-    * Items
-	* Homescreen
-	* Cell
-	* Corridor
-	* Staffroom
-	* Reactcore
-	* Escapepod
-	* Endscreen
  
 ## Team Learning Objectives
  
@@ -81,16 +66,58 @@ puzzles to win. The aim of the game is to blow up the React Core and exit the ba
 * Kelly
 * Simon
 * Hannah
- 
-### GreenSock
-* Kelly
-* Hannah
 * Elena
  
-## Wireframes
- 
-## Developer Information
+### Inkscape
+* Kelly
 
+### Beautiful original art created by Kelly!
+
+
+## Base Components
+ 
+- App
+- UI
+   * Inventory
+   * Function
+   * UI
+   * Back Button
+   * Log
+   
+- Rooms
+   * Cell
+   * Corridor
+   * Staffroom
+   * Reactcore
+   * Escapepod
+- Items
+- Doors
+- Console Interactions
+- Code Givers
+- Home Screen 
+- End Screen
+ 
+
+ 
+## Wireframes
+
+
+
+ 
+### Developer Information
+
+-Npm install
+-Run dev
+-Local host 3000
+-File structure is separated into base component files, a list of which can be found above.
+	 * Items extend base Item component
+	 * Doors extend base Door component
+	 * Console interactions extends base Console component
+	 * Code Givers extend base Code Giver components
+-Please check the reducer index to get a good idea of our states.
+
+	
+	
 ## Item List
 
 | Item                   | Location    | OnClick                                                     | Log Message                                                                                                                                                              | Joins Inventory | Used For                                     |
