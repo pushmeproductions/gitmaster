@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import {updateLog} from '../../../actions/currentLog'
-import {goodEnding} from '../../../actions/ending'
+import {funEnding} from '../../../actions/ending'
 
 class EscapePanel extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class EscapePanel extends React.Component {
   this.wonMsg = 'Wow you defeated the evil SVN!'
   this.img = 'images/items/EscKey.png'
   this.roomStyle = {
+    cursor: 'pointer',
     width: '58px',
     height: '47px',
     position: 'absolute',
@@ -36,8 +37,7 @@ class EscapePanel extends React.Component {
   }
 
 
-mouseClick() {
-  console.log(this.props)
+  mouseClick() {
     if (this.props.meltdown && this.props.func.length < 5) {
       this.dispatch(updateLog(this.lostMsg))
       //bad
@@ -45,7 +45,7 @@ mouseClick() {
       console.log("this should be bad ending")
 
     } else if (this.props.meltdown && this.props.func.length == 5) {
-      this.dispatch(goodEnding())
+      this.dispatch(funEnding())
       window.location.href = '/#/end'
       console.log("this should be good ending");
       // good
@@ -55,11 +55,16 @@ mouseClick() {
     }
   }
 
-  render(){
+  renderEscButton() {
     return (<img id='esc'
-      src={this.img}
-      style={this.roomStyle}
-      onClick={() => this.mouseClick()}/>
+    src={this.img}
+    style={this.roomStyle}
+    onClick={() => this.mouseClick()} />
+    )}
+
+  render(){
+    return (
+      this.renderEscButton()
     )
   }
 }
@@ -69,7 +74,7 @@ mouseClick() {
       location: state.location,
       meltdown: state.meltdown,
       func: state.func,
-      goodEnding: state.goodEnding
+      funEnding: state.funEnding
     }
   }
 
