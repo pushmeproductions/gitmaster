@@ -46,7 +46,7 @@ class Corridor extends React.Component {
       style={sign.roomStyle}
       onClick={() => sign.mouseClick(this.props.authorised)}
       onMouseOver={sign.mouseOver}
-      onMouseOff={sign.mouseOff}/>
+      onMouseLeave={sign.mouseOff}/>
     )
   }
 
@@ -56,7 +56,7 @@ class Corridor extends React.Component {
       style={sign.roomStyle}
       onClick={() => sign.mouseClick(this.props.authorised)}
       onMouseOver={sign.mouseOver}
-      onMouseOff={sign.mouseOff}/>
+      onMouseLeave={sign.mouseOff}/>
     )
   }
 
@@ -67,7 +67,7 @@ class Corridor extends React.Component {
       style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
       onClick={() => bot.mouseClick(this.props.activeItem)}
       onMouseOver={bot.mouseOver}
-      onMouseOff={bot.mouseOff}/>
+      onMouseLeave={bot.mouseOff}/>
     )
   }
 
@@ -79,7 +79,7 @@ class Corridor extends React.Component {
         mo.idleStyle : mo.activeStyle}
         onClick={() => mo.mouseClick()}
         onMouseOver={mo.mouseOver}
-        onMouseOff={mo.mouseOff}/>
+        onMouseLeave={mo.mouseOff}/>
       )
     }
  }
@@ -92,7 +92,7 @@ class Corridor extends React.Component {
       style={cell.roomStyle}
       onClick={() => cell.mouseClick('click')}
       onMouseOver={cell.mouseOver}
-      onMouseOff={cell.mouseOff}/>
+      onMouseLeave={cell.mouseOff}/>
       )
     }
   }
@@ -104,7 +104,7 @@ class Corridor extends React.Component {
         style={cell.roomStyle}
         onClick={() => cell.mouseClick(this.props.activeItem)}
         onMouseOver={cell.mouseOver}
-        onMouseOff={cell.mouseOff}/>
+        onMouseLeave={cell.mouseOff}/>
       )
     }
   }

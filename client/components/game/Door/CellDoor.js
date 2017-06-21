@@ -1,4 +1,6 @@
 import Door from './Door'
+import React from 'react'
+
 
 import {deactivateItem} from '../../../actions/activeItem'
 import {openCell} from '../../../actions/door'
@@ -9,6 +11,7 @@ export default class CellDoor extends Door {
   constructor(dispatch) {
     super(dispatch)
     this.img = 'images/items/CellDoor.png'
+    this.imgOpen = 'images/items/OpenDoor.png'
     this.nextLoc = 'corridor'
     this.lockmsg = 'The door is locked...'
     this.openmsg = 'Spark! Flash! The door melts before your very eyes'
@@ -30,7 +33,6 @@ export default class CellDoor extends Door {
     if(activeItem == 'bucket') {
       this.dispatch(updateLog(this.openmsg))
       this.dispatch(openCell())
-      this.img = 'images/items/OpenDoor.png'
       this.dispatch(deactivateItem())
     } else if (!cellLocked) {
        super.mouseClick()
@@ -38,6 +40,16 @@ export default class CellDoor extends Door {
         this.dispatch(updateLog(this.lockmsg))
         if(activeItem) this.dispatch(updateLog(this.error))
     }
+  }
+
+  render(activeItem, cellLocked){
+    return (<img id='celldoor'
+      src={cellLocked ? this.img : this.imgOpen}
+      style={this.roomStyle}
+      onClick={() => this.mouseClick(activeItem, cellLocked)}
+      onMouseOver= {this.mouseOver}
+      onMouseOut= {this.mouseOff}/>
+    )
   }
 
 }

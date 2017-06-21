@@ -135,5 +135,22 @@ background-size: 30px;*/
 background-color: #F5F5DC;
 border: 3px  #F5F5DC solid;
 z-index: 8;
-border-radius: 50%; 
+border-radius: 50%;
+}
+
+/*ENDSCREEN*/
+.end-container {
+  text-align: center;
+  margin: 15vh;
+  font-family: 'Orbitron';
+  letter-spacing: 1.8px;
+}
+
+.ending-picture {
+  max-width: 100%;
+  height: auto;
+}
+
+.footer {
+  padding: 10px;
 }

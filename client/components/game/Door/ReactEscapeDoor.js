@@ -35,6 +35,7 @@ export default class ReactEscapeDoor extends Door {
       this.dispatch(countDown())
       this.dispatch(updateLog('The door looks like it\'s about to come down on you! Perhaps use something to jam it open.'))
     } else {
+      window.location.href = '/#/end'
     }
   }
 
