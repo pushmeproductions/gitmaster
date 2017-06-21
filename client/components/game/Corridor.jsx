@@ -13,6 +13,14 @@ import Moustache from './code/Moustache'
 class Corridor extends React.Component {
   constructor(props) {
     super(props)
+    this.reactSign = new ReactSign(this.props.dispatch)
+    this.staffRoom = new StaffRoom(this.props.dispatch)
+    this.mo = new Moustache(this.props.dispatch)
+    this.authbot = new Authbot(this.props.dispatch)
+    this.roomItems = [
+      new CorridorCell1(this.props.dispatch),
+      new CorridorCell2(this.props.dispatch),
+    ]
 
     this.state = {
       authorised: this.props.authorised,
@@ -21,16 +29,6 @@ class Corridor extends React.Component {
     }
   }
 
-  componentWillMount(props) {
-    this.setState({
-      reactSign: new ReactSign(this.props.dispatch),
-      staffRoom: new StaffRoom(this.props.dispatch),
-      authbot: new Authbot(this.props.dispatch),
-      corridorCell1: new CorridorCell1(this.props.dispatch),
-      corridorCell2: new CorridorCell2(this.props.dispatch),
-      mo: new Moustache(this.props.dispatch)
-    })
-  }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
@@ -40,86 +38,23 @@ class Corridor extends React.Component {
     })
   }
 
-  renderReactSign(sign) {
-    return (<img id='reactsign'
-      src={sign.img}
-      style={sign.roomStyle}
-      onClick={() => sign.mouseClick(this.props.authorised)}
-      onMouseOver={sign.mouseOver}
-      onMouseLeave={sign.mouseOff}/>
-    )
+  renderItems() {
+    return this.roomItems.map((item, i) => {
+      if (this.state.worldItems.indexOf(item.name) > -1) {
+        return item.render(i)
+      }
+    })
   }
-
-  renderStaffRoom(sign) {
-    return (<img id='staffroom'
-      src={sign.img}
-      style={sign.roomStyle}
-      onClick={() => sign.mouseClick(this.props.authorised)}
-      onMouseOver={sign.mouseOver}
-      onMouseLeave={sign.mouseOff}/>
-    )
-  }
-
-
-  renderAuthbot(bot) {
-    return (<img id='authbot'
-      src={bot.img}
-      style={this.props.authorised ? bot.idleStyle : bot.activeStyle}
-      onClick={() => bot.mouseClick(this.props.activeItem)}
-      onMouseOver={bot.mouseOver}
-      onMouseLeave={bot.mouseOff}/>
-    )
-  }
-
-  renderMo(mo) {
-    if (this.state.worldItems.indexOf(mo.name) > -1) {
-      return (<img id='mo'
-        src={mo.img}
-        style={this.props.authorised ?
-        mo.idleStyle : mo.activeStyle}
-        onClick={() => mo.mouseClick()}
-        onMouseOver={mo.mouseOver}
-        onMouseLeave={mo.mouseOff}/>
-      )
-    }
- }
-
-
-  renderCorridorCell1(cell) {
-    if (this.state.worldItems.indexOf(cell.name) > -1) {
-    return (<img id='cell1'
-      src={cell.img}
-      style={cell.roomStyle}
-      onClick={() => cell.mouseClick('click')}
-      onMouseOver={cell.mouseOver}
-      onMouseLeave={cell.mouseOff}/>
-      )
-    }
-  }
-
-  renderCorridorCell2(cell) {
-    if (this.state.worldItems.indexOf(cell.name) > -1) {
-      return (<img id='cell2'
-        src={cell.img}
-        style={cell.roomStyle}
-        onClick={() => cell.mouseClick(this.props.activeItem)}
-        onMouseOver={cell.mouseOver}
-        onMouseLeave={cell.mouseOff}/>
-      )
-    }
-  }
-
 
   render() {
     return (
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Corridor.png'/>
-          {this.renderReactSign(this.state.reactSign)}
-          {this.renderStaffRoom(this.state.staffRoom)}
-          {this.renderAuthbot(this.state.authbot)}
-          {this.renderCorridorCell1(this.state.corridorCell1)}
-          {this.renderCorridorCell2(this.state.corridorCell2)}
-          {this.renderMo(this.state.mo)}
+          {this.reactSign.render(this.props.authorised)}
+          {this.staffRoom.render(this.props.authorised)}
+          {this.authbot.render(this.props.authorised, this.props.activeItem)}
+          {this.renderItems()}
+          {this.mo.render(this.state.worldItems, this.props.authorised)}
         )
       </div>
     )
@@ -128,13 +63,10 @@ class Corridor extends React.Component {
 
 const mapStateToProps = (state) => {
   return {
-    location: state.location,
     authorised: state.authorised,
-    inventory: state.inventory,
     activeItem: state.activeItem,
     worldItems: state.worldItems,
-    func: state.func,
-    meltdown: state.meltdown
+    func: state.func
   }
 }
 

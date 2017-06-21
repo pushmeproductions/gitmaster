@@ -1,4 +1,5 @@
 import CodeGiver from './CodeGiver'
+import React from 'react'
 
 import {updateLog} from '../../../actions/currentLog'
 import {sendToFunc} from '../../../actions/sendToFunction'
@@ -59,5 +60,15 @@ export default class Authbot extends CodeGiver {
           break
       }
     }
+  }
+
+  render(authorised, activeItem) {
+    return (<img id='authbot'
+       src={this.img}
+       style={authorised ? this.idleStyle : this.activeStyle}
+       onClick={() =>this.mouseClick(activeItem)}
+       onMouseOver={this.mouseOver}
+       onMouseLeave={this.mouseOff}/>
+     )
   }
 }
