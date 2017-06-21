@@ -60,7 +60,7 @@
     position: absolute;
     left: 50%;
     margin-left: 258px;
-    top: 84%;
+    top: 540px;
     width: 85px;
     height: 75px;
     z-index: 5;
@@ -135,5 +135,5 @@ background-size: 30px;*/
 background-color: #F5F5DC;
 border: 3px  #F5F5DC solid;
 z-index: 8;
-border-radius: 50%; 
+border-radius: 50%;
 }

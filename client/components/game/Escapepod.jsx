@@ -24,6 +24,6 @@ class Escapepod extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-return {state}
+  return {state}
 }
 export default connect(mapStateToProps)(Escapepod)
