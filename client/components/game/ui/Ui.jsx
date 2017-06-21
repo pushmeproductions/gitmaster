@@ -29,7 +29,7 @@ class Ui extends React.Component {
   render () {
     return (
       <div className='ui-container'>
-        <img id='overlay' src='images/backgrounds/UI.png' />
+        <img id='overlay' src='images/backgrounds/UI-view1.png' />
         <Inventory />
         <FunctionCode />
         <BackButton />

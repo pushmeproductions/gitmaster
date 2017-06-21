@@ -13,8 +13,8 @@ export default class Password extends InventoryItem {
       width: '80px',
       height: '66px',
       position: 'absolute',
-      top: '18%',
-      left: '3%',
+      top: '39%',
+      left: '5%',
       zIndex: 5
     }
   }
