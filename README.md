@@ -101,20 +101,16 @@ puzzles to win. The aim of the game is to blow up the React Core and exit the ba
  
 ## Wireframes
 
-
+[Storyboarding, wireframes and states](https://github.com/pushmeproductions/gitmaster/wiki/Wireframes)
 
  
 ### Developer Information
 
--Npm install
--Run dev
--Local host 3000
--File structure is separated into base component files, a list of which can be found above.
-	 * Items extend base Item component
-	 * Doors extend base Door component
-	 * Console interactions extends base Console component
-	 * Code Givers extend base Code Giver components
--Please check the reducer index to get a good idea of our states.
+- Npm install
+- Run dev
+- Local host 3000
+- File structure is separated into base component files, a list of which can be found above
+- Please check the reducer index to get a good idea of our states.
 
 	
 	
