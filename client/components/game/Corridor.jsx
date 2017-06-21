@@ -13,6 +13,8 @@ import Moustache from './code/Moustache'
 class Corridor extends React.Component {
   constructor(props) {
     super(props)
+    this.reactSign = new ReactSign(this.props.dispatch)
+    this.staffRoom = new StaffRoom(this.props.dispatch)
 
     this.state = {
       authorised: this.props.authorised,
@@ -23,8 +25,6 @@ class Corridor extends React.Component {
 
   componentWillMount(props) {
     this.setState({
-      reactSign: new ReactSign(this.props.dispatch),
-      staffRoom: new StaffRoom(this.props.dispatch),
       authbot: new Authbot(this.props.dispatch),
       corridorCell1: new CorridorCell1(this.props.dispatch),
       corridorCell2: new CorridorCell2(this.props.dispatch),
@@ -40,25 +40,25 @@ class Corridor extends React.Component {
     })
   }
 
-  renderReactSign(sign) {
-    return (<img id='reactsign'
-      src={sign.img}
-      style={sign.roomStyle}
-      onClick={() => sign.mouseClick(this.props.authorised)}
-      onMouseOver={sign.mouseOver}
-      onMouseLeave={sign.mouseOff}/>
-    )
-  }
-
-  renderStaffRoom(sign) {
-    return (<img id='staffroom'
-      src={sign.img}
-      style={sign.roomStyle}
-      onClick={() => sign.mouseClick(this.props.authorised)}
-      onMouseOver={sign.mouseOver}
-      onMouseLeave={sign.mouseOff}/>
-    )
-  }
+  // renderReactSign(sign) {
+  //   return (<img id='reactsign'
+  //     src={sign.img}
+  //     style={sign.roomStyle}
+  //     onClick={() => sign.mouseClick(this.props.authorised)}
+  //     onMouseOver={sign.mouseOver}
+  //     onMouseLeave={sign.mouseOff}/>
+  //   )
+  // }
+  //
+  // renderStaffRoom(sign) {
+  //   return (<img id='staffroom'
+  //     src={sign.img}
+  //     style={sign.roomStyle}
+  //     onClick={() => sign.mouseClick(this.props.authorised)}
+  //     onMouseOver={sign.mouseOver}
+  //     onMouseLeave={sign.mouseOff}/>
+  //   )
+  // }
 
 
   renderAuthbot(bot) {
@@ -114,8 +114,8 @@ class Corridor extends React.Component {
     return (
       <div className='window'>
         <img className='background-img' src='images/backgrounds/Corridor.png'/>
-          {this.renderReactSign(this.state.reactSign)}
-          {this.renderStaffRoom(this.state.staffRoom)}
+          {this.reactSign.render(this.props.authorised)}
+          {this.staffRoom.render(this.props.authorised)}
           {this.renderAuthbot(this.state.authbot)}
           {this.renderCorridorCell1(this.state.corridorCell1)}
           {this.renderCorridorCell2(this.state.corridorCell2)}

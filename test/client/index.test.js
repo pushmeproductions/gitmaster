@@ -101,7 +101,7 @@ test('Corridor background image rendering', t => {
 })
 test('Staffroom sign is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#staffroom').simulate('click' )
+  wrapper.find('#sign-staffroom').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 test('Authbot is Clickable', t => {
@@ -135,7 +135,7 @@ test('corridorCell2 is Clickable', t => {
 
 test('ReactSign is Clickable', t => {
   const wrapper = mount(<Provider store={store}><Corridor/></Provider>)
-  wrapper.find('#reactsign').simulate('click' )
+  wrapper.find('#sign-reactSign').simulate('click' )
   t.is(wrapper.find(".window").exists(), true)
 })
 
