@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
 
 import {updateLog} from '../../../actions/currentLog'
-import {goodEnding} from '../../../actions/ending'
+import {funEnding} from '../../../actions/ending'
 
 class EscapePanel extends React.Component {
   constructor(props) {
@@ -37,7 +37,6 @@ class EscapePanel extends React.Component {
 
 
 mouseClick() {
-  console.log(this.props)
     if (this.props.meltdown && this.props.func.length < 5) {
       this.dispatch(updateLog(this.lostMsg))
       //bad
@@ -45,7 +44,7 @@ mouseClick() {
       console.log("this should be bad ending")
 
     } else if (this.props.meltdown && this.props.func.length == 5) {
-      this.dispatch(goodEnding())
+      this.dispatch(funEnding())
       window.location.href = '/#/end'
       console.log("this should be good ending");
       // good
@@ -74,8 +73,3 @@ mouseClick() {
   }
 
 export default connect(mapStateToProps)(EscapePanel)
-//
-// <Link to='/end'><img
-//   src={this.img}
-//   style={this.roomStyle}
-//   onClick={() => this.mouseClick()}/></Link>
