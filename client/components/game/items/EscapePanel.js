@@ -1,6 +1,5 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
 
 import {updateLog} from '../../../actions/currentLog'
 import {funEnding} from '../../../actions/ending'
@@ -42,12 +41,12 @@ class EscapePanel extends React.Component {
       this.dispatch(updateLog(this.lostMsg))
       //bad
       window.location.href = '/#/end'
-      console.log("this should be bad ending")
+      // console.log("this should be bad ending")
 
     } else if (this.props.meltdown && this.props.func.length == 5) {
       this.dispatch(funEnding())
       window.location.href = '/#/end'
-      console.log("this should be good ending");
+      // console.log("this should be good ending");
       // good
       this.dispatch(updateLog(this.wonMsg))
     } else {

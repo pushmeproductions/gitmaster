@@ -27,6 +27,14 @@ import consolePopUp from '../../client/reducers/consolePopUp'
 import {funEnding} from '../../client/actions/ending'
 import goodEnding from '../../client/reducers/goodEnding'
 
+import {jamDoor} from '../../client/actions/reDoor'
+import doorJammed from '../../client/reducers/doorJammed'
+
+test('The state for door jammed changes based on countdown', t =>{
+  const nextState = doorJammed(false, jamDoor())
+  t.is(nextState,true)
+})
+
 test('The state in ending starts as false', t => {
   const nextState = goodEnding(false, funEnding())
   t.is(nextState, true)
