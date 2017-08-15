@@ -5,7 +5,7 @@ export default class Brick extends CodeGiver {
     super (dispatch)
     this.code = 1
     this.img = 'images/items/Brick.png'
-    this.msg = 'This brick could come in handy later...'
+    this.msg = 'You find some code'
     this.name = 'brick'
     this.roomStyle = {
       width: '90px',

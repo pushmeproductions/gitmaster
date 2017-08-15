@@ -9,9 +9,9 @@ export default class DeployBranch extends ConsoleInteraction {
     this.branch = 'deployment'
     this.style = {
       width: '60px',
-      height: '35px',
+      height: '25px',
       position: 'absolute',
-      top: '56%',
+      top: '57%',
       left: '43%',
       zIndex: 9
     }
