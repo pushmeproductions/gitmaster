@@ -41,10 +41,12 @@ mouseClick() {
     if (this.props.meltdown && this.props.func.length < 5) {
       this.dispatch(updateLog(this.lostMsg))
       window.location.href = '/#/end'
-      //bad
+      // console.log("this should be bad ending")
+
     } else if (this.props.meltdown && this.props.func.length == 5) {
       this.dispatch(funEnding())
       window.location.href = '/#/end'
+      // console.log("this should be good ending");
       // good
       this.dispatch(updateLog(this.wonMsg))
     } else {
